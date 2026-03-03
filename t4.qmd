@@ -1,0 +1,139 @@
+# Working with normal distributions II - the sampling distribution of means {#sec-ISACh4}
+
+## Learning goals
+
+### Conceptual
+
+1. Understand the difference between a given variable's distribution and the **sampling distribution of means** for that variable
+2. Answer questions about proportions/probabilities based on both types of distribution using z-formulae
+
+### SPSS
+
+1. Create new variables from existing values with `Compute`
+
+
+## Recap: Z-transformations
+
+Imagine we know that income per week (in euro) is normally distributed in the population of Dutch university students who graduated in the last year, such that the mean ($\mu$) income is  1,500 EUR, with an SD ($\sigma$) of 100.We might wonder: _what proportion of the population of new Dutch graduates would have a weekly income of **less than 1,350 EUR**?_
+
+```{r}
+#| label: fig-normdist_twee
+#| fig-cap: "Fictional distribution of graduate income scores. Green shading denotes incomes of less than 1,350 EUR."
+#| echo: FALSE 
+
+x<-seq(1100,1900,10)
+y<-dnorm(x,1500,100)
+xx<-tibble::tibble("Income"=x,"pdf"=y)
+mulab<- paste("mu[income] == ", 1500)
+siglab<- paste("sigma[income] == ", 100)
+p <- ggplot2::ggplot(xx, ggplot2::aes(x=Income,y=pdf)) +
+  ggplot2::geom_line()+
+  ggplot2::geom_segment(x=1500,y=0,xend=1500,yend=max(xx$pdf),linetype="dashed",color="red")+
+  ggplot2::geom_segment(x=1400,y=0,xend=1400,yend=as.numeric(xx[xx$Income==1400,2]),linetype="dashed",color="blue")+
+  ggplot2::geom_segment(x=1600,y=0,xend=1600,yend=as.numeric(xx[xx$Income==1600,2]),linetype="dashed",color="blue")+
+  ggplot2::geom_segment(x=1300,y=0,xend=1300,yend=as.numeric(xx[xx$Income==1300,2]),linetype="dashed",color="blue")+
+  ggplot2::geom_segment(x=1700,y=0,xend=1700,yend=as.numeric(xx[xx$Income==1700,2]),linetype="dashed",color="blue")+
+  ggplot2::annotate("text", x = 1150, y = 0.0041, colour="red", label = mulab,parse=TRUE)+
+  ggplot2::annotate("text", x = 1150, y = 0.0039, colour="blue", label = siglab,parse=TRUE)+
+  ggplot2::geom_ribbon(data=subset(xx,x<=1350),ggplot2::aes(x=Income,ymax=pdf),ymin=0,fill="green")+
+  ggplot2::scale_x_continuous(breaks = seq(1100,1900,100),labels = seq(1100,1900,100))+
+  ggplot2::theme(axis.text.y = ggplot2::element_blank())+
+  ggplot2::ylab("Density")
+p
+```
+
+We can see the area of interest in the distribution above, in @fig-normdist_twee. To calculate the proportion, we first need to convert the target value into a **z-score**, which transforms the value into standard deviation units. In this case:
+
+$$
+z = \frac{x-\mu}{\sigma} = \frac{1350-1500}{100} = -1.5
+$$
+
+
+```{r}
+target_income<-1350
+mean_income<-1500
+sd_income<-100
+
+prob<-pnorm(target_income ,mean = mean_income, sd = sd_income, lower.tail = TRUE)
+
+# We set 'lower.tail = TRUE' because we want to return probabilities associated with a score *less* than 1,350, so the lower/left-tail values.
+
+```
+
+To work out the probability associated with a z-score of 1.5, we can consult the normal distribution tables in the Argyrous textbook (pp. 541 - 542), looking for the area under the curve <b>beyond</b> one point. This allows us to answer our question: _there is a `{r} round(prob*100,2)`% chance of randomly selecting an individual with an income below 1,350 EUR per week from the population of new Dutch graduates_
+
+## The Sampling Distribution (of Means) {#sec-se}
+
+Imagine (as before) that we know that income per week (in euro) is normally distributed in the population of Dutch university students who graduated in the last year ($\mu_{income}=  1,500$, $\sigma_{income}=  100$). If we _repeatedly_ draw samples of $n$ = 1,000 from the population, then we might see $\bar{x}_1=1,501.93$ , $\bar{x}_2=1,497.62$ ,... and so on. Computing sample means from **all possible samples of size** $n$ **= 1,000** gives the **sampling distribution of means** (for $n$ = 1,000). 
+
+The mean of the sampling distribution = $\mu = 1,500$ and the standard deviation of sampling distribution is known as the **Standard Error (_SE_)**. While the sampling distribution is purely theoretical (because we usually cannot collect all possible permutations of elements from our population), we can estimate the standard error of the sampling distribution of means with the formula:
+
+$$
+\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
+$$
+Plugging in the values from our current example gives:
+
+$$
+\sigma_{\bar{x}} = \frac{100}{\sqrt{1000}} = 3.16
+$$
+
+We can now ask the question: _what is the probability of drawing a sample (_n_ = 1,000) from this population with a mean of less than 1,489 EUR?_
+
+```{r}
+#| label: fig-sampdist
+#| fig-cap: "Fictional sampling distrubution of means (n = 1000) for graduate income scores. Area to the left of the green line denotes incomes of less than 1,489 EUR."
+#| echo: FALSE
+
+x<-seq(1485,1515,.01)
+y<-dnorm(x,1500,3.16)
+se_min1<-1500-3.16
+se_min2<-1500-6.32
+se_plus1<-1500+3.16
+se_plus2<-1500+6.32
+# x<-seq(1100,1900,10)
+# y<-dnorm(x,1500,3.16)
+xx<-tibble::tibble("Income"=x,"pdf"=y)
+mulab<- paste("mu[income] == ", 1500)
+siglab<- paste("SE[income] == ", 3.16)
+p <- ggplot2::ggplot(xx, ggplot2::aes(x=Income,y=pdf)) +
+  ggplot2::geom_line()+
+  ggplot2::geom_segment(x=1500,y=0,xend=1500,yend=max(xx$pdf),linetype="dashed",color="red")+
+  ggplot2::geom_segment(x=se_min1,y=0,xend=se_min1,yend=as.numeric(xx[xx$Income==se_min1,2])
+               ,linetype="dashed",color="blue")+
+  ggplot2::geom_segment(x=se_min2,y=0,xend=se_min2,yend=as.numeric(xx[xx$Income==se_min2,2])
+               ,linetype="dashed",color="blue")+
+  ggplot2::geom_segment(x=se_plus1,y=0,xend=se_plus1,yend=as.numeric(xx[xx$Income==se_plus1,2])
+               ,linetype="dashed",color="blue")+
+  ggplot2::geom_segment(x=se_plus2,y=0,xend=se_plus2,yend=as.numeric(xx[xx$Income==se_plus2,2])
+               ,linetype="dashed",color="blue")+
+  ggplot2::geom_segment(x=1489,y=0,xend=1489,yend=max(xx$pdf),linetype="dashed",color="green")+
+  ggplot2::annotate("text", x = 1510, y = 0.11, colour="red", label = mulab,parse=TRUE)+
+  ggplot2::annotate("text", x = 1510.25, y = 0.1, colour="blue", label = siglab,parse=TRUE)+
+  ggplot2::scale_x_continuous(breaks = seq(1485,1515,2),labels = seq(1485,1515,2))+
+  ggplot2::theme(axis.text.y = ggplot2::element_blank())+
+  ggplot2::ylab("Density")
+p
+```
+
+We can follow exactly the same steps as we did when working above with (fictional) population values: 
+
+$$
+z = \frac{x-\mu}{\frac{\sigma}{\sqrt{n}}} = \frac{1489-1500}{3.16} = -3.48
+$$
+```{r}
+target_income<-1489
+mean_income<-1500
+se_income<-3.16
+
+prop2<-pnorm(target_income ,mean = mean_income, sd = se_income, lower.tail = TRUE)
+
+# We set 'lower.tail = TRUE' because we want to return probabilities associated with a score *less* than 1,489, so the lower/left-tail values.
+
+```
+
+
+Our answer, then, is: _there is a `{r} round(prop2*100,2)`% chance of randomly drawing a sample (n = 1,000) with a mean income of less than 1,489 EUR from this population (with $\mu = 1,500$ & $\sigma = 100$)_
+
+## SPSS explainer video
+
+[ESS Compute, trust variables]

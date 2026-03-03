@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="David Fleming">
 
-<title>PPLE Introduction to Statistical Analysis: tutorial manual</title>
+<title>4&nbsp; Working with normal distributions II - the sampling distribution of means – PPLE Introduction to Statistical Analysis: tutorial manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./t1.html" rel="next">
+<link href="./t5.html" rel="next">
+<link href="./t3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./t4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with normal distributions II - the sampling distribution of means</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -139,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./t4.html" class="sidebar-item-text sidebar-link">
+  <a href="./t4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with normal distributions II - the sampling distribution of means</span></span></a>
   </div>
 </li>
@@ -176,31 +205,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">4.1</span> Learning goals</a>
   <ul class="collapse">
-  <li><a href="#assignments" id="toc-assignments" class="nav-link" data-scroll-target="#assignments">Assignments</a></li>
+  <li><a href="#conceptual" id="toc-conceptual" class="nav-link" data-scroll-target="#conceptual"><span class="header-section-number">4.1.1</span> Conceptual</a></li>
+  <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">4.1.2</span> SPSS</a></li>
   </ul></li>
+  <li><a href="#recap-z-transformations" id="toc-recap-z-transformations" class="nav-link" data-scroll-target="#recap-z-transformations"><span class="header-section-number">4.2</span> Recap: Z-transformations</a></li>
+  <li><a href="#sec-se" id="toc-sec-se" class="nav-link" data-scroll-target="#sec-se"><span class="header-section-number">4.3</span> The Sampling Distribution (of Means)</a></li>
+  <li><a href="#spss-explainer-video" id="toc-spss-explainer-video" class="nav-link" data-scroll-target="#spss-explainer-video"><span class="header-section-number">4.4</span> SPSS explainer video</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t4.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PPLE Introduction to Statistical Analysis: tutorial manual</h1>
+<h1 class="title"><span id="sec-ISACh4" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with normal distributions II - the sampling distribution of means</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>David Fleming </p>
-          </div>
-  </div>
     
   
     
@@ -211,16 +238,81 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Welcome! In these pages you will find tutorial materials for the PPLE <em>Introduction to Statistical Analysis</em> tutorials. In session 2025/26, we will be working with the software package SPSS which can be downloaded for a small fee from <a href="https://www.surfspot.nl/universiteit-van-amsterdam">SURFSPOT</a> or accessed for free via connection to an <a href="apps.uva.nl">UvA virtual desktop</a>. The course is supported by the textbook, <a href="https://uk.sagepub.com/en-gb/eur/statistics-for-research/book234621"><i>Statistics for research with a guide to SPSS</i></a>, by George Argyrous.</p>
-<p>Every page contains video demonstrations of techniques featured in the lectures and tutorial meetings using datasets available for download on the course <a href="canvas.uva.nl">canvas</a> page. For questions about these materials, please <a href="mailto:d.fleming@uva.nl">get in touch</a>!</p>
-<section id="assignments" class="level2">
-<h2 class="anchored" data-anchor-id="assignments">Assignments</h2>
-<p>Details of the in-class pair/group assignments will be published on canvas. <strong>Please prepare a single document (.doc or .pdf) containing your answers and ensure that you upload on time via the submission points!</strong></p>
-
-
+<section id="learning-goals" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">4.1</span> Learning goals</h2>
+<section id="conceptual" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="conceptual"><span class="header-section-number">4.1.1</span> Conceptual</h3>
+<ol type="1">
+<li>Understand the difference between a given variable’s distribution and the <strong>sampling distribution of means</strong> for that variable</li>
+<li>Answer questions about proportions/probabilities based on both types of distribution using z-formulae</li>
+</ol>
 </section>
+<section id="spss" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="spss"><span class="header-section-number">4.1.2</span> SPSS</h3>
+<ol type="1">
+<li>Create new variables from existing values with <code>Compute</code></li>
+</ol>
+</section>
+</section>
+<section id="recap-z-transformations" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="recap-z-transformations"><span class="header-section-number">4.2</span> Recap: Z-transformations</h2>
+<p>Imagine we know that income per week (in euro) is normally distributed in the population of Dutch university students who graduated in the last year, such that the mean (<span class="math inline">\(\mu\)</span>) income is 1,500 EUR, with an SD (<span class="math inline">\(\sigma\)</span>) of 100.We might wonder: <em>what proportion of the population of new Dutch graduates would have a weekly income of <strong>less than 1,350 EUR</strong>?</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-normdist_twee" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normdist_twee-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="t4_files/figure-html/fig-normdist_twee-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normdist_twee-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Fictional distribution of graduate income scores. Green shading denotes incomes of less than 1,350 EUR.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We can see the area of interest in the distribution above, in <a href="#fig-normdist_twee" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>. To calculate the proportion, we first need to convert the target value into a <strong>z-score</strong>, which transforms the value into standard deviation units. In this case:</p>
+<p><span class="math display">\[
+z = \frac{x-\mu}{\sigma} = \frac{1350-1500}{100} = -1.5
+\]</span></p>
+<p>To work out the probability associated with a z-score of 1.5, we can consult the normal distribution tables in the Argyrous textbook (pp.&nbsp;541 - 542), looking for the area under the curve <b>beyond</b> one point. This allows us to answer our question: <em>there is a 6.68% chance of randomly selecting an individual with an income below 1,350 EUR per week from the population of new Dutch graduates</em></p>
+</section>
+<section id="sec-se" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sec-se"><span class="header-section-number">4.3</span> The Sampling Distribution (of Means)</h2>
+<p>Imagine (as before) that we know that income per week (in euro) is normally distributed in the population of Dutch university students who graduated in the last year (<span class="math inline">\(\mu_{income}=  1,500\)</span>, <span class="math inline">\(\sigma_{income}=  100\)</span>). If we <em>repeatedly</em> draw samples of <span class="math inline">\(n\)</span> = 1,000 from the population, then we might see <span class="math inline">\(\bar{x}_1=1,501.93\)</span> , <span class="math inline">\(\bar{x}_2=1,497.62\)</span> ,… and so on. Computing sample means from <strong>all possible samples of size</strong> <span class="math inline">\(n\)</span> <strong>= 1,000</strong> gives the <strong>sampling distribution of means</strong> (for <span class="math inline">\(n\)</span> = 1,000).</p>
+<p>The mean of the sampling distribution = <span class="math inline">\(\mu = 1,500\)</span> and the standard deviation of sampling distribution is known as the <strong>Standard Error (<em>SE</em>)</strong>. While the sampling distribution is purely theoretical (because we usually cannot collect all possible permutations of elements from our population), we can estimate the standard error of the sampling distribution of means with the formula:</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
+\]</span> Plugging in the values from our current example gives:</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}} = \frac{100}{\sqrt{1000}} = 3.16
+\]</span></p>
+<p>We can now ask the question: <em>what is the probability of drawing a sample (<em>n</em> = 1,000) from this population with a mean of less than 1,489 EUR?</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-sampdist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sampdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="t4_files/figure-html/fig-sampdist-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Fictional sampling distrubution of means (n = 1000) for graduate income scores. Area to the left of the green line denotes incomes of less than 1,489 EUR.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We can follow exactly the same steps as we did when working above with (fictional) population values:</p>
+<p><span class="math display">\[
+z = \frac{x-\mu}{\frac{\sigma}{\sqrt{n}}} = \frac{1489-1500}{3.16} = -3.48
+\]</span></p>
+<p>Our answer, then, is: <em>there is a 0.02% chance of randomly drawing a sample (n = 1,000) with a mean income of less than 1,489 EUR from this population (with <span class="math inline">\(\mu = 1,500\)</span> &amp; <span class="math inline">\(\sigma = 100\)</span>)</em></p>
+</section>
+<section id="spss-explainer-video" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="spss-explainer-video"><span class="header-section-number">4.4</span> SPSS explainer video</h2>
+<p>[ESS Compute, trust variables]</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -626,10 +718,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./t3.html" class="pagination-link" aria-label="Correlation coefficients and working with normal distributions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correlation coefficients and working with normal distributions</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./t1.html" class="pagination-link" aria-label="Entering, importing, summarizing and subsetting data">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Entering, importing, summarizing and subsetting data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./t5.html" class="pagination-link" aria-label="The one-sample t-test &amp; confidence intervals">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The one-sample t-test &amp; confidence intervals</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -641,7 +736,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
 <p>CC-BY-SA-4.0 (2026) David Fleming</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t4.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

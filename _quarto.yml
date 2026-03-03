@@ -17,6 +17,10 @@ book:
   chapters:
     - index.qmd
     - t1.qmd
+    - t2.qmd
+    - t3.qmd
+    - t4.qmd
+    - t5.qmd
   appendices: 
     - a1.qmd
 

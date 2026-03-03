@@ -1,0 +1,193 @@
+# The one-sample t-test & confidence intervals {#sec-ISACh5}
+
+## R outcomes
+
+After reading this chapter, you can: 
+
+1. Perform and interpret a one-sample t-test by hand and in R 
+2. Calculate confidence intervals by hand and interpret them
+
+## Learning goals
+
+### Conceptual 
+
+1. Perform a one-sample t-test by hand and interpret it
+2. Calculate confidence intervals by hand and interpret them
+
+### SPSS
+
+1. Run a one-sample t-test
+
+## One-sample t-test by hand
+
+The **one-sample t-test** is appropriate when we wish to compare an estimate (from a sample) of the population of interest's mean value on some measure to a theoretical value. For example, we might have read some scholarly literature on alcohol consumption which suggests that Dutch students, on average, consume about 10 alcoholic drinks per week. This might lead us to pose the research question: _Is the average number of **beers** consumed per week by **UvA students** different from 10?_
+
+As a **null hypothesis**, we can specify: 
+$$
+H_0: \mu_{beers} = 10
+$$
+
+and, as an **alternative hypothesis**:
+
+$$
+H_1: \mu_{beers} \neq 10
+$$
+
+Or, in plain English:
+
+* $H_0$ = _In the population of Amsterdam students_, the average number of beers consumed per week is 10
+* $H_1$ = _In the population of Amsterdam students_, the average number of beers consumed per week is **NOT** 10
+
+<br>  
+
+::: {#nte-hypo .callout-note}
+### Nulls, alternatives, and directions
+In this course, we concern ourselves only with the family of null hypothesis significance tests (NHST) where the null hypothesis ($H_0$) is typically specified as a **point hypothesis**. In other words, it states that the population parameter of interest is **equal** to a single value, rather than stating that it falls within a range, or above/below another value. For example, in the above example, the null hypothesis is that the population mean ($\mu$) is equal to 10.  
+
+On the other hand, the alternative hypothesis ($H_1$) can be specified as **directional** or **non-directional**, with respect to $H_0$. In the above example, we specified $H_1$ as non-directional - we hypothesized that $\mu$ would **not** be equal to 10, but we didn't state whether it would be smaller or larger than 10. If theory led us to hypothesize that $\mu$ would be greater than 10, then we could formulate $H_1: \mu > 10$.
+:::
+
+<br>  
+
+Now, let's imagine we gather the following data from four UvA students:
+
+```{r}
+#| echo: FALSE
+#| html-table-processing: none
+#| label: tbl-beer
+#| tbl-cap: "Beers consumed per week for four UvA students"
+#| tbl-cap-location: bottom 
+`%>%`<-magrittr::`%>%`
+
+data<-tibble::tibble("BeersPerWeek"=c(5,10,12,5)) 
+data %>%
+  knitr::kable(align="c",col.names=c("Beers per week"))
+```
+
+We estimate $\mu$ with the sample mean ($\bar{X}$), which is 8. The test-statistic for the t-test is then given by:
+
+$$
+t = \frac{\bar{X}-\mu}{\frac{s}{\sqrt{n}}}
+$$
+Where:
+
+* $\bar{X}-\mu$ = the difference between the sample mean and the value for $\mu$ presented in the null hypothesis
+* $\frac{s}{\sqrt{n}}$ = the [standard error (SE)](t4.qmd#sec-se)
+
+
+To calculate $se$, we first need $s$, the sample standard deviation:
+
+```{r}
+#| echo: FALSE
+#| label: tbl-tsteps
+#| tbl-cap: "t-test steps"
+#| tbl-cap-location: bottom 
+
+data<-tibble::tibble("BeersPerWeek"=c(5,10,12,5))
+data$x_minus_xbar<-data$BeersPerWeek-mean(data$BeersPerWeek)
+data$xdev_square<-data$x_minus_xbar^2
+
+data %>%
+  knitr::kable(align="c",col.names=c("$x_{beers}$","$x-\\bar{x}$","$(x-\\bar{x})^2$"))
+
+```
+
+1. $\sum_{i=1}^{n}(X_i-\bar{X})^2 = 38$  
+
+2. $s = \sqrt{\frac{38}{3}} = 3.56$  
+
+3. $se = \frac{3.56}{\sqrt{4}} = 1.78$ 
+
+Which then leads us to $t = \frac{-2}{1.78} = -1.12$.
+
+To determine whether the result is **statistically significant**, we have to compare the obtained t-statistic to a **t-distribution** with 3 degrees of freedom (df). You can find the relevant **critical values** associated with a particular significance level for t-distributions of various degrees of freedom on page 543 of the Argyrous textbook.   
+
+<br>  
+
+::: {#nte-df .callout-note}
+### Degrees of freedom
+The **degrees of freedom** of a dataset refers to the number of independent values that are free to vary without affecting the outcome of a calculation. In the above example, where we are interested in the mean of four datapoints, the degrees of freedom is 3. The first three values of the data can assume any value, but the fourth necessarily leads us to the sample mean. For one-sample t-tests (which also includes t-tests of regression slope coefficients), the degrees of freedom are always given by $df = n - 1$.   
+:::
+
+<br>  
+
+```{r}
+propt<-pt(q = -1.12, df = 3, lower.tail = TRUE)*2
+# q = our t-value
+# df = 3
+# lower.tail = TRUE - as the t-value is negative, we compare the value to the left tail of the symmetric t-distribution, but we multiply the result by 2 because our hypothesis was non-directional and requires a two-tailed p-value 
+```
+
+
+We need to compare our observed t-statistic to the critical t-value associated with the conventional threshold for statistical significance ($\alpha$), which is .05. As we specified a [non-directional alternative hypothesis](t5.qmd#nte-hypo), we look under the column "level of significance for two-tailed test", allowing us to look for differences greater than or less than the value specified in the null hypothesis (in this case, 0). The relevant critical value for a t-distribution with 3 degrees of freedom is 3.182, meaning that we would expect to see a t-statistic at least as large as this five percent of the time over the long run, **assuming that the null hypothesis is true**. The t-value we calculated, however, is **smaller** than this value, meaning that its associated p-value is **greater** than .05 (although note that you cannot obtain the exact p-value associated with your test from the tables in the book). We should therefore **NOT** reject $H_0$ and instead conclude that, in the population, the mean number of beers consumed by UvA students per week does not differ from 10. Formatting this in APA style, we have:
+
+> Our 1-sample t-test indicated that, in the population of Amsterdam students, the mean beers consumed per week (_M_ = 8, _SD_ = 3.56) did not differ from 10, _t_ (3) = -1.12, _p_ > .05.`
+
+<br>  
+
+::: {#nte-sig .callout-note}
+### Statistical significance
+To say that a finding is **statistically significant** does not mean that it is important; it merely means that the p-value produced by a null-hypothesis test falls below a specified $\alpha$ level (usually .05) which gives the expected type-1 error rate of a test, **in the long run**. In other words, with $\alpha = .05$ you expect your test to lead you to falsely reject $H_0$ 1 in 20 times/5% of the time (i.e., to reject $H_0$ when $H_0$ is actually true), where p values $< \alpha$ are typically accepted as sufficient for allowing one to reject $H_0$. In the above example, the p-value associated with the t-test suggests that, **assuming that $H_0$ is true**, we would expect to see a result at least as extreme as that which we observed `{r} round(pt(q = -1.12, df = 3, lower.tail = TRUE)*200,2)`% of the time, which falls below the 5% threshold and leads us to say that we **fail to reject** $H_0$. If setting $\alpha = .05$ seems arbitrary, that's because it is - you will hear more about this towards the end of the course.           
+:::
+
+<br>  
+
+## Confidence Intervals by hand
+
+For our next trick, let's imagine we sampled 100 UvA students and asked them to estimate how many shots of tequila they drink per weekend. We note a sample mean ($\bar{x}$) of 2.5, with a sample standard deviation ($s$) of 1.5 and we want to use these to **estimate** $\mu_{tequila}$ in the UvA student population by building 95% **confidence intervals**, which will provide a range of plausible values.
+
+<br>  
+  
+::: {#nte-conf .callout-note}
+### Confidence
+The **confidence level** relates to the long-term coverage of the confidence intervals we generate. If we set the confidence level to 95%, then we expect that 95/100 confidence intervals constructed in this way over time should contain $\mu$; however, that also means that 5/100 constructed intervals will **NOT** contain $\mu$, and we cannot know whether the confidence interval we are currently building belongs to the former or the latter!   
+:::
+
+<br>  
+
+To construct the interval, we first need to calculate $se$:
+
+$$
+se = \frac{1.5}{\sqrt{100}} = .15 
+$$
+
+Next, to create the bounds of our 95% interval, we need to find the critical t-value which marks the top and bottom 2.5% of a t-distribution with $df = 1 - n = 99$ degrees of freedom. Once more, we can find these from Argyrous, p. 543. 
+
+Now, we build the upper and lower bounds according to the following:
+
+$$
+ci_{95} = \bigg[\bar{x} - t_{crit} \times \frac{s}{\sqrt{n}}, \ \bar{x} + t_{crit} \times \frac{s}{\sqrt{n}} \bigg]
+$$
+Plugging in the values gives us:
+
+$$
+ci_{95} = \bigg[2.5 - 1.98 \times .15,\ 2.5 + 1.98 \times .15 \bigg]  
+$$
+$$
+= \bigg[2.20 <  \ 2.5 \ < 2.80\bigg]
+$$
+
+Given what we learned about confidence intervals [above](#nte-conf), we can conclude with something like:
+
+> With 95% confidence we estimate that the mean number of shots of tequila consumed per weekend in the population of Amsterdam students lies between 2.20 and 2.80.
+
+## One-sample t-test in SPSS
+
+Let's load in the ESS11 dataset and imagine we are interested working habits in Belgium and the Netherlands. Specifically, we are interested in whether people living in these countries normally work more than 37.5 hours per week on average, inclusive of overtime. This information is held in the variable `wkhtot`, which you can call to check.
+
+Before we go further, let's formulate some hypotheses.
+
+* $H_0: \mu_{hrs} = 37.5$ (In the population of Belgian and Dutch, average weekly working hours are not different from 37.5)
+* $H_1: \mu_{hrs} > 37.5$ (In the population of Belgian and Dutch, average weekly working hours are **less than** 37.5)
+
+Note that we now have a **directional** alternative hypothesis (see @nte-hypo). In this case, it can be justifiable to use a one-tailed t-test, meaning we only consider half of the t-distribution when deriving our p-value.
+
+### Explainer video
+
+[ESS one-samp t]
+
+
+### Conclusion
+
+> In the population of Belgians and Dutch, the total hours worked per week (inclusive of overtime) is less than 37.5 (mean = 36.46, s = 16.64; t[3031] = -3.45, p < .001). 
+

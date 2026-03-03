@@ -1,6 +1,6 @@
 # Preface {.unnumbered}
 
-Welcome! In these pages you will find tutorial materials for the PPLE _Introduction to Statistical Analysis_ tutorials. In session 2025/26, we will be working with the software package SPSS which can be downloaded for a small fee from [SURFSPOT](https://www.surfspot.nl/universiteit-van-amsterdam) or accessed for free via connection to an [UvA virtual desktop](apps.uva.nl). 
+Welcome! In these pages you will find tutorial materials for the PPLE _Introduction to Statistical Analysis_ tutorials. In session 2025/26, we will be working with the software package SPSS which can be downloaded for a small fee from [SURFSPOT](https://www.surfspot.nl/universiteit-van-amsterdam) or accessed for free via connection to an [UvA virtual desktop](apps.uva.nl). The course is supported by the textbook, [<i>Statistics for research with a guide to SPSS</i>](https://uk.sagepub.com/en-gb/eur/statistics-for-research/book234621), by George Argyrous. 
 
 Every page contains video demonstrations of techniques featured in the lectures and tutorial meetings using datasets available for download on the course [canvas](canvas.uva.nl) page. For questions about these materials, please [get in touch](mailto:d.fleming@uva.nl)!
 

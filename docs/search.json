@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PPLE Introduction to Statistical Analysis: tutorial manual",
     "section": "",
-    "text": "Preface\nWelcome! In these pages you will find tutorial materials for the PPLE Introduction to Statistical Analysis tutorials. In session 2025/26, we will be working with the software package SPSS which can be downloaded for a small fee from SURFSPOT or accessed for free via connection to an UvA virtual desktop.\nEvery page contains video demonstrations of techniques featured in the lectures and tutorial meetings using datasets available for download on the course canvas page. For questions about these materials, please get in touch!",
+    "text": "Preface\nWelcome! In these pages you will find tutorial materials for the PPLE Introduction to Statistical Analysis tutorials. In session 2025/26, we will be working with the software package SPSS which can be downloaded for a small fee from SURFSPOT or accessed for free via connection to an UvA virtual desktop. The course is supported by the textbook, Statistics for research with a guide to SPSS, by George Argyrous.\nEvery page contains video demonstrations of techniques featured in the lectures and tutorial meetings using datasets available for download on the course canvas page. For questions about these materials, please get in touch!",
     "crumbs": [
       "Preface"
     ]
@@ -77,51 +77,51 @@
   {
     "objectID": "t1.html",
     "href": "t1.html",
-    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "title": "1  Entering, importing, summarizing and subsetting data",
     "section": "",
     "text": "1.1 Learning goals",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Entering, importing, summarizing and subsetting data</span>"
     ]
   },
   {
     "objectID": "t1.html#learning-goals",
     "href": "t1.html#learning-goals",
-    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "title": "1  Entering, importing, summarizing and subsetting data",
     "section": "",
     "text": "1.1.1 Conceptual\n\nUnderstand the meaning of unit of analysis\nUnderstand and apply common measures of central tendency\n\n\n\n1.1.2 SPSS\n\nEnter new data\nImport and work with existing data\nCreate frequency tables\nSelect subsets of data using Select cases",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Entering, importing, summarizing and subsetting data</span>"
     ]
   },
   {
     "objectID": "t1.html#entering-data",
     "href": "t1.html#entering-data",
-    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "title": "1  Entering, importing, summarizing and subsetting data",
     "section": "1.2 Entering data",
     "text": "1.2 Entering data\nIn an SPSS spreadsheet, rows correspond to observations on the unit of analysis (e.g., mice, people, countries), and columns correspond to variables (e.g., fur colour, occupation, GDP per capita).\nLet’s create a dataset of student names and ages:\n\n\n    names age\n1 Matthew  18\n2    Mark  19\n3    Luke  18\n4    John  20",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Entering, importing, summarizing and subsetting data</span>"
     ]
   },
   {
     "objectID": "t1.html#measures-of-central-tendency",
     "href": "t1.html#measures-of-central-tendency",
-    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "title": "1  Entering, importing, summarizing and subsetting data",
     "section": "1.3 Measures of central tendency",
     "text": "1.3 Measures of central tendency\nIn this course, we will consider three measures of central tendency.\n\n1.3.1 The arithmetic mean\nThis is usually represented by one of two formulae:\n\n\\(\\bar{x} = \\frac{1}{n} \\sum\\limits_{i = 1}^{n}x_i\\)\n\\(\\bar{x} = \\frac{\\sum_{i = 1}^{n}x_i}{n}\\)\n\nStraightforwardly: sum all scores and divide by the total number of scores. Our students have a mean age of 18.75.\nStrictly speaking, the mean can only be sensibly calculated for interval/ratio level data.\n\n\n1.3.2 The median\nThis is the 50th percentile in the dataset (i.e., it divides the data into a lower half and an upper half). It is obtained by ranking scores and finding the value which divides the dataset in two.\nFor data \\(x\\) with \\(n\\) elements:\n\nif \\(n\\) is odd, \\(med(x) = x_{(n+1)/2}\\)\nif \\(n\\) is even, \\(med(x) = \\frac{x_{(n/2)} + x_{((n/2)+1)}}{2}\\)\n\nFor example, in a sorted dataset with 11 values, the median will be the value at the observation ranked 6th. However, in a sorted dataset with 12 values, the median will be the arithmetic mean of the values ranked in 6th and 7th. The median age in our newly-synthesized dataset is 18.5.\nThe median can be used to summarize both interval/ratio and ordinal variables.\n\n\n1.3.3 The mode\nLastly, we turn to the mode, which is simply the most frequently occurring value. In our dataset, this is 18.\nDatasets can have multiple modes; for example, let’s imagine we added a new student aged 20 to the dataset. In this case, the modes would be 18 and 20.\nThe mode can be calculated for all measurement levels about which you have learned, but it is typically most informative when there are relatively few values which the data can take. For example, imagine trying to calculate modal household income within a country; you would likely end up with countless unique values and multiple modes, rendering this measure fairly useless for the purpose of summarizing.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Entering, importing, summarizing and subsetting data</span>"
     ]
   },
   {
     "objectID": "t1.html#spss-explainer-video",
     "href": "t1.html#spss-explainer-video",
-    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "title": "1  Entering, importing, summarizing and subsetting data",
     "section": "1.4 SPSS explainer video",
     "text": "1.4 SPSS explainer video\n[entering data; frequencies, central tendency, selecting cases with ESS11]\n\n\n\n\n\n\nNote 1.1: Use of logical operators when selecting cases\n\n\n\nYou will probably rely mostly on the following:\n\n= - searches for equivalence, whether the data are numerical or character string (text).\n~= - the complement of =. E.g, cntry ~= \"Netherlands\" means “return all respondents who are NOT from the Netherlands”.\n& (AND) - used when you want the selected responses to satisfy multiple conditions. E.g., cntry == \"Netherlands\" & agea &gt; 22 means “return all respondents from the Netherlands who are also older than (&gt; = ”greater than”) 22”.\n| (OR) - use this if you want to select responses which match at least one of the specified conditions. E.g., cntry == \"Netherlands\" | agea &gt; 22 will return participants who are either in the Netherlands, or older than 22, or both. Participants who meet neither criterion will be filtered out.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Entering, importing, summarizing and subsetting data</span>"
     ]
   },
   {
@@ -132,6 +132,246 @@
     "text": "1.5 Summary\nIn this tutorial, we covered:\n\nEntering new data\nImporting existing data in .sav format\nCalculating frequencies and descriptive statistics\nUsing dplyr::filter to select subsets of data",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+    ]
+  },
+  {
+    "objectID": "t2.html",
+    "href": "t2.html",
+    "title": "2  Measures of dispersion and visualizing relationships",
+    "section": "",
+    "text": "2.1 Learning goals",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Measures of dispersion and visualizing relationships</span>"
+    ]
+  },
+  {
+    "objectID": "t2.html#learning-goals",
+    "href": "t2.html#learning-goals",
+    "title": "2  Measures of dispersion and visualizing relationships",
+    "section": "",
+    "text": "2.1.1 Conceptual\n\nUnderstand and interpret common measures of dispersion\nInterpret scatterplots and crosstabulations\n\n\n\n2.1.2 SPSS\n\nAdd measures of dispersion to your descriptive statistics output\nCreate scatterplots (interval/ratio data) and crosstabulations (nominal and ordinal data)\nRecode existing data into new variables",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Measures of dispersion and visualizing relationships</span>"
+    ]
+  },
+  {
+    "objectID": "t2.html#measures-of-dispersion",
+    "href": "t2.html#measures-of-dispersion",
+    "title": "2  Measures of dispersion and visualizing relationships",
+    "section": "2.2 Measures of dispersion",
+    "text": "2.2 Measures of dispersion\nIn this course, we will consider three measures of dispersion.\n\n2.2.1 The standard deviation\nThe standard deviation is defined as:\n\\[\nS = \\sqrt\\frac{\\sum_{i=1}^{n}{(x_i-\\bar{x})^2}}{n-1}\n\\]\nComputation of the standard deviation involves:\n\nCalculating the sample mean \\(\\bar{x}\\)\nSubtracting \\(\\bar{x}\\) from each “raw” value of \\(x\\) to compute deviations\nSquaring the deviations from step 2 \\((x_i - \\bar{x})^2\\)\nSumming the deviations \\(\\sum_{i = 1}^{n}\\)\nDividing the deviations by the number of observations (\\(n\\)) minus 1\nTaking the square root of 5\n\nThe standard deviation can be roughly interpreted as the average deviation from the sample mean in the data. Much like the mean, this measure of dispersion is mot appropriate for interval/ratio level data.\n\n\n2.2.2 The range\nThe range is simply the difference between the maximum and minimum values in the data, and can be written as:\n\\[\nrange = max(x_1, x_2, ..., x_n) - min(x_1, x_2, ..., x_n)\n\\]\n\n\n2.2.3 The interquartile range (IQR)\nThis represents the spread of the middle 50% of the data and is calculated as:\n\\[\nIQR = Q_3 - Q_1\n\\]\n\\(Q_3\\) and \\(Q_1\\), are, respectively, the 75th and 25th percentiles of the data.To find these for data \\(x\\) with \\(n\\) elements:\n\n\\(Q_1(x) = x_{(\\frac{n+1}{4})}\\)\n\\(Q_3(x) = x_{(\\frac{3(n+1)}{4})}\\)\n\nWhere the position index for the quartile is not a whole number, we can average the values from the two nearest whole number positions to find our quartile. For example, for data with \\(n = 100\\):\n\n\\(Q_1(x) = x_{(\\frac{101}{4})} = 25.25\\)\n\nIn the above case, we would average the 25th- and 26th-ranked values of \\(x\\) to find \\(Q_1(x)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Measures of dispersion and visualizing relationships</span>"
+    ]
+  },
+  {
+    "objectID": "t2.html#visualizing-relationships-between-variables",
+    "href": "t2.html#visualizing-relationships-between-variables",
+    "title": "2  Measures of dispersion and visualizing relationships",
+    "section": "2.3 Visualizing relationships between variables",
+    "text": "2.3 Visualizing relationships between variables\n\n2.3.1 Scatterplots\nScatterplots are useful for visualizing relationships between interval/ratio variables. In this course, our convention will be to place independent variables (IVs) on the x-axis and dependent variables (DVs) on the y-axis.\n\n\n\n\n\n\nNote 2.1: IVs and DVs\n\n\n\nAn independent variable is the presumed cause of effects on a dependent variable. See the lecture notes for further information.\n\n\nThe variables wdi_lifexp (life expectancy at birth) and wdi_water (percentage of population with access to improved water) are appropriate for scatterplotting. If there is a causal relationship between these two variables, then the most intuitive direction of influence would be from wdi_water to wdi_lifexp, so wdi_water will be our IV (x-variable) and wdi_lifexp our DV (y-variable).\n\n\n\n\n\n\n\n\nFigure 2.1: Access to water vs. Life exp.\n\n\n\n\n\nWe can see a noisy, yet positive relationship between a country’s percentage access to an improved water source and its life expectancy at birth. It is also possible to fit a linear model to the data and plot the fit line:\n\n\n\n\n\n\n\n\nFigure 2.2: Adding a linear fit line\n\n\n\n\n\n\n\n2.3.2 Crosstabulations\nCrosstabulations (crosstabs) are a useful method for visualizing relationships among combinations of ordinal and nominal-level variables with relatively few unique categories. For example, let’s imagine we are interested how freedom of the press varies across countries in different regions of the world. In the World Development Indicators dataset (WDI), we can examine this with the variables region and fhp_status5 (freedom of the press score, as rated by Freedom House). region is measured at the nominal level (as we cannot rank regions based on name alone), where fhp_status5 has ranks press freedom from 1 (“Free”) to 3 (“Not Free”).\nA simple crosstab will show us the number of countries within regions which fall into the different categories of press freedom, and also give us the marginal counts1 On this course, our convention will be to place IVs in the columns and DVs in the rows, so our most logical approach would be to place region in the columns and fhp_status5 in the rows. This allows us to see how the distribution of counts across the levels of press freedom (the DV) vary across the different regions (the IV). In other words, we compare counts horizontally, between different regions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEast Asia & Pacific\nEurope & Central Asia\nLatin America & Caribbean\nMiddle East & North Africa\nNorth America\nSouth Asia\nSub-Saharan Africa\nTotal\n\n\n\n\nFree\n13\n27\n14\n1\n2\n0\n3\n60\n\n\nPartly Free\n7\n14\n14\n4\n0\n4\n26\n69\n\n\nNot Free\n10\n11\n5\n15\n0\n4\n18\n63\n\n\nTotal\n30\n52\n33\n20\n2\n8\n47\n192\n\n\n\n\n\n\nTable 2.1: Count crosstab of region vs. press freedom\n\n\n\n\nWhile we can see trends, it can be more informative to view the press freedom category counts as percentages (or proportions) within countries. This adjusts for differences in the number of countries within regions and shows us the proportional distribution of counts for the freedom categories.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEast Asia & Pacific\nEurope & Central Asia\nLatin America & Caribbean\nMiddle East & North Africa\nNorth America\nSouth Asia\nSub-Saharan Africa\nTotal\n\n\n\n\nFree\n43.33\n51.92\n42.42\n5\n100\n0\n6.38\n31.25\n\n\nPartly Free\n23.33\n26.92\n42.42\n20\n0\n50\n55.32\n35.94\n\n\nNot Free\n33.33\n21.15\n15.15\n75\n0\n50\n38.30\n32.81\n\n\nTotal\n100.00\n100.00\n100.00\n100\n100\n100\n100.00\n100.00\n\n\n\n\n\n\nTable 2.2: Percentage crosstab of region vs. press freedom",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Measures of dispersion and visualizing relationships</span>"
+    ]
+  },
+  {
+    "objectID": "t2.html#datawrangling-skills-recoding-variables",
+    "href": "t2.html#datawrangling-skills-recoding-variables",
+    "title": "2  Measures of dispersion and visualizing relationships",
+    "section": "2.4 Datawrangling skills: recoding variables",
+    "text": "2.4 Datawrangling skills: recoding variables\nIt may sometimes be necessary to add new variables to your dataset, or to transform existing ones. For example, in ?sec-mut1 we created a BMI variable from existing information about a person’s height and mass. In this example, we will look at the variable wd$wef_mobile which holds the number of mobile telephone subscriptions per 100 people for each country.\n\n\n  [1]        NA 123.66314 113.57871 131.93422 114.95461        NA        NA\n  [8] 119.83760 139.20094 119.49152        NA 129.67279  51.86338        NA\n [15]        NA 133.17834 134.52600        NA 134.93196 110.12814        NA\n [22]        NA        NA 145.70737        NA 180.18262        NA        NA\n [29]        NA 147.19527        NA        NA  94.17700        NA 121.25902\n [36] 123.53527 103.92142 103.43883 118.11706 104.12563        NA 129.60948\n [43] 100.93444 119.17389 129.32422 125.11896 115.87110 145.43843 132.18469\n [50] 108.40813 117.54892 133.39757 115.66691 105.58346 103.44518 103.17105\n [57] 126.13709 137.46695 141.96803 122.57011        NA 164.27902 132.16493\n [64] 107.34892        NA  88.01395  98.45585 180.69382 120.62500 107.17371\n [71] 134.74843 115.63621 116.24561 157.43130        NA  97.64591 132.80182\n [78] 118.67422 125.12024 111.52817        NA  97.30133 122.55068        NA\n [85] 132.09315        NA        NA        NA 100.81641  98.84350 122.57284\n [92] 134.43732 129.90862 169.93069        NA        NA  84.10208  92.32327\n [99]        NA 118.66708        NA  79.15031  57.52892 101.02653        NA\n[106]        NA  93.00775 115.09591 130.06845 123.75976 106.95258 146.91322\n[113]        NA 140.05675 149.90422        NA  71.76614 208.50484 133.34094\n[120]        NA 121.93248  95.28660 108.46239        NA 127.66187  87.62149\n[127] 178.59059  64.49806        NA 124.17155 140.20393 133.36629 141.85582\n[134] 122.57331        NA 127.70720  55.17502  89.23100 123.68756        NA\n[141]  97.28119        NA  86.94257 115.06100        NA 139.44637  72.55706\n[148]  43.13052  56.53471  82.38429  97.91227 150.00558 134.85796  69.08540\n[155]  43.38221        NA        NA 112.24072        NA  37.21807 138.28098\n[162] 137.51717  96.11502 139.52902        NA        NA  96.32021        NA\n[169] 113.83052  40.57034 115.08467  47.71578 103.70605 151.35912  39.00579\n[176] 112.70236        NA  88.18424  78.85411        NA 104.45064        NA\n[183]        NA        NA        NA  93.52732 184.29802  45.12374        NA\n[190]  77.24136  57.27261 153.24991  89.15704  89.40487\nattr(,\"label\")\n[1] \"Mobile-cellular telephone subscriptions/100 pop.\"\nattr(,\"format.spss\")\n[1] \"F8.0\"\n\n\nFrom this interval/ratio level variable, we will create ordinal categories using the base::cut function, as below:\nWe supply our input data via the x, we give our category breakpoints with breaks, and we set labels to FALSE which means that R will give us simple numerical labels for the output. We request here bins of values from 0 up to to and including 50, from greater than 50 up to and including 100 … and so on, up to the maximum value in wef_mobile. This function also automatically leaves any NA as they are, so we do not need to provide any extra input to handle these.\nWe can compare these variables side-by-side to check that our recode worked as intended:\n\n\n# A tibble: 194 × 2\n   wef_mobile mobile_recode\n        &lt;dbl&gt;         &lt;int&gt;\n 1       NA              NA\n 2      124.              3\n 3      114.              3\n 4      132.              3\n 5      115.              3\n 6       NA              NA\n 7       NA              NA\n 8      120.              3\n 9      139.              3\n10      119.              3\n11       NA              NA\n12      130.              3\n13       51.9             2\n14       NA              NA\n15       NA              NA\n16      133.              3\n17      135.              3\n18       NA              NA\n19      135.              3\n20      110.              3\n21       NA              NA\n22       NA              NA\n23       NA              NA\n24      146.              3\n25       NA              NA\n# ℹ 169 more rows",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Measures of dispersion and visualizing relationships</span>"
+    ]
+  },
+  {
+    "objectID": "t2.html#footnotes",
+    "href": "t2.html#footnotes",
+    "title": "2  Measures of dispersion and visualizing relationships",
+    "section": "",
+    "text": "That is, the counts in the categories of one variable when we ignore the levels of the other.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Measures of dispersion and visualizing relationships</span>"
+    ]
+  },
+  {
+    "objectID": "t2.html#spss-explainer-video",
+    "href": "t2.html#spss-explainer-video",
+    "title": "2  Measures of dispersion and visualizing relationships",
+    "section": "2.4 SPSS explainer video",
+    "text": "2.4 SPSS explainer video\n[WDI measures of dispersion, scatterplot, crosstab, recode]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Measures of dispersion and visualizing relationships</span>"
+    ]
+  },
+  {
+    "objectID": "t3.html",
+    "href": "t3.html",
+    "title": "3  Correlation coefficients and working with normal distributions",
+    "section": "",
+    "text": "3.1 Learning goals",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correlation coefficients and working with normal distributions</span>"
+    ]
+  },
+  {
+    "objectID": "t3.html#learning-goals",
+    "href": "t3.html#learning-goals",
+    "title": "3  Correlation coefficients and working with normal distributions",
+    "section": "",
+    "text": "3.1.1 Conceptual\n\nCalculate and interpret pearson’s \\(r\\) by hand\nZ-transform datapoints and interpret the result\n\n\n\n3.1.2 SPSS\n\nCompute pearson’s \\(r\\)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correlation coefficients and working with normal distributions</span>"
+    ]
+  },
+  {
+    "objectID": "t3.html#pearsons-r-correlation-coefficient",
+    "href": "t3.html#pearsons-r-correlation-coefficient",
+    "title": "3  Correlation coefficients and working with normal distributions",
+    "section": "3.2 Pearson’s \\(r\\) correlation coefficient",
+    "text": "3.2 Pearson’s \\(r\\) correlation coefficient\nPearson’s \\(r\\) is given by:\n\\[\nr_{xy} = \\frac{\\sum_{i=1}^{n}{(x_i - \\bar{x})(y_i - \\bar{y})}}{{\\sqrt{\\sum_{i=1}^{n}{(x_i - \\bar{x})^2}}}{\\sqrt{\\sum_{i=1}^{n}{(y_i - \\bar{y})^2}}}}\n\\]\nWhere:\n\n\\(x_i\\) = i’th score on variable \\(x\\)\n\n\\(y_i\\) = i’th score on variable \\(y\\)\n\n\\(\\bar{x}\\) = mean of variable \\(x\\)\n\n\\(\\bar{y}\\) = mean of variable \\(y\\)\n\n\\(\\sum_{i=1}^{n}\\) = sum scores from index (element) 1 to \\(n\\)\n\n\\(n\\) = sample size\n\nLet’s now imagine that we develop the following Research Question:Does the average daily time (in minutes) spent using R correlate with the average number of obscenities used per day? We collect some data, which looks like this:\n\n\n\n\n\n\n\n\nAverage R minutes\nAverage # obscenities\n\n\n\n\n240\n3\n\n\n310\n6\n\n\n230\n4\n\n\n220\n3\n\n\n\n\n\n\nTable 3.1: Average R minutes per week vs. average obscenities uttered\n\n\n\n\nWith the following steps, we can unpack the formula and derive the correlation coefficient:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(x_{minutes}\\)\n\\(y_{words}\\)\n\\(x-\\bar{x}\\)\n\\(y-\\bar{y}\\)\n\\((x-\\bar{x}).(y-\\bar{y})\\)\n\\((x-\\bar{x})^2\\)\n\\((y-\\bar{y})^2\\)\n\n\n\n\n240\n3\n-10\n-1\n10\n100\n1\n\n\n310\n6\n60\n2\n120\n3600\n4\n\n\n230\n4\n-20\n0\n0\n400\n0\n\n\n220\n3\n-30\n-1\n30\n900\n1\n\n\n\n\n\n\nTable 3.2: Correlation steps\n\n\n\n\n\n\\(\\bar{x} = 250\\)\n\n\\(\\bar{y}= 4\\)\n\n\\(\\sum_{i=1}^{n}{(x_i - \\bar{x})(y_i - \\bar{y})}=160\\)\n\n\\(\\sum_{i=1}^{n}{(x_i - \\bar{x})^2} = 5000\\)\n\n\\(\\sum_{i=1}^{n}{(y_i - \\bar{y})^2} = 6\\)\n\n\\[\nr_{xy} = \\frac{160}{\\sqrt{5000}*\\sqrt{6}} = \\frac{160}{173.21} = .92\n\\]\n\n\n[1] 0.9237604\n\n\nWe will use the following rules-of-thumb for interpreting absolute values of \\(r\\):\n\n\\(r \\le .3\\) = small\n\n\\(.3 &lt; r \\le .6\\) = moderate\n\n\\(.6 &lt; r \\le .8\\) = strong\n\n\\(.8 &lt; r \\le 1\\) = very strong",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correlation coefficients and working with normal distributions</span>"
+    ]
+  },
+  {
+    "objectID": "t3.html#z-transformations",
+    "href": "t3.html#z-transformations",
+    "title": "3  Correlation coefficients and working with normal distributions",
+    "section": "3.3 Z-transformations",
+    "text": "3.3 Z-transformations\nImagine we know that income per week (in euro) is normally distributed in the population of Dutch university students who graduated in the last year, such that the mean (\\(\\mu\\)) income is 1,500 EUR, with an SD (\\(\\sigma\\)) of 100.We might wonder: what proportion of the population of new Dutch graduates would have a weekly income of greater than 1,700 EUR?\n\n\n\n\n\n\n\n\nFigure 3.1: Fictional distribution of graduate income scores. Green shading denotes incomes of greater than 1,700 EUR.\n\n\n\n\n\nWe can see the area of interest in the distribution above, in Figure 3.1. To calculate the proportion, we first need to convert the target value into a z-score, which transforms the value into standard deviation units. In this case:\n\\[\nz = \\frac{x-\\mu}{\\sigma} = \\frac{1700-1500}{100} = 2\n\\]\nTo work out the probability associated with a z-score of 2, we can consult the normal distribution tables in the Argyrous textbook (pp. 541 - 542), looking for the area under the curve beyond one point.\n\n\n[1] 0.02275013\n\n\nThis allows us to answer our question: there is a 2.28% chance of randomly selecting an individual with an income above 1,700 EUR per week from the population of new Dutch graduates",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correlation coefficients and working with normal distributions</span>"
+    ]
+  },
+  {
+    "objectID": "t3.html#scatterplots-and-r-with-the-wdi-data-spss",
+    "href": "t3.html#scatterplots-and-r-with-the-wdi-data-spss",
+    "title": "3  Correlation coefficients and working with normal distributions",
+    "section": "3.4 Scatterplots and \\(r\\) with the WDI data (SPSS)",
+    "text": "3.4 Scatterplots and \\(r\\) with the WDI data (SPSS)\nLet’s again load in the World Data Indicators (WDI) dataset (World_Data.sav), and revisit our scatterplot from the previous class (see Figure 2.1).\n\n\n\n\n\n\n\n\nFigure 3.2: Access to water vs. Life exp.\n\n\n\n\n\nWe see a noisy, yet positive relationship between a country’s percentage access to an improved water source and its life expectancy at birth. The points do not cling tightly around the linear fit line, but are scattered around it.\n\n\n[1] 0.737482\n\n\nTo give us some more formal information about the relationship strength, we can calculate pearson’s \\(r\\) in SPSS which reveals that the correlation between the variables is 0.74. Following our rules-of-thumb above, we could diagnose this as a moderate, positive relationship between the two variables.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correlation coefficients and working with normal distributions</span>"
+    ]
+  },
+  {
+    "objectID": "t3.html#spss-explainer-video",
+    "href": "t3.html#spss-explainer-video",
+    "title": "3  Correlation coefficients and working with normal distributions",
+    "section": "3.5 SPSS explainer video",
+    "text": "3.5 SPSS explainer video\n[WDI scatterplot, pearson]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correlation coefficients and working with normal distributions</span>"
+    ]
+  },
+  {
+    "objectID": "t5.html",
+    "href": "t5.html",
+    "title": "5  The one-sample t-test & confidence intervals",
+    "section": "",
+    "text": "5.1 R outcomes\nAfter reading this chapter, you can:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The one-sample t-test & confidence intervals</span>"
+    ]
+  },
+  {
+    "objectID": "t5.html#r-outcomes",
+    "href": "t5.html#r-outcomes",
+    "title": "5  The one-sample t-test & confidence intervals",
+    "section": "",
+    "text": "Perform and interpret a one-sample t-test by hand and in R\nCalculate confidence intervals by hand and interpret them",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The one-sample t-test & confidence intervals</span>"
+    ]
+  },
+  {
+    "objectID": "t5.html#learning-goals",
+    "href": "t5.html#learning-goals",
+    "title": "5  The one-sample t-test & confidence intervals",
+    "section": "5.2 Learning goals",
+    "text": "5.2 Learning goals\n\n5.2.1 Conceptual\n\nPerform a one-sample t-test by hand and interpret it\nCalculate confidence intervals by hand and interpret them\n\n\n\n5.2.2 SPSS\n\nRun a one-sample t-test",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The one-sample t-test & confidence intervals</span>"
+    ]
+  },
+  {
+    "objectID": "t5.html#one-sample-t-test-by-hand",
+    "href": "t5.html#one-sample-t-test-by-hand",
+    "title": "5  The one-sample t-test & confidence intervals",
+    "section": "5.3 One-sample t-test by hand",
+    "text": "5.3 One-sample t-test by hand\nThe one-sample t-test is appropriate when we wish to compare an estimate (from a sample) of the population of interest’s mean value on some measure to a theoretical value. For example, we might have read some scholarly literature on alcohol consumption which suggests that Dutch students, on average, consume about 10 alcoholic drinks per week. This might lead us to pose the research question: Is the average number of beers consumed per week by UvA students different from 10?\nAs a null hypothesis, we can specify: \\[\nH_0: \\mu_{beers} = 10\n\\]\nand, as an alternative hypothesis:\n\\[\nH_1: \\mu_{beers} \\neq 10\n\\]\nOr, in plain English:\n\n\\(H_0\\) = In the population of Amsterdam students, the average number of beers consumed per week is 10\n\\(H_1\\) = In the population of Amsterdam students, the average number of beers consumed per week is NOT 10\n\n\n\n\n\n\n\n\nNote 5.1: Nulls, alternatives, and directions\n\n\n\nIn this course, we concern ourselves only with the family of null hypothesis significance tests (NHST) where the null hypothesis (\\(H_0\\)) is typically specified as a point hypothesis. In other words, it states that the population parameter of interest is equal to a single value, rather than stating that it falls within a range, or above/below another value. For example, in the above example, the null hypothesis is that the population mean (\\(\\mu\\)) is equal to 10.\nOn the other hand, the alternative hypothesis (\\(H_1\\)) can be specified as directional or non-directional, with respect to \\(H_0\\). In the above example, we specified \\(H_1\\) as non-directional - we hypothesized that \\(\\mu\\) would not be equal to 10, but we didn’t state whether it would be smaller or larger than 10. If theory led us to hypothesize that \\(\\mu\\) would be greater than 10, then we could formulate \\(H_1: \\mu &gt; 10\\).\n\n\n\nNow, let’s imagine we gather the following data from four UvA students:\n\n\n\n\n\n\n\n\nBeers per week\n\n\n\n\n5\n\n\n10\n\n\n12\n\n\n5\n\n\n\n\n\n\nTable 5.1: Beers consumed per week for four UvA students\n\n\n\n\nWe estimate \\(\\mu\\) with the sample mean (\\(\\bar{X}\\)), which is 8. The test-statistic for the t-test is then given by:\n\\[\nt = \\frac{\\bar{X}-\\mu}{\\frac{s}{\\sqrt{n}}}\n\\] Where:\n\n\\(\\bar{X}-\\mu\\) = the difference between the sample mean and the value for \\(\\mu\\) presented in the null hypothesis\n\\(\\frac{s}{\\sqrt{n}}\\) = the standard error (SE)\n\nTo calculate \\(se\\), we first need \\(s\\), the sample standard deviation:\n\n\n\n\n\n\n\n\n\\(x_{beers}\\)\n\\(x-\\bar{x}\\)\n\\((x-\\bar{x})^2\\)\n\n\n\n\n5\n-3\n9\n\n\n10\n2\n4\n\n\n12\n4\n16\n\n\n5\n-3\n9\n\n\n\n\n\n\nTable 5.2: t-test steps\n\n\n\n\n\n\\(\\sum_{i=1}^{n}(X_i-\\bar{X})^2 = 38\\)\n\\(s = \\sqrt{\\frac{38}{3}} = 3.56\\)\n\\(se = \\frac{3.56}{\\sqrt{4}} = 1.78\\)\n\nWhich then leads us to \\(t = \\frac{-2}{1.78} = -1.12\\).\nTo determine whether the result is statistically significant, we have to compare the obtained t-statistic to a t-distribution with 3 degrees of freedom (df). You can find the relevant critical values associated with a particular significance level for t-distributions of various degrees of freedom on page 543 of the Argyrous textbook.\n\n\n\n\n\n\n\nNote 5.2: Degrees of freedom\n\n\n\nThe degrees of freedom of a dataset refers to the number of independent values that are free to vary without affecting the outcome of a calculation. In the above example, where we are interested in the mean of four datapoints, the degrees of freedom is 3. The first three values of the data can assume any value, but the fourth necessarily leads us to the sample mean. For one-sample t-tests (which also includes t-tests of regression slope coefficients), the degrees of freedom are always given by \\(df = n - 1\\).\n\n\n\nWe need to compare our observed t-statistic to the critical t-value associated with the conventional threshold for statistical significance (\\(\\alpha\\)), which is .05. As we specified a non-directional alternative hypothesis, we look under the column “level of significance for two-tailed test”, allowing us to look for differences greater than or less than the value specified in the null hypothesis (in this case, 0). The relevant critical value for a t-distribution with 3 degrees of freedom is 3.182, meaning that we would expect to see a t-statistic at least as large as this five percent of the time over the long run, assuming that the null hypothesis is true. The t-value we calculated, however, is smaller than this value, meaning that its associated p-value is greater than .05 (although note that you cannot obtain the exact p-value associated with your test from the tables in the book). We should therefore NOT reject \\(H_0\\) and instead conclude that, in the population, the mean number of beers consumed by UvA students per week does not differ from 10. Formatting this in APA style, we have:\n\nOur 1-sample t-test indicated that, in the population of Amsterdam students, the mean beers consumed per week (M = 8, SD = 3.56) did not differ from 10, t (3) = -1.12, p &gt; .05.`\n\n\n\n\n\n\n\n\nNote 5.3: Statistical significance\n\n\n\nTo say that a finding is statistically significant does not mean that it is important; it merely means that the p-value produced by a null-hypothesis test falls below a specified \\(\\alpha\\) level (usually .05) which gives the expected type-1 error rate of a test, in the long run. In other words, with \\(\\alpha = .05\\) you expect your test to lead you to falsely reject \\(H_0\\) 1 in 20 times/5% of the time (i.e., to reject \\(H_0\\) when \\(H_0\\) is actually true), where p values \\(&lt; \\alpha\\) are typically accepted as sufficient for allowing one to reject \\(H_0\\). In the above example, the p-value associated with the t-test suggests that, assuming that \\(H_0\\) is true, we would expect to see a result at least as extreme as that which we observed 34.43% of the time, which falls below the 5% threshold and leads us to say that we fail to reject \\(H_0\\). If setting \\(\\alpha = .05\\) seems arbitrary, that’s because it is - you will hear more about this towards the end of the course.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The one-sample t-test & confidence intervals</span>"
+    ]
+  },
+  {
+    "objectID": "t5.html#confidence-intervals-by-hand",
+    "href": "t5.html#confidence-intervals-by-hand",
+    "title": "5  The one-sample t-test & confidence intervals",
+    "section": "5.4 Confidence Intervals by hand",
+    "text": "5.4 Confidence Intervals by hand\nFor our next trick, let’s imagine we sampled 100 UvA students and asked them to estimate how many shots of tequila they drink per weekend. We note a sample mean (\\(\\bar{x}\\)) of 2.5, with a sample standard deviation (\\(s\\)) of 1.5 and we want to use these to estimate \\(\\mu_{tequila}\\) in the UvA student population by building 95% confidence intervals, which will provide a range of plausible values.\n\n\n\n\n\n\n\nNote 5.4: Confidence\n\n\n\nThe confidence level relates to the long-term coverage of the confidence intervals we generate. If we set the confidence level to 95%, then we expect that 95/100 confidence intervals constructed in this way over time should contain \\(\\mu\\); however, that also means that 5/100 constructed intervals will NOT contain \\(\\mu\\), and we cannot know whether the confidence interval we are currently building belongs to the former or the latter!\n\n\n\nTo construct the interval, we first need to calculate \\(se\\):\n\\[\nse = \\frac{1.5}{\\sqrt{100}} = .15\n\\]\nNext, to create the bounds of our 95% interval, we need to find the critical t-value which marks the top and bottom 2.5% of a t-distribution with \\(df = 1 - n = 99\\) degrees of freedom. Once more, we can find these from Argyrous, p. 543.\nNow, we build the upper and lower bounds according to the following:\n\\[\nci_{95} = \\bigg[\\bar{x} - t_{crit} \\times \\frac{s}{\\sqrt{n}}, \\ \\bar{x} + t_{crit} \\times \\frac{s}{\\sqrt{n}} \\bigg]\n\\] Plugging in the values gives us:\n\\[\nci_{95} = \\bigg[2.5 - 1.98 \\times .15,\\ 2.5 + 1.98 \\times .15 \\bigg]  \n\\] \\[\n= \\bigg[2.20 &lt;  \\ 2.5 \\ &lt; 2.80\\bigg]\n\\]\nGiven what we learned about confidence intervals above, we can conclude with something like:\n\nWith 95% confidence we estimate that the mean number of shots of tequila consumed per weekend in the population of Amsterdam students lies between 2.20 and 2.80.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The one-sample t-test & confidence intervals</span>"
+    ]
+  },
+  {
+    "objectID": "t5.html#one-sample-t-test-in-spss",
+    "href": "t5.html#one-sample-t-test-in-spss",
+    "title": "5  The one-sample t-test & confidence intervals",
+    "section": "5.5 One-sample t-test in SPSS",
+    "text": "5.5 One-sample t-test in SPSS\nLet’s load in the ESS11 dataset and imagine we are interested working habits in Belgium and the Netherlands. Specifically, we are interested in whether people living in these countries normally work more than 37.5 hours per week on average, inclusive of overtime. This information is held in the variable wkhtot, which you can call to check.\nBefore we go further, let’s formulate some hypotheses.\n\n\\(H_0: \\mu_{hrs} = 37.5\\) (In the population of Belgian and Dutch, average weekly working hours are not different from 37.5)\n\\(H_1: \\mu_{hrs} &gt; 37.5\\) (In the population of Belgian and Dutch, average weekly working hours are less than 37.5)\n\nNote that we now have a directional alternative hypothesis (see Note 5.1). In this case, it can be justifiable to use a one-tailed t-test, meaning we only consider half of the t-distribution when deriving our p-value.\n\n5.5.1 Explainer video\n[ESS one-samp t]\n\n\n5.5.2 Conclusion\n\nIn the population of Belgians and Dutch, the total hours worked per week (inclusive of overtime) is less than 37.5 (mean = 36.46, s = 16.64; t[3031] = -3.45, p &lt; .001).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The one-sample t-test & confidence intervals</span>"
+    ]
+  },
+  {
+    "objectID": "t4.html",
+    "href": "t4.html",
+    "title": "4  Working with normal distributions II - the sampling distribution of means",
+    "section": "",
+    "text": "4.1 Learning goals",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with normal distributions II - the sampling distribution of means</span>"
+    ]
+  },
+  {
+    "objectID": "t4.html#learning-goals",
+    "href": "t4.html#learning-goals",
+    "title": "4  Working with normal distributions II - the sampling distribution of means",
+    "section": "",
+    "text": "4.1.1 Conceptual\n\nUnderstand the difference between a given variable’s distribution and the sampling distribution of means for that variable\nAnswer questions about proportions/probabilities based on both types of distribution using z-formulae\n\n\n\n4.1.2 SPSS\n\nCreate new variables from existing values with Compute",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with normal distributions II - the sampling distribution of means</span>"
+    ]
+  },
+  {
+    "objectID": "t4.html#recap-z-transformations",
+    "href": "t4.html#recap-z-transformations",
+    "title": "4  Working with normal distributions II - the sampling distribution of means",
+    "section": "4.2 Recap: Z-transformations",
+    "text": "4.2 Recap: Z-transformations\nImagine we know that income per week (in euro) is normally distributed in the population of Dutch university students who graduated in the last year, such that the mean (\\(\\mu\\)) income is 1,500 EUR, with an SD (\\(\\sigma\\)) of 100.We might wonder: what proportion of the population of new Dutch graduates would have a weekly income of less than 1,350 EUR?\n\n\n\n\n\n\n\n\nFigure 4.1: Fictional distribution of graduate income scores. Green shading denotes incomes of less than 1,350 EUR.\n\n\n\n\n\nWe can see the area of interest in the distribution above, in Figure 4.1. To calculate the proportion, we first need to convert the target value into a z-score, which transforms the value into standard deviation units. In this case:\n\\[\nz = \\frac{x-\\mu}{\\sigma} = \\frac{1350-1500}{100} = -1.5\n\\]\nTo work out the probability associated with a z-score of 1.5, we can consult the normal distribution tables in the Argyrous textbook (pp. 541 - 542), looking for the area under the curve beyond one point. This allows us to answer our question: there is a 6.68% chance of randomly selecting an individual with an income below 1,350 EUR per week from the population of new Dutch graduates",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with normal distributions II - the sampling distribution of means</span>"
+    ]
+  },
+  {
+    "objectID": "t4.html#sec-se",
+    "href": "t4.html#sec-se",
+    "title": "4  Working with normal distributions II - the sampling distribution of means",
+    "section": "4.3 The Sampling Distribution (of Means)",
+    "text": "4.3 The Sampling Distribution (of Means)\nImagine (as before) that we know that income per week (in euro) is normally distributed in the population of Dutch university students who graduated in the last year (\\(\\mu_{income}=  1,500\\), \\(\\sigma_{income}=  100\\)). If we repeatedly draw samples of \\(n\\) = 1,000 from the population, then we might see \\(\\bar{x}_1=1,501.93\\) , \\(\\bar{x}_2=1,497.62\\) ,… and so on. Computing sample means from all possible samples of size \\(n\\) = 1,000 gives the sampling distribution of means (for \\(n\\) = 1,000).\nThe mean of the sampling distribution = \\(\\mu = 1,500\\) and the standard deviation of sampling distribution is known as the Standard Error (SE). While the sampling distribution is purely theoretical (because we usually cannot collect all possible permutations of elements from our population), we can estimate the standard error of the sampling distribution of means with the formula:\n\\[\n\\sigma_{\\bar{x}} = \\frac{\\sigma}{\\sqrt{n}}\n\\] Plugging in the values from our current example gives:\n\\[\n\\sigma_{\\bar{x}} = \\frac{100}{\\sqrt{1000}} = 3.16\n\\]\nWe can now ask the question: what is the probability of drawing a sample (n = 1,000) from this population with a mean of less than 1,489 EUR?\n\n\n\n\n\n\n\n\nFigure 4.2: Fictional sampling distrubution of means (n = 1000) for graduate income scores. Area to the left of the green line denotes incomes of less than 1,489 EUR.\n\n\n\n\n\nWe can follow exactly the same steps as we did when working above with (fictional) population values:\n\\[\nz = \\frac{x-\\mu}{\\frac{\\sigma}{\\sqrt{n}}} = \\frac{1489-1500}{3.16} = -3.48\n\\]\nOur answer, then, is: there is a 0.02% chance of randomly drawing a sample (n = 1,000) with a mean income of less than 1,489 EUR from this population (with \\(\\mu = 1,500\\) & \\(\\sigma = 100\\))",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with normal distributions II - the sampling distribution of means</span>"
+    ]
+  },
+  {
+    "objectID": "t4.html#spss-explainer-video",
+    "href": "t4.html#spss-explainer-video",
+    "title": "4  Working with normal distributions II - the sampling distribution of means",
+    "section": "4.4 SPSS explainer video",
+    "text": "4.4 SPSS explainer video\n[ESS Compute, trust variables]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with normal distributions II - the sampling distribution of means</span>"
     ]
   }
 ]

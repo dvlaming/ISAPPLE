@@ -1,11 +1,11 @@
-# ISA 1: entering, importing, summarizing and subsetting data {#sec-ISACh1}
+# Entering, importing, summarizing and subsetting data {#sec-ISACh1}
 
 ## Learning goals
 
 ### Conceptual
 
-1. Understand the meaning of *unit of analysis*
-2. Understand and apply common measures of *central tendency*
+1. Understand the meaning of unit of analysis
+2. Understand and apply common measures of central tendency
 
 ### SPSS
 

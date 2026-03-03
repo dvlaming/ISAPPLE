@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="David Fleming">
 
-<title>PPLE Introduction to Statistical Analysis: tutorial manual</title>
+<title>3&nbsp; Correlation coefficients and working with normal distributions – PPLE Introduction to Statistical Analysis: tutorial manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./t1.html" rel="next">
+<link href="./t4.html" rel="next">
+<link href="./t2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./t3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correlation coefficients and working with normal distributions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -133,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./t3.html" class="sidebar-item-text sidebar-link">
+  <a href="./t3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correlation coefficients and working with normal distributions</span></span></a>
   </div>
 </li>
@@ -176,31 +205,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">3.1</span> Learning goals</a>
   <ul class="collapse">
-  <li><a href="#assignments" id="toc-assignments" class="nav-link" data-scroll-target="#assignments">Assignments</a></li>
+  <li><a href="#conceptual" id="toc-conceptual" class="nav-link" data-scroll-target="#conceptual"><span class="header-section-number">3.1.1</span> Conceptual</a></li>
+  <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">3.1.2</span> SPSS</a></li>
   </ul></li>
+  <li><a href="#pearsons-r-correlation-coefficient" id="toc-pearsons-r-correlation-coefficient" class="nav-link" data-scroll-target="#pearsons-r-correlation-coefficient"><span class="header-section-number">3.2</span> Pearson’s <span class="math inline">\(r\)</span> correlation coefficient</a></li>
+  <li><a href="#z-transformations" id="toc-z-transformations" class="nav-link" data-scroll-target="#z-transformations"><span class="header-section-number">3.3</span> Z-transformations</a></li>
+  <li><a href="#scatterplots-and-r-with-the-wdi-data-spss" id="toc-scatterplots-and-r-with-the-wdi-data-spss" class="nav-link" data-scroll-target="#scatterplots-and-r-with-the-wdi-data-spss"><span class="header-section-number">3.4</span> Scatterplots and <span class="math inline">\(r\)</span> with the WDI data (SPSS)</a></li>
+  <li><a href="#spss-explainer-video" id="toc-spss-explainer-video" class="nav-link" data-scroll-target="#spss-explainer-video"><span class="header-section-number">3.5</span> SPSS explainer video</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t3.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PPLE Introduction to Statistical Analysis: tutorial manual</h1>
+<h1 class="title"><span id="sec-ISACh3" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correlation coefficients and working with normal distributions</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>David Fleming </p>
-          </div>
-  </div>
     
   
     
@@ -211,16 +239,229 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Welcome! In these pages you will find tutorial materials for the PPLE <em>Introduction to Statistical Analysis</em> tutorials. In session 2025/26, we will be working with the software package SPSS which can be downloaded for a small fee from <a href="https://www.surfspot.nl/universiteit-van-amsterdam">SURFSPOT</a> or accessed for free via connection to an <a href="apps.uva.nl">UvA virtual desktop</a>. The course is supported by the textbook, <a href="https://uk.sagepub.com/en-gb/eur/statistics-for-research/book234621"><i>Statistics for research with a guide to SPSS</i></a>, by George Argyrous.</p>
-<p>Every page contains video demonstrations of techniques featured in the lectures and tutorial meetings using datasets available for download on the course <a href="canvas.uva.nl">canvas</a> page. For questions about these materials, please <a href="mailto:d.fleming@uva.nl">get in touch</a>!</p>
-<section id="assignments" class="level2">
-<h2 class="anchored" data-anchor-id="assignments">Assignments</h2>
-<p>Details of the in-class pair/group assignments will be published on canvas. <strong>Please prepare a single document (.doc or .pdf) containing your answers and ensure that you upload on time via the submission points!</strong></p>
-
-
+<section id="learning-goals" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">3.1</span> Learning goals</h2>
+<section id="conceptual" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="conceptual"><span class="header-section-number">3.1.1</span> Conceptual</h3>
+<ol type="1">
+<li>Calculate and interpret pearson’s <span class="math inline">\(r\)</span> by hand</li>
+<li>Z-transform datapoints and interpret the result</li>
+</ol>
 </section>
+<section id="spss" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="spss"><span class="header-section-number">3.1.2</span> SPSS</h3>
+<ol type="1">
+<li>Compute pearson’s <span class="math inline">\(r\)</span></li>
+</ol>
+</section>
+</section>
+<section id="pearsons-r-correlation-coefficient" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="pearsons-r-correlation-coefficient"><span class="header-section-number">3.2</span> Pearson’s <span class="math inline">\(r\)</span> correlation coefficient</h2>
+<p>Pearson’s <span class="math inline">\(r\)</span> is given by:</p>
+<p><span class="math display">\[
+r_{xy} = \frac{\sum_{i=1}^{n}{(x_i - \bar{x})(y_i - \bar{y})}}{{\sqrt{\sum_{i=1}^{n}{(x_i - \bar{x})^2}}}{\sqrt{\sum_{i=1}^{n}{(y_i - \bar{y})^2}}}}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(x_i\)</span> = i’th score on variable <span class="math inline">\(x\)</span><br>
+</li>
+<li><span class="math inline">\(y_i\)</span> = i’th score on variable <span class="math inline">\(y\)</span><br>
+</li>
+<li><span class="math inline">\(\bar{x}\)</span> = mean of variable <span class="math inline">\(x\)</span><br>
+</li>
+<li><span class="math inline">\(\bar{y}\)</span> = mean of variable <span class="math inline">\(y\)</span><br>
+</li>
+<li><span class="math inline">\(\sum_{i=1}^{n}\)</span> = sum scores from index (element) 1 to <span class="math inline">\(n\)</span><br>
+</li>
+<li><span class="math inline">\(n\)</span> = sample size</li>
+</ul>
+<p>Let’s now imagine that we develop the following Research Question:<em>Does the average daily time (in minutes) spent using R correlate with the average number of obscenities used per day?</em> We collect some data, which looks like this:</p>
+<div class="cell" data-tbl-cap-location="bottom">
+<div id="tbl-corrdat" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-corrdat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Average R minutes</th>
+<th style="text-align: center;">Average # obscenities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">240</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">310</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">230</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">220</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-corrdat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.1: Average R minutes per week vs.&nbsp;average obscenities uttered
+</figcaption>
+</figure>
+</div>
+</div>
+<p>With the following steps, we can unpack the formula and derive the correlation coefficient:</p>
+<div class="cell" data-tbl-cap-location="bottom">
+<div id="tbl-corrdat_unpack" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-corrdat_unpack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x_{minutes}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(y_{words}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(x-\bar{x}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(y-\bar{y}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((x-\bar{x}).(y-\bar{y})\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((x-\bar{x})^2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((y-\bar{y})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">240</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">-10</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">310</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">3600</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">230</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-20</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">220</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">-30</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">900</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-corrdat_unpack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.2: Correlation steps
+</figcaption>
+</figure>
+</div>
+</div>
+<ul>
+<li><span class="math inline">\(\bar{x} = 250\)</span><br>
+</li>
+<li><span class="math inline">\(\bar{y}= 4\)</span><br>
+</li>
+<li><span class="math inline">\(\sum_{i=1}^{n}{(x_i - \bar{x})(y_i - \bar{y})}=160\)</span><br>
+</li>
+<li><span class="math inline">\(\sum_{i=1}^{n}{(x_i - \bar{x})^2} = 5000\)</span><br>
+</li>
+<li><span class="math inline">\(\sum_{i=1}^{n}{(y_i - \bar{y})^2} = 6\)</span></li>
+</ul>
+<p><span class="math display">\[
+r_{xy} = \frac{160}{\sqrt{5000}*\sqrt{6}} = \frac{160}{173.21} = .92
+\]</span></p>
+<p>We will use the following rules-of-thumb for interpreting <strong>absolute</strong> values of <span class="math inline">\(r\)</span>:</p>
+<ul>
+<li><span class="math inline">\(r \le .3\)</span> = small<br>
+</li>
+<li><span class="math inline">\(.3 &lt; r \le .6\)</span> = moderate<br>
+</li>
+<li><span class="math inline">\(.6 &lt; r \le .8\)</span> = strong<br>
+</li>
+<li><span class="math inline">\(.8 &lt; r \le 1\)</span> = very strong</li>
+</ul>
+</section>
+<section id="z-transformations" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="z-transformations"><span class="header-section-number">3.3</span> Z-transformations</h2>
+<p>Imagine we know that income per week (in euro) is normally distributed in the population of Dutch university students who graduated in the last year, such that the mean (<span class="math inline">\(\mu\)</span>) income is 1,500 EUR, with an SD (<span class="math inline">\(\sigma\)</span>) of 100. We might wonder: <em>what proportion of the population of new Dutch graduates would have a weekly income of greater than 1,700 EUR?</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-normdist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="t3_files/figure-html/fig-normdist-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Fictional distribution of graduate income scores. Green shading denotes incomes of greater than 1,700 EUR.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We can see the area of interest in the distribution above, in <a href="#fig-normdist" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-normdist</span></a>. To calculate the proportion, we first need to convert the target value into a <strong>z-score</strong>, which transforms the value into standard deviation units. In this case:</p>
+<p><span class="math display">\[
+z = \frac{x-\mu}{\sigma} = \frac{1700-1500}{100} = 2
+\]</span></p>
+<p>To work out the probability associated with a z-score of 2, we can consult the normal distribution tables in the Argyrous textbook (pp.&nbsp;541 - 542), looking for the area under the curve <b>beyond</b> one point. This allows us to answer our question: <em>there is a 2.28% chance of randomly selecting an individual with an income above 1,700 EUR per week from the population of new Dutch graduates</em></p>
+</section>
+<section id="scatterplots-and-r-with-the-wdi-data-spss" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="scatterplots-and-r-with-the-wdi-data-spss"><span class="header-section-number">3.4</span> Scatterplots and <span class="math inline">\(r\)</span> with the WDI data (SPSS)</h2>
+<p>Let’s again load in the World Data Indicators (WDI) dataset (<code>World_Data.sav</code>), and revisit our scatterplot from the previous class (see <a href="#fig-wdscatter_1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-wdscatter_1</span></a>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-wdscatter_ISA3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wdscatter_ISA3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="t3_files/figure-html/fig-wdscatter_ISA3-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wdscatter_ISA3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Access to water vs.&nbsp;Life exp.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We see a noisy, yet positive relationship between a country’s percentage access to an improved water source and its life expectancy at birth. The points do not cling tightly around the linear fit line, but are scattered around it.</p>
+<p>To give us some more formal information about the relationship strength, we can calculate pearson’s <span class="math inline">\(r\)</span> in SPSS which reveals that the correlation between the variables is 0.74. Following our rules-of-thumb above, we could diagnose this as a <strong>moderate, positive</strong> relationship between the two variables.</p>
+</section>
+<section id="spss-explainer-video" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="spss-explainer-video"><span class="header-section-number">3.5</span> SPSS explainer video</h2>
+<p>[WDI scatterplot, pearson]</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -626,10 +867,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./t2.html" class="pagination-link" aria-label="Measures of dispersion and visualizing relationships">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Measures of dispersion and visualizing relationships</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./t1.html" class="pagination-link" aria-label="Entering, importing, summarizing and subsetting data">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Entering, importing, summarizing and subsetting data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./t4.html" class="pagination-link" aria-label="Working with normal distributions II - the sampling distribution of means">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with normal distributions II - the sampling distribution of means</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -641,7 +885,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
 <p>CC-BY-SA-4.0 (2026) David Fleming</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t3.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

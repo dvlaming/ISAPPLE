@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="David Fleming">
 
-<title>PPLE Introduction to Statistical Analysis: tutorial manual</title>
+<title>2&nbsp; Measures of dispersion and visualizing relationships – PPLE Introduction to Statistical Analysis: tutorial manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./t1.html" rel="next">
+<link href="./t3.html" rel="next">
+<link href="./t1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./t2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Measures of dispersion and visualizing relationships</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -127,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./t2.html" class="sidebar-item-text sidebar-link">
+  <a href="./t2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Measures of dispersion and visualizing relationships</span></span></a>
   </div>
 </li>
@@ -135,18 +164,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./t3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correlation coefficients and working with normal distributions</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./t4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with normal distributions II - the sampling distribution of means</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./t5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The one-sample t-test &amp; confidence intervals</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -176,31 +193,38 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">2.1</span> Learning goals</a>
   <ul class="collapse">
-  <li><a href="#assignments" id="toc-assignments" class="nav-link" data-scroll-target="#assignments">Assignments</a></li>
+  <li><a href="#conceptual" id="toc-conceptual" class="nav-link" data-scroll-target="#conceptual"><span class="header-section-number">2.1.1</span> Conceptual</a></li>
+  <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">2.1.2</span> SPSS</a></li>
   </ul></li>
+  <li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion" class="nav-link" data-scroll-target="#measures-of-dispersion"><span class="header-section-number">2.2</span> Measures of dispersion</a>
+  <ul class="collapse">
+  <li><a href="#the-standard-deviation" id="toc-the-standard-deviation" class="nav-link" data-scroll-target="#the-standard-deviation"><span class="header-section-number">2.2.1</span> The standard deviation</a></li>
+  <li><a href="#the-range" id="toc-the-range" class="nav-link" data-scroll-target="#the-range"><span class="header-section-number">2.2.2</span> The range</a></li>
+  <li><a href="#the-interquartile-range-iqr" id="toc-the-interquartile-range-iqr" class="nav-link" data-scroll-target="#the-interquartile-range-iqr"><span class="header-section-number">2.2.3</span> The interquartile range (IQR)</a></li>
+  </ul></li>
+  <li><a href="#visualizing-relationships-between-variables" id="toc-visualizing-relationships-between-variables" class="nav-link" data-scroll-target="#visualizing-relationships-between-variables"><span class="header-section-number">2.3</span> Visualizing relationships between variables</a>
+  <ul class="collapse">
+  <li><a href="#scatterplots" id="toc-scatterplots" class="nav-link" data-scroll-target="#scatterplots"><span class="header-section-number">2.3.1</span> Scatterplots</a></li>
+  <li><a href="#crosstabulations" id="toc-crosstabulations" class="nav-link" data-scroll-target="#crosstabulations"><span class="header-section-number">2.3.2</span> Crosstabulations</a></li>
+  </ul></li>
+  <li><a href="#spss-explainer-video" id="toc-spss-explainer-video" class="nav-link" data-scroll-target="#spss-explainer-video"><span class="header-section-number">2.4</span> SPSS explainer video</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PPLE Introduction to Statistical Analysis: tutorial manual</h1>
+<h1 class="title"><span id="sec-ISACh2" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Measures of dispersion and visualizing relationships</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>David Fleming </p>
-          </div>
-  </div>
     
   
     
@@ -211,16 +235,306 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Welcome! In these pages you will find tutorial materials for the PPLE <em>Introduction to Statistical Analysis</em> tutorials. In session 2025/26, we will be working with the software package SPSS which can be downloaded for a small fee from <a href="https://www.surfspot.nl/universiteit-van-amsterdam">SURFSPOT</a> or accessed for free via connection to an <a href="apps.uva.nl">UvA virtual desktop</a>. The course is supported by the textbook, <a href="https://uk.sagepub.com/en-gb/eur/statistics-for-research/book234621"><i>Statistics for research with a guide to SPSS</i></a>, by George Argyrous.</p>
-<p>Every page contains video demonstrations of techniques featured in the lectures and tutorial meetings using datasets available for download on the course <a href="canvas.uva.nl">canvas</a> page. For questions about these materials, please <a href="mailto:d.fleming@uva.nl">get in touch</a>!</p>
-<section id="assignments" class="level2">
-<h2 class="anchored" data-anchor-id="assignments">Assignments</h2>
-<p>Details of the in-class pair/group assignments will be published on canvas. <strong>Please prepare a single document (.doc or .pdf) containing your answers and ensure that you upload on time via the submission points!</strong></p>
+<section id="learning-goals" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">2.1</span> Learning goals</h2>
+<section id="conceptual" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="conceptual"><span class="header-section-number">2.1.1</span> Conceptual</h3>
+<ol type="1">
+<li>Understand and interpret common measures of dispersion</li>
+<li>Interpret scatterplots and crosstabulations</li>
+</ol>
+</section>
+<section id="spss" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="spss"><span class="header-section-number">2.1.2</span> SPSS</h3>
+<ol type="1">
+<li>Add measures of dispersion to your descriptive statistics output</li>
+<li>Create scatterplots (interval/ratio data) and crosstabulations (nominal and ordinal data)</li>
+<li>Recode existing data into new variables</li>
+</ol>
+</section>
+</section>
+<section id="measures-of-dispersion" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="measures-of-dispersion"><span class="header-section-number">2.2</span> Measures of dispersion</h2>
+<p>In this course, we will consider three measures of dispersion.</p>
+<section id="the-standard-deviation" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="the-standard-deviation"><span class="header-section-number">2.2.1</span> The standard deviation</h3>
+<p>The standard deviation is defined as:</p>
+<p><span class="math display">\[
+S = \sqrt\frac{\sum_{i=1}^{n}{(x_i-\bar{x})^2}}{n-1}
+\]</span></p>
+<p>Computation of the standard deviation involves:</p>
+<ol type="1">
+<li>Calculating the sample mean <span class="math inline">\(\bar{x}\)</span></li>
+<li>Subtracting <span class="math inline">\(\bar{x}\)</span> from each “raw” value of <span class="math inline">\(x\)</span> to compute deviations</li>
+<li>Squaring the deviations from step 2 <span class="math inline">\((x_i - \bar{x})^2\)</span></li>
+<li>Summing the deviations <span class="math inline">\(\sum_{i = 1}^{n}\)</span></li>
+<li>Dividing the deviations by the number of observations (<span class="math inline">\(n\)</span>) minus 1</li>
+<li>Taking the square root of 5</li>
+</ol>
+<p>The standard deviation can be roughly interpreted as the average deviation from the sample mean in the data. Much like the mean, this measure of dispersion is mot appropriate for interval/ratio level data.</p>
+</section>
+<section id="the-range" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="the-range"><span class="header-section-number">2.2.2</span> The range</h3>
+<p>The range is simply the difference between the maximum and minimum values in the data, and can be written as:</p>
+<p><span class="math display">\[
+range = max(x_1, x_2, ..., x_n) - min(x_1, x_2, ..., x_n)
+\]</span></p>
+</section>
+<section id="the-interquartile-range-iqr" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="the-interquartile-range-iqr"><span class="header-section-number">2.2.3</span> The interquartile range (IQR)</h3>
+<p>This represents the spread of the middle 50% of the data and is calculated as:</p>
+<p><span class="math display">\[
+IQR = Q_3 - Q_1
+\]</span></p>
+<p><span class="math inline">\(Q_3\)</span> and <span class="math inline">\(Q_1\)</span>, are, respectively, the 75th and 25th percentiles of the data.To find these for data <span class="math inline">\(x\)</span> with <span class="math inline">\(n\)</span> elements:</p>
+<ul>
+<li><p><span class="math inline">\(Q_1(x) = x_{(\frac{n+1}{4})}\)</span></p></li>
+<li><p><span class="math inline">\(Q_3(x) = x_{(\frac{3(n+1)}{4})}\)</span></p></li>
+</ul>
+<p>Where the position index for the quartile is not a whole number, we can average the values from the two nearest whole number positions to find our quartile. For example, for data with <span class="math inline">\(n = 100\)</span>:</p>
+<ul>
+<li><span class="math inline">\(Q_1(x) = x_{(\frac{101}{4})} = 25.25\)</span></li>
+</ul>
+<p>In the above case, we would average the 25th- and 26th-ranked values of <span class="math inline">\(x\)</span> to find <span class="math inline">\(Q_1(x)\)</span>.</p>
+</section>
+</section>
+<section id="visualizing-relationships-between-variables" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="visualizing-relationships-between-variables"><span class="header-section-number">2.3</span> Visualizing relationships between variables</h2>
+<section id="scatterplots" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="scatterplots"><span class="header-section-number">2.3.1</span> Scatterplots</h3>
+<p>Scatterplots are useful for visualizing relationships between interval/ratio variables. In this course, our convention will be to place <strong>independent variables (IVs)</strong> on the x-axis and <strong>dependent variables (DVs)</strong> on the y-axis.</p>
+<div id="nte-ivdv" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;2.1: IVs and DVs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <strong>independent variable</strong> is the presumed cause of effects on a <strong>dependent variable</strong>. See the lecture notes for further information.</p>
+</div>
+</div>
+<p>The variables <code>wdi_lifexp</code> (life expectancy at birth) and <code>wdi_water</code> (percentage of population with access to improved water) are appropriate for scatterplotting. If there is a causal relationship between these two variables, then the most intuitive direction of influence would be from <code>wdi_water</code> to <code>wdi_lifexp</code>, so <code>wdi_water</code> will be our IV (x-variable) and <code>wdi_lifexp</code> our DV (y-variable).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-wdscatter_1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wdscatter_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="t2_files/figure-html/fig-wdscatter_1-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wdscatter_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Access to water vs.&nbsp;Life exp.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We can see a noisy, yet positive relationship between a country’s percentage access to an improved water source and its life expectancy at birth. It is also possible to fit a linear model to the data and plot the fit line:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-wdscatter_2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wdscatter_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="t2_files/figure-html/fig-wdscatter_2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wdscatter_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Adding a linear fit line
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="crosstabulations" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="crosstabulations"><span class="header-section-number">2.3.2</span> Crosstabulations</h3>
+<p>Crosstabulations (crosstabs) are a useful method for visualizing relationships among combinations of ordinal and nominal-level variables with relatively few unique categories. For example, let’s imagine we are interested how freedom of the press varies across countries in different regions of the world. In the World Development Indicators dataset (WDI), we can examine this with the variables <code>region</code> and <code>fhp_status5</code> (freedom of the press score, as rated by <a href="https://freedomhouse.org/">Freedom House</a>). <code>region</code> is measured at the nominal level (as we cannot rank regions based on name alone), where <code>fhp_status5</code> has ranks press freedom from 1 (“Free”) to 3 (“Not Free”).</p>
+<p>A simple crosstab will show us the number of countries within regions which fall into the different categories of press freedom, and also give us the marginal counts<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> On this course, our convention will be to place IVs in the columns and DVs in the rows, so our most logical approach would be to place <code>region</code> in the columns and <code>fhp_status5</code> in the rows. This allows us to see how the distribution of counts across the levels of press freedom (the DV) vary across the different regions (the IV). In other words, we compare counts <strong>horizontally</strong>, between different regions.</p>
+<div class="cell" data-tbl-cap-location="bottom">
+<div id="tbl-crosstab1" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-crosstab1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 4%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">East Asia &amp; Pacific</th>
+<th style="text-align: center;">Europe &amp; Central Asia</th>
+<th style="text-align: center;">Latin America &amp; Caribbean</th>
+<th style="text-align: center;">Middle East &amp; North Africa</th>
+<th style="text-align: center;">North America</th>
+<th style="text-align: center;">South Asia</th>
+<th style="text-align: center;">Sub-Saharan Africa</th>
+<th style="text-align: center;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Free</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Partly Free</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Not Free</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">63</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">47</td>
+<td style="text-align: center;">192</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-crosstab1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Count crosstab of region vs.&nbsp;press freedom
+</figcaption>
+</figure>
+</div>
+</div>
+<p>While we can see trends, it can be more informative to view the press freedom category counts as percentages (or proportions) within countries. This adjusts for differences in the number of countries within regions and shows us the proportional distribution of counts for the freedom categories.</p>
+<div class="cell" data-tbl-cap-location="bottom">
+<div id="tbl-crosstab2" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-crosstab2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 4%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">East Asia &amp; Pacific</th>
+<th style="text-align: center;">Europe &amp; Central Asia</th>
+<th style="text-align: center;">Latin America &amp; Caribbean</th>
+<th style="text-align: center;">Middle East &amp; North Africa</th>
+<th style="text-align: center;">North America</th>
+<th style="text-align: center;">South Asia</th>
+<th style="text-align: center;">Sub-Saharan Africa</th>
+<th style="text-align: center;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Free</td>
+<td style="text-align: center;">43.33</td>
+<td style="text-align: center;">51.92</td>
+<td style="text-align: center;">42.42</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6.38</td>
+<td style="text-align: center;">31.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Partly Free</td>
+<td style="text-align: center;">23.33</td>
+<td style="text-align: center;">26.92</td>
+<td style="text-align: center;">42.42</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">55.32</td>
+<td style="text-align: center;">35.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Not Free</td>
+<td style="text-align: center;">33.33</td>
+<td style="text-align: center;">21.15</td>
+<td style="text-align: center;">15.15</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">38.30</td>
+<td style="text-align: center;">32.81</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: center;">100.00</td>
+<td style="text-align: center;">100.00</td>
+<td style="text-align: center;">100.00</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100.00</td>
+<td style="text-align: center;">100.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-crosstab2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.2: Percentage crosstab of region vs.&nbsp;press freedom
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="spss-explainer-video" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="spss-explainer-video"><span class="header-section-number">2.4</span> SPSS explainer video</h2>
+<p>[WDI measures of dispersion, scatterplot, crosstab, recode]</p>
 
 
 </section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>That is, the counts in the categories of one variable when we ignore the levels of the other.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -626,10 +940,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./t1.html" class="pagination-link" aria-label="Entering, importing, summarizing and subsetting data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Entering, importing, summarizing and subsetting data</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./t1.html" class="pagination-link" aria-label="Entering, importing, summarizing and subsetting data">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Entering, importing, summarizing and subsetting data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./t3.html" class="pagination-link" aria-label="Correlation coefficients and working with normal distributions">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correlation coefficients and working with normal distributions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -641,7 +958,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
 <p>CC-BY-SA-4.0 (2026) David Fleming</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

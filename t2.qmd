@@ -1,0 +1,144 @@
+# Measures of dispersion and visualizing relationships {#sec-ISACh2}
+
+## Learning goals
+
+### Conceptual
+
+1. Understand and interpret common measures of dispersion
+2. Interpret scatterplots and crosstabulations
+
+### SPSS
+
+1. Add measures of dispersion to your descriptive statistics output
+2. Create scatterplots (interval/ratio data) and crosstabulations (nominal and ordinal data) 
+3. Recode existing data into new variables 
+
+## Measures of dispersion
+
+In this course, we will consider three measures of dispersion.
+
+### The standard deviation
+
+The standard deviation is defined as:
+
+$$
+S = \sqrt\frac{\sum_{i=1}^{n}{(x_i-\bar{x})^2}}{n-1}
+$$
+
+
+Computation of the standard deviation involves:
+
+1. Calculating the sample mean $\bar{x}$
+2. Subtracting $\bar{x}$ from each "raw" value of $x$ to compute deviations
+3. Squaring the deviations from step 2 $(x_i - \bar{x})^2$
+4. Summing the deviations $\sum_{i = 1}^{n}$
+5. Dividing the deviations by the number of observations ($n$) minus 1
+6. Taking the square root of 5
+
+The standard deviation can be roughly interpreted as the average deviation from the sample mean in the data. Much like the mean, this measure of dispersion is mot appropriate for interval/ratio level data. 
+
+### The range
+
+The range is simply the difference between the maximum and minimum values in the data, and can be written as:
+
+$$
+range = max(x_1, x_2, ..., x_n) - min(x_1, x_2, ..., x_n)
+$$
+
+### The interquartile range (IQR)
+
+This represents the spread of the middle 50% of the data and is calculated as:
+
+$$
+IQR = Q_3 - Q_1
+$$
+
+$Q_3$ and $Q_1$, are, respectively, the 75th and 25th percentiles of the data.To find these for data $x$ with $n$ elements:
+
+* $Q_1(x) = x_{(\frac{n+1}{4})}$
+  
+* $Q_3(x) = x_{(\frac{3(n+1)}{4})}$
+  
+Where the position index for the quartile is not a whole number, we can average the values from the two nearest whole number positions to find our quartile. For example, for data with $n = 100$:
+
+* $Q_1(x) = x_{(\frac{101}{4})} = 25.25$
+
+In the above case, we would average the 25th- and 26th-ranked values of $x$ to find $Q_1(x)$.
+
+## Visualizing relationships between variables
+
+```{r ESSloadreal, echo = FALSE}
+wd<-haven::read_sav("C:/Users/David/OneDrive - UvA/2025_2026/ISA_24_25/Datasets/World_Data.sav")
+```
+
+### Scatterplots
+
+Scatterplots are useful for visualizing relationships between interval/ratio variables. In this course, our convention will be to place **independent variables (IVs)** on the x-axis and **dependent variables (DVs)** on the y-axis.
+
+::: {#nte-ivdv .callout-note}
+### IVs and DVs
+An **independent variable** is the presumed cause of effects on a **dependent variable**. See the lecture notes for further information.
+:::
+
+The variables `wdi_lifexp` (life expectancy at birth) and `wdi_water` (percentage of population with access to improved water) are appropriate for scatterplotting. If there is a causal relationship between these two variables, then the most intuitive direction of influence would be from `wdi_water` to `wdi_lifexp`, so `wdi_water` will be our IV (x-variable) and `wdi_lifexp` our DV (y-variable). 
+
+```{r}
+#| label: fig-wdscatter_1
+#| fig-cap: "Access to water vs. Life exp."
+#| warning: FALSE
+#| message: FALSE  
+
+`%>%`<-magrittr::`%>%`
+wd %>% 
+  ggplot2::ggplot(ggplot2::aes(x = wdi_water, y = wdi_lifexp)) +
+  ggplot2::geom_point()
+
+```
+
+We can see a noisy, yet positive relationship between a country's percentage access to an improved water source and its life expectancy at birth. It is also possible to fit a linear model to the data and plot the fit line:
+
+```{r}
+#| label: fig-wdscatter_2
+#| fig-cap: "Adding a linear fit line"
+#| warning: FALSE
+#| message: FALSE 
+wd %>% 
+  ggplot2::ggplot(ggplot2::aes(x = wdi_water, y = wdi_lifexp)) +
+  ggplot2::geom_point() +
+  ggplot2::geom_smooth(method = "lm", se = FALSE)
+
+```
+
+
+### Crosstabulations
+
+Crosstabulations (crosstabs) are a useful method for visualizing relationships among combinations of ordinal and nominal-level variables with relatively few unique categories. For example, let's imagine we are interested how freedom of the press varies across countries in different regions of the world. In the World Development Indicators dataset (WDI), we can examine this with the variables `region` and  `fhp_status5` (freedom of the press score, as rated by [Freedom House](https://freedomhouse.org/)). `region` is measured at the nominal level (as we cannot rank regions based on name alone), where `fhp_status5` has ranks press freedom from 1 ("Free") to 3 ("Not Free").
+
+A simple crosstab will show us the number of countries within regions which fall into the different categories of press freedom, and also give us the marginal counts^[That is, the counts in the categories of one variable when we ignore the levels of the other.] On this course, our convention will be to place IVs in the columns and DVs in the rows, so our most logical approach would be to place `region` in the columns and `fhp_status5` in the rows. This allows us to see how the distribution of counts across the levels of press freedom (the DV) vary across the different regions (the IV). In other words, we compare counts **horizontally**, between different regions.
+
+```{r}
+#| label: tbl-crosstab1
+#| tbl-cap: "Count crosstab of region vs. press freedom"
+#| tbl-cap-location: bottom 
+
+source("customFunctions") 
+
+knitr::kable(quickxtab(haven::as_factor(wd$fhp_status5),haven::as_factor(wd$region)), digits = 2, align = "c")
+
+
+```
+
+While we can see trends, it can be more informative to view the press freedom category counts as percentages (or proportions) within countries. This adjusts for differences in the number of countries within regions and shows us the proportional distribution of counts for the freedom categories. 
+
+```{r}
+#| label: tbl-crosstab2
+#| tbl-cap: "Percentage crosstab of region vs. press freedom"
+#| tbl-cap-location: bottom 
+
+knitr::kable(prop.table(quickxtab(haven::as_factor(wd$fhp_status5),haven::as_factor(wd$region)),margin = 2)*200, digits = 2, align = "c") 
+```
+
+## SPSS explainer video
+
+[WDI measures of dispersion, scatterplot, crosstab, recode]
+
