@@ -1,0 +1,13 @@
+# Preface {.unnumbered}
+
+Welcome! In these pages you will find tutorial materials for the PPLE _Introduction to Statistical Analysis_ tutorials. In session 2025/26, we will be working with the software package SPSS which can be downloaded for a small fee from [SURFSPOT](https://www.surfspot.nl/universiteit-van-amsterdam) or accessed for free via connection to an [UvA virtual desktop](apps.uva.nl). 
+
+Every page contains video demonstrations of techniques featured in the lectures and tutorial meetings using datasets available for download on the course [canvas](canvas.uva.nl) page. For questions about these materials, please [get in touch](mailto:d.fleming@uva.nl)!
+
+## Assignments
+
+Details of the in-class pair/group assignments will be published on canvas. **Please prepare a single document (.doc or .pdf) containing your answers and ensure that you upload on time via the submission points!**
+
+
+
+

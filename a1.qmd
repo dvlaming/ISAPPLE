@@ -1,0 +1,23 @@
+# APA reporting style for statistical tests {#sec-a1report}
+
+## Correlation (Pearson's $r$)
+
+r(<b>degrees of freedom</b>) = <b>correlation coefficient</b> p = <b>p-value</b>
+
+## t-tests {#sec-a1t}
+
+t(<b>degrees of freedom</b>) = <b>t-value</b>,  p = <b>p-value</b>
+
+## ANOVA {#sec-a1anova}
+
+F(<b>numerator/effect degrees of freedom</b>,  <b>denominator/residual degrees of freedom</b>) = <b>F-value</b>,  p = <b>p-value</b>, 
+
+## $\chi^2$ {#sec-a1chi}
+
+$\chi^2$(_n_, <b>degrees of freedom</b>) = <b>chi-squared value</b>,  p = <b>p-value</b>
+
+## Regression {#sec-a1reg}
+
+* Omnibus F-test of the model should be reported as for ANOVA (see above)
+* Coefficients: b = <b>coefficient/slope value</b>, t(<b>degrees of freedom</b>) = <b>t-value</b>,  p = <b>p-value</b>
+

@@ -1,0 +1,101 @@
+# ISA 1: entering, importing, summarizing and subsetting data {#sec-ISACh1}
+
+## Learning goals
+
+### Conceptual
+
+1. Understand the meaning of *unit of analysis*
+2. Understand and apply common measures of *central tendency*
+
+### SPSS
+
+1. Enter new data 
+2. Import and work with existing data 
+3. Create frequency tables 
+4. Select subsets of data using `Select cases`
+
+
+## Entering data
+
+In an SPSS spreadsheet, rows correspond to observations on the *unit of analysis* (e.g., mice, people, countries), and columns correspond to variables (e.g., fur colour, occupation, GDP per capita).
+
+Let's create a dataset of student names and ages:
+
+```{r}
+#| label: gospels
+
+students<-data.frame(names = c("Matthew","Mark","Luke","John"), age = c(18,19,18,20))
+students
+
+```
+
+## Measures of central tendency
+
+In this course, we will consider three measures of central tendency.
+
+### The arithmetic mean
+
+This is usually represented by one of two formulae:
+
+(@)  $\bar{x} = \frac{1}{n} \sum\limits_{i = 1}^{n}x_i$
+
+
+(@)  $\bar{x} = \frac{\sum_{i = 1}^{n}x_i}{n}$
+
+
+Straightforwardly: sum all scores and divide by the total number of scores. Our students have a mean age of `{r} mean(students$age)`.
+
+Strictly speaking, the mean can only be sensibly calculated for interval/ratio level data. 
+
+### The median
+
+This is the 50th percentile in the dataset (i.e., it divides the data into a lower half and an upper half). It is obtained by ranking scores and finding the value which divides the dataset in two. 
+
+For data $x$ with $n$ elements:
+
+* if $n$ is **odd**, $med(x) = x_{(n+1)/2}$
+  
+
+* if $n$ is **even**, $med(x) = \frac{x_{(n/2)} + x_{((n/2)+1)}}{2}$
+
+For example, in a sorted dataset with 11 values, the median will be the value at the observation ranked 6th. However, in a sorted dataset with 12 values, the median will be the arithmetic mean of the values ranked in 6th and 7th. The median age in our newly-synthesized dataset is `{r} median(students$age)`.
+
+
+The median can be used to summarize both interval/ratio and ordinal variables.
+
+### The mode
+
+```{r cusmode}
+source("customFunctions")
+```
+
+Lastly, we turn to the mode, which is simply the most frequently occurring value. In our dataset, this is `{r} cusmode(students$age)$mode`.
+
+```{r Billy}
+
+
+
+students[5,1]<-"Billy"
+students[5,2]<-20
+
+```
+
+Datasets can have multiple modes; for example, let's imagine we added a new student aged 20 to the dataset. In this case, the modes would be `{r} cusmode(students$age)$mode[1]` and `{r} cusmode(students$age)$mode[2]`. 
+
+The mode can be calculated for all measurement levels about which you have learned, but it is typically most informative when there are relatively few values which the data can take. For example, imagine trying to calculate modal household income within a country; you would likely end up with countless unique values and multiple modes, rendering this measure fairly useless for the purpose of summarizing.
+
+## SPSS explainer video
+
+[entering data; frequencies, central tendency, selecting cases with ESS11]
+
+::: {#nte-logoper .callout-note}
+### Use of logical operators when selecting cases
+
+You will probably rely mostly on the following: 
+
+1.  `=` - searches for equivalence, whether the data are numerical or character string (text).
+2.  `~=` - the complement of `=`. E.g, `cntry ~= "Netherlands"` means "return all respondents who are NOT from the Netherlands".
+3.  `& (AND)` - used when you want the selected responses to satisfy multiple conditions. E.g., `cntry == "Netherlands" & agea > 22` means "return all respondents from the Netherlands **who are also older than (> = "greater than") 22**".
+4. `| (OR)` - use this if you want to select responses which match **at least one** of the specified conditions. E.g., `cntry == "Netherlands" | agea > 22` will return participants who are either in the Netherlands, or older than 22, or both. Participants who meet neither criterion will be filtered out.
+:::
+

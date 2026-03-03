@@ -1,0 +1,137 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PPLE Introduction to Statistical Analysis: tutorial manual",
+    "section": "",
+    "text": "Preface\nWelcome! In these pages you will find tutorial materials for the PPLE Introduction to Statistical Analysis tutorials. In session 2025/26, we will be working with the software package SPSS which can be downloaded for a small fee from SURFSPOT or accessed for free via connection to an UvA virtual desktop.\nEvery page contains video demonstrations of techniques featured in the lectures and tutorial meetings using datasets available for download on the course canvas page. For questions about these materials, please get in touch!",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#assignments",
+    "href": "index.html#assignments",
+    "title": "PPLE Introduction to Statistical Analysis: tutorial manual",
+    "section": "Assignments",
+    "text": "Assignments\nDetails of the in-class pair/group assignments will be published on canvas. Please prepare a single document (.doc or .pdf) containing your answers and ensure that you upload on time via the submission points!",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "a1.html",
+    "href": "a1.html",
+    "title": "Appendix A — APA reporting style for statistical tests",
+    "section": "",
+    "text": "A.1 Correlation (Pearson’s \\(r\\))\nr(degrees of freedom) = correlation coefficient p = p-value",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>APA reporting style for statistical tests</span>"
+    ]
+  },
+  {
+    "objectID": "a1.html#sec-a1t",
+    "href": "a1.html#sec-a1t",
+    "title": "Appendix A — APA reporting style for statistical tests",
+    "section": "A.2 t-tests",
+    "text": "A.2 t-tests\nt(degrees of freedom) = t-value, p = p-value",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>APA reporting style for statistical tests</span>"
+    ]
+  },
+  {
+    "objectID": "a1.html#sec-a1anova",
+    "href": "a1.html#sec-a1anova",
+    "title": "Appendix A — APA reporting style for statistical tests",
+    "section": "A.3 ANOVA",
+    "text": "A.3 ANOVA\nF(numerator/effect degrees of freedom, denominator/residual degrees of freedom) = F-value, p = p-value,",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>APA reporting style for statistical tests</span>"
+    ]
+  },
+  {
+    "objectID": "a1.html#sec-a1chi",
+    "href": "a1.html#sec-a1chi",
+    "title": "Appendix A — APA reporting style for statistical tests",
+    "section": "A.4 \\(\\chi^2\\)",
+    "text": "A.4 \\(\\chi^2\\)\n\\(\\chi^2\\)(n, degrees of freedom) = chi-squared value, p = p-value",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>APA reporting style for statistical tests</span>"
+    ]
+  },
+  {
+    "objectID": "a1.html#sec-a1reg",
+    "href": "a1.html#sec-a1reg",
+    "title": "Appendix A — APA reporting style for statistical tests",
+    "section": "A.5 Regression",
+    "text": "A.5 Regression\n\nOmnibus F-test of the model should be reported as for ANOVA (see above)\nCoefficients: b = coefficient/slope value, t(degrees of freedom) = t-value, p = p-value",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>APA reporting style for statistical tests</span>"
+    ]
+  },
+  {
+    "objectID": "t1.html",
+    "href": "t1.html",
+    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "section": "",
+    "text": "1.1 Learning goals",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+    ]
+  },
+  {
+    "objectID": "t1.html#learning-goals",
+    "href": "t1.html#learning-goals",
+    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "section": "",
+    "text": "1.1.1 Conceptual\n\nUnderstand the meaning of unit of analysis\nUnderstand and apply common measures of central tendency\n\n\n\n1.1.2 SPSS\n\nEnter new data\nImport and work with existing data\nCreate frequency tables\nSelect subsets of data using Select cases",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+    ]
+  },
+  {
+    "objectID": "t1.html#entering-data",
+    "href": "t1.html#entering-data",
+    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "section": "1.2 Entering data",
+    "text": "1.2 Entering data\nIn an SPSS spreadsheet, rows correspond to observations on the unit of analysis (e.g., mice, people, countries), and columns correspond to variables (e.g., fur colour, occupation, GDP per capita).\nLet’s create a dataset of student names and ages:\n\n\n    names age\n1 Matthew  18\n2    Mark  19\n3    Luke  18\n4    John  20",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+    ]
+  },
+  {
+    "objectID": "t1.html#measures-of-central-tendency",
+    "href": "t1.html#measures-of-central-tendency",
+    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "section": "1.3 Measures of central tendency",
+    "text": "1.3 Measures of central tendency\nIn this course, we will consider three measures of central tendency.\n\n1.3.1 The arithmetic mean\nThis is usually represented by one of two formulae:\n\n\\(\\bar{x} = \\frac{1}{n} \\sum\\limits_{i = 1}^{n}x_i\\)\n\\(\\bar{x} = \\frac{\\sum_{i = 1}^{n}x_i}{n}\\)\n\nStraightforwardly: sum all scores and divide by the total number of scores. Our students have a mean age of 18.75.\nStrictly speaking, the mean can only be sensibly calculated for interval/ratio level data.\n\n\n1.3.2 The median\nThis is the 50th percentile in the dataset (i.e., it divides the data into a lower half and an upper half). It is obtained by ranking scores and finding the value which divides the dataset in two.\nFor data \\(x\\) with \\(n\\) elements:\n\nif \\(n\\) is odd, \\(med(x) = x_{(n+1)/2}\\)\nif \\(n\\) is even, \\(med(x) = \\frac{x_{(n/2)} + x_{((n/2)+1)}}{2}\\)\n\nFor example, in a sorted dataset with 11 values, the median will be the value at the observation ranked 6th. However, in a sorted dataset with 12 values, the median will be the arithmetic mean of the values ranked in 6th and 7th. The median age in our newly-synthesized dataset is 18.5.\nThe median can be used to summarize both interval/ratio and ordinal variables.\n\n\n1.3.3 The mode\nLastly, we turn to the mode, which is simply the most frequently occurring value. In our dataset, this is 18.\nDatasets can have multiple modes; for example, let’s imagine we added a new student aged 20 to the dataset. In this case, the modes would be 18 and 20.\nThe mode can be calculated for all measurement levels about which you have learned, but it is typically most informative when there are relatively few values which the data can take. For example, imagine trying to calculate modal household income within a country; you would likely end up with countless unique values and multiple modes, rendering this measure fairly useless for the purpose of summarizing.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+    ]
+  },
+  {
+    "objectID": "t1.html#spss-explainer-video",
+    "href": "t1.html#spss-explainer-video",
+    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "section": "1.4 SPSS explainer video",
+    "text": "1.4 SPSS explainer video\n[entering data; frequencies, central tendency, selecting cases with ESS11]\n\n\n\n\n\n\nNote 1.1: Use of logical operators when selecting cases\n\n\n\nYou will probably rely mostly on the following:\n\n= - searches for equivalence, whether the data are numerical or character string (text).\n~= - the complement of =. E.g, cntry ~= \"Netherlands\" means “return all respondents who are NOT from the Netherlands”.\n& (AND) - used when you want the selected responses to satisfy multiple conditions. E.g., cntry == \"Netherlands\" & agea &gt; 22 means “return all respondents from the Netherlands who are also older than (&gt; = ”greater than”) 22”.\n| (OR) - use this if you want to select responses which match at least one of the specified conditions. E.g., cntry == \"Netherlands\" | agea &gt; 22 will return participants who are either in the Netherlands, or older than 22, or both. Participants who meet neither criterion will be filtered out.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+    ]
+  },
+  {
+    "objectID": "t1.html#summary",
+    "href": "t1.html#summary",
+    "title": "1  ISA 1: entering, importing, summarizing and subsetting data",
+    "section": "1.5 Summary",
+    "text": "1.5 Summary\nIn this tutorial, we covered:\n\nEntering new data\nImporting existing data in .sav format\nCalculating frequencies and descriptive statistics\nUsing dplyr::filter to select subsets of data",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>ISA 1: entering, importing, summarizing and subsetting data</span>"
+    ]
+  }
+]
