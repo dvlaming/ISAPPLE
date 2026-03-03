@@ -106,7 +106,8 @@ p <- ggplot2::ggplot(xx, ggplot2::aes(x=Income,y=pdf)) +
                ,linetype="dashed",color="blue")+
   ggplot2::geom_segment(x=se_plus2,y=0,xend=se_plus2,yend=as.numeric(xx[xx$Income==se_plus2,2])
                ,linetype="dashed",color="blue")+
-  ggplot2::geom_segment(x=1489,y=0,xend=1489,yend=max(xx$pdf),linetype="dashed",color="green")+
+  ggplot2::geom_segment(x=1489,y=0,xend=1489,yend=max(xx$pdf),linetype="solid", 
+                        linewidth=1, color="green")+
   ggplot2::annotate("text", x = 1510, y = 0.11, colour="red", label = mulab,parse=TRUE)+
   ggplot2::annotate("text", x = 1510.25, y = 0.1, colour="blue", label = siglab,parse=TRUE)+
   ggplot2::scale_x_continuous(breaks = seq(1485,1515,2),labels = seq(1485,1515,2))+
