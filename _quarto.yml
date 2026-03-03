@@ -1,0 +1,35 @@
+project:
+  type: book
+  output-dir: docs
+
+execute: 
+  echo: false
+  warning: false
+  message: false
+
+book:
+  title: "PPLE Introduction to Statistical Analysis: tutorial manual"
+  author: "David Fleming"
+  license: "CC BY-SA"
+  page-footer: CC-BY-SA-4.0 (2025) David Fleming
+  repo-url: https://github.com/dvlaming/ISA
+  repo-actions: [source]
+  chapters:
+    - index.qmd
+    - references.qmd
+  appendices: 
+    - a1.qmd
+
+bibliography: ISAreferences.bib
+csl: apa-annotated-bibliography.csl
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
+
