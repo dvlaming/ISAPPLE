@@ -194,6 +194,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The t-test for paired samples and Principal Components Analysis</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">One-way ANOVA (between subjects)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Factorial ANOVA (between subjects)</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -428,7 +440,7 @@ Note&nbsp;5.2: Degrees of freedom
 <p><br></p>
 <p>We need to compare our observed t-statistic to the critical t-value associated with the conventional threshold for statistical significance (<span class="math inline">\(\alpha\)</span>), which is .05. As we specified a <a href="./t5.html#nte-hypo">non-directional alternative hypothesis</a>, we look under the column “level of significance for two-tailed test”, allowing us to look for differences greater than or less than the value specified in the null hypothesis (in this case, 0). The relevant critical value for a t-distribution with 3 degrees of freedom is 3.182, meaning that we would expect to see a t-statistic at least as large as this five percent of the time over the long run, <strong>assuming that the null hypothesis is true</strong>. The t-value we calculated, however, is <strong>smaller</strong> than this value, meaning that its associated p-value is <strong>greater</strong> than .05 (although note that you cannot obtain the exact p-value associated with your test from the tables in the book). We should therefore <strong>NOT</strong> reject <span class="math inline">\(H_0\)</span> and instead conclude that, in the population, the mean number of beers consumed by UvA students per week does not differ from 10. Formatting this in APA style, we have:</p>
 <blockquote class="blockquote">
-<p>Our 1-sample t-test indicated that, in the population of Amsterdam students, the mean beers consumed per week (<em>M</em> = 8, <em>SD</em> = 3.56) did not differ from 10, <em>t</em> (3) = -1.12, <em>p</em> &gt; .05.`</p>
+<p>Our 1-sample t-test indicated that, in the population of Amsterdam students, the mean beers consumed per week (<em>M</em> = 8, <em>SD</em> = 3.56) did not differ from 10, <em>t</em> (3) = -1.12, <em>p</em> &gt; .05.</p>
 </blockquote>
 <p><br></p>
 <div id="nte-sig" class="callout callout-style-default callout-note callout-titled">
@@ -441,7 +453,7 @@ Note&nbsp;5.3: Statistical significance
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To say that a finding is <strong>statistically significant</strong> does not mean that it is important; it merely means that the p-value produced by a null-hypothesis test falls below a specified <span class="math inline">\(\alpha\)</span> level (usually .05) which gives the expected type-1 error rate of a test, <strong>in the long run</strong>. In other words, with <span class="math inline">\(\alpha = .05\)</span> you expect your test to lead you to falsely reject <span class="math inline">\(H_0\)</span> 1 in 20 times/5% of the time (i.e., to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> is actually true), where p values <span class="math inline">\(&lt; \alpha\)</span> are typically accepted as sufficient for allowing one to reject <span class="math inline">\(H_0\)</span>. In the above example, the p-value associated with the t-test suggests that, <strong>assuming that <span class="math inline">\(H_0\)</span> is true</strong>, we would expect to see a result at least as extreme as that which we observed 34.43% of the time, which falls below the 5% threshold and leads us to say that we <strong>fail to reject</strong> <span class="math inline">\(H_0\)</span>. If setting <span class="math inline">\(\alpha = .05\)</span> seems arbitrary, that’s because it is - you will hear more about this towards the end of the course.</p>
+<p>To say that a finding is <strong>statistically significant</strong> does not mean that it is important; it merely means that the p-value produced by a null-hypothesis test falls below a specified <span class="math inline">\(\alpha\)</span> level (usually .05) which gives the expected type-1 error rate of a test, <strong>in the long run</strong>. In other words, with <span class="math inline">\(\alpha = .05\)</span> you expect your test to lead you to falsely reject <span class="math inline">\(H_0\)</span> 1 in 20 times/5% of the time (i.e., to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> is actually true), where p values <span class="math inline">\(&lt; \alpha\)</span> are typically accepted as sufficient for allowing one to reject <span class="math inline">\(H_0\)</span>. In the above example, the p-value associated with the t-test suggests that, <strong>assuming that <span class="math inline">\(H_0\)</span> is true</strong>, we would expect to see a result at least as extreme as that which we observed 34.43% of the time, which is (naturally) greater than the 5% threshold, leading us to say that we <strong>fail to reject</strong> <span class="math inline">\(H_0\)</span>. If setting <span class="math inline">\(\alpha = .05\)</span> seems arbitrary, that’s because it is - you will hear more about this towards the end of the course.</p>
 </div>
 </div>
 <p><br></p>
