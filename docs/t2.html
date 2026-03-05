@@ -178,6 +178,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The one-sample t-test &amp; confidence intervals</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The <span class="math inline">\(\chi^2\)</span> test of independence and the independent-samples t-test</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The t-test for paired samples and Principal Components Analysis</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -362,7 +374,7 @@ Figure&nbsp;2.2: Adding a linear fit line
 <section id="crosstabulations" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="crosstabulations"><span class="header-section-number">2.3.2</span> Crosstabulations</h3>
 <p>Crosstabulations (crosstabs) are a useful method for visualizing relationships among combinations of ordinal and nominal-level variables with relatively few unique categories. For example, let’s imagine we are interested how freedom of the press varies across countries in different regions of the world. In the World Development Indicators dataset (WDI), we can examine this with the variables <code>region</code> and <code>fhp_status5</code> (freedom of the press score, as rated by <a href="https://freedomhouse.org/">Freedom House</a>). <code>region</code> is measured at the nominal level (as we cannot rank regions based on name alone), where <code>fhp_status5</code> has ranks press freedom from 1 (“Free”) to 3 (“Not Free”).</p>
-<p>A simple crosstab will show us the number of countries within regions which fall into the different categories of press freedom, and also give us the marginal counts<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> On this course, our convention will be to place IVs in the columns and DVs in the rows, so our most logical approach would be to place <code>region</code> in the columns and <code>fhp_status5</code> in the rows. This allows us to see how the distribution of counts across the levels of press freedom (the DV) vary across the different regions (the IV). In other words, we compare counts <strong>horizontally</strong>, between different regions.</p>
+<p>A simple crosstab will show us the number of countries within regions which fall into the different categories of press freedom, and also give us the marginal counts.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> On this course, our convention will be to place IVs in the columns and DVs in the rows, so our most logical approach would be to place <code>region</code> in the columns and <code>fhp_status5</code> in the rows. This allows us to see how the distribution of counts across the levels of press freedom (the DV) vary across the different regions (the IV). In other words, we compare counts <strong>horizontally</strong>, between different regions.</p>
 <div class="cell" data-tbl-cap-location="bottom">
 <div id="tbl-crosstab1" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
 <figure class="quarto-float quarto-float-tbl figure">

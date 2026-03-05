@@ -1,12 +1,5 @@
 # The one-sample t-test & confidence intervals {#sec-ISACh5}
 
-## R outcomes
-
-After reading this chapter, you can: 
-
-1. Perform and interpret a one-sample t-test by hand and in R 
-2. Calculate confidence intervals by hand and interpret them
-
 ## Learning goals
 
 ### Conceptual 

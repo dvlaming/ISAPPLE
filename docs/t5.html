@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./a1.html" rel="next">
+<link href="./t6.html" rel="next">
 <link href="./t4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -178,6 +178,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The one-sample t-test &amp; confidence intervals</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The <span class="math inline">\(\chi^2\)</span> test of independence and the independent-samples t-test</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The t-test for paired samples and Principal Components Analysis</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -205,18 +217,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#r-outcomes" id="toc-r-outcomes" class="nav-link active" data-scroll-target="#r-outcomes"><span class="header-section-number">5.1</span> R outcomes</a></li>
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">5.2</span> Learning goals</a>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">5.1</span> Learning goals</a>
   <ul class="collapse">
-  <li><a href="#conceptual" id="toc-conceptual" class="nav-link" data-scroll-target="#conceptual"><span class="header-section-number">5.2.1</span> Conceptual</a></li>
-  <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">5.2.2</span> SPSS</a></li>
+  <li><a href="#conceptual" id="toc-conceptual" class="nav-link" data-scroll-target="#conceptual"><span class="header-section-number">5.1.1</span> Conceptual</a></li>
+  <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">5.1.2</span> SPSS</a></li>
   </ul></li>
-  <li><a href="#one-sample-t-test-by-hand" id="toc-one-sample-t-test-by-hand" class="nav-link" data-scroll-target="#one-sample-t-test-by-hand"><span class="header-section-number">5.3</span> One-sample t-test by hand</a></li>
-  <li><a href="#confidence-intervals-by-hand" id="toc-confidence-intervals-by-hand" class="nav-link" data-scroll-target="#confidence-intervals-by-hand"><span class="header-section-number">5.4</span> Confidence Intervals by hand</a></li>
-  <li><a href="#one-sample-t-test-in-spss" id="toc-one-sample-t-test-in-spss" class="nav-link" data-scroll-target="#one-sample-t-test-in-spss"><span class="header-section-number">5.5</span> One-sample t-test in SPSS</a>
+  <li><a href="#one-sample-t-test-by-hand" id="toc-one-sample-t-test-by-hand" class="nav-link" data-scroll-target="#one-sample-t-test-by-hand"><span class="header-section-number">5.2</span> One-sample t-test by hand</a></li>
+  <li><a href="#confidence-intervals-by-hand" id="toc-confidence-intervals-by-hand" class="nav-link" data-scroll-target="#confidence-intervals-by-hand"><span class="header-section-number">5.3</span> Confidence Intervals by hand</a></li>
+  <li><a href="#one-sample-t-test-in-spss" id="toc-one-sample-t-test-in-spss" class="nav-link" data-scroll-target="#one-sample-t-test-in-spss"><span class="header-section-number">5.4</span> One-sample t-test in SPSS</a>
   <ul class="collapse">
-  <li><a href="#explainer-video" id="toc-explainer-video" class="nav-link" data-scroll-target="#explainer-video"><span class="header-section-number">5.5.1</span> Explainer video</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5.5.2</span> Conclusion</a></li>
+  <li><a href="#explainer-video" id="toc-explainer-video" class="nav-link" data-scroll-target="#explainer-video"><span class="header-section-number">5.4.1</span> Explainer video</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5.4.2</span> Conclusion</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t5.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
@@ -243,32 +254,24 @@ window.Quarto = {
 </header>
 
 
-<section id="r-outcomes" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="r-outcomes"><span class="header-section-number">5.1</span> R outcomes</h2>
-<p>After reading this chapter, you can:</p>
-<ol type="1">
-<li>Perform and interpret a one-sample t-test by hand and in R</li>
-<li>Calculate confidence intervals by hand and interpret them</li>
-</ol>
-</section>
-<section id="learning-goals" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">5.2</span> Learning goals</h2>
-<section id="conceptual" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="conceptual"><span class="header-section-number">5.2.1</span> Conceptual</h3>
+<section id="learning-goals" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">5.1</span> Learning goals</h2>
+<section id="conceptual" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="conceptual"><span class="header-section-number">5.1.1</span> Conceptual</h3>
 <ol type="1">
 <li>Perform a one-sample t-test by hand and interpret it</li>
 <li>Calculate confidence intervals by hand and interpret them</li>
 </ol>
 </section>
-<section id="spss" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="spss"><span class="header-section-number">5.2.2</span> SPSS</h3>
+<section id="spss" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="spss"><span class="header-section-number">5.1.2</span> SPSS</h3>
 <ol type="1">
 <li>Run a one-sample t-test</li>
 </ol>
 </section>
 </section>
-<section id="one-sample-t-test-by-hand" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="one-sample-t-test-by-hand"><span class="header-section-number">5.3</span> One-sample t-test by hand</h2>
+<section id="one-sample-t-test-by-hand" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="one-sample-t-test-by-hand"><span class="header-section-number">5.2</span> One-sample t-test by hand</h2>
 <p>The <strong>one-sample t-test</strong> is appropriate when we wish to compare an estimate (from a sample) of the population of interest’s mean value on some measure to a theoretical value. For example, we might have read some scholarly literature on alcohol consumption which suggests that Dutch students, on average, consume about 10 alcoholic drinks per week. This might lead us to pose the research question: <em>Is the average number of <strong>beers</strong> consumed per week by <strong>UvA students</strong> different from 10?</em></p>
 <p>As a <strong>null hypothesis</strong>, we can specify: <span class="math display">\[
 H_0: \mu_{beers} = 10
@@ -303,7 +306,7 @@ Note&nbsp;5.1: Nulls, alternatives, and directions
 <div id="tbl-beer" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-beer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
+<div class="cell-output-display" data-html-table-processing="none">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
@@ -428,8 +431,8 @@ Note&nbsp;5.3: Statistical significance
 </div>
 <p><br></p>
 </section>
-<section id="confidence-intervals-by-hand" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="confidence-intervals-by-hand"><span class="header-section-number">5.4</span> Confidence Intervals by hand</h2>
+<section id="confidence-intervals-by-hand" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="confidence-intervals-by-hand"><span class="header-section-number">5.3</span> Confidence Intervals by hand</h2>
 <p>For our next trick, let’s imagine we sampled 100 UvA students and asked them to estimate how many shots of tequila they drink per weekend. We note a sample mean (<span class="math inline">\(\bar{x}\)</span>) of 2.5, with a sample standard deviation (<span class="math inline">\(s\)</span>) of 1.5 and we want to use these to <strong>estimate</strong> <span class="math inline">\(\mu_{tequila}\)</span> in the UvA student population by building 95% <strong>confidence intervals</strong>, which will provide a range of plausible values.</p>
 <p><br></p>
 <div id="nte-conf" class="callout callout-style-default callout-note callout-titled">
@@ -465,8 +468,8 @@ ci_{95} = \bigg[2.5 - 1.98 \times .15,\ 2.5 + 1.98 \times .15 \bigg]
 <p>With 95% confidence we estimate that the mean number of shots of tequila consumed per weekend in the population of Amsterdam students lies between 2.20 and 2.80.</p>
 </blockquote>
 </section>
-<section id="one-sample-t-test-in-spss" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="one-sample-t-test-in-spss"><span class="header-section-number">5.5</span> One-sample t-test in SPSS</h2>
+<section id="one-sample-t-test-in-spss" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="one-sample-t-test-in-spss"><span class="header-section-number">5.4</span> One-sample t-test in SPSS</h2>
 <p>Let’s load in the ESS11 dataset and imagine we are interested working habits in Belgium and the Netherlands. Specifically, we are interested in whether people living in these countries normally work more than 37.5 hours per week on average, inclusive of overtime. This information is held in the variable <code>wkhtot</code>, which you can call to check.</p>
 <p>Before we go further, let’s formulate some hypotheses.</p>
 <ul>
@@ -474,12 +477,12 @@ ci_{95} = \bigg[2.5 - 1.98 \times .15,\ 2.5 + 1.98 \times .15 \bigg]
 <li><span class="math inline">\(H_1: \mu_{hrs} &gt; 37.5\)</span> (In the population of Belgian and Dutch, average weekly working hours are <strong>less than</strong> 37.5)</li>
 </ul>
 <p>Note that we now have a <strong>directional</strong> alternative hypothesis (see <a href="#nte-hypo" class="quarto-xref">Note&nbsp;<span>5.1</span></a>). In this case, it can be justifiable to use a one-tailed t-test, meaning we only consider half of the t-distribution when deriving our p-value.</p>
-<section id="explainer-video" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="explainer-video"><span class="header-section-number">5.5.1</span> Explainer video</h3>
+<section id="explainer-video" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="explainer-video"><span class="header-section-number">5.4.1</span> Explainer video</h3>
 <p>[ESS one-samp t]</p>
 </section>
-<section id="conclusion" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5.5.2</span> Conclusion</h3>
+<section id="conclusion" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5.4.2</span> Conclusion</h3>
 <blockquote class="blockquote">
 <p>In the population of Belgians and Dutch, the total hours worked per week (inclusive of overtime) is less than 37.5 (mean = 36.46, s = 16.64; t[3031] = -3.45, p &lt; .001).</p>
 </blockquote>
@@ -896,8 +899,8 @@ ci_{95} = \bigg[2.5 - 1.98 \times .15,\ 2.5 + 1.98 \times .15 \bigg]
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./a1.html" class="pagination-link" aria-label="APA reporting style for statistical tests">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">APA reporting style for statistical tests</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./t6.html" class="pagination-link" aria-label="The $\chi^2$ test of independence and the independent-samples t-test">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The <span class="math inline">\(\chi^2\)</span> test of independence and the independent-samples t-test</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

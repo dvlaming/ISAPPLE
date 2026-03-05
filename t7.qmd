@@ -1,0 +1,30 @@
+# The t-test for paired samples and Principal Components Analysis {#sec-ISACh5}
+
+## Learning goals
+
+### SPSS
+
+1. Perform and interpret paired-samples t-tests and Principal Components Analysis (PCA)
+
+## A note on the paired-samples t-test 
+
+The **paired-samples t-test** is of use in designs where we collect **two measurements of a dependent variable from a single sample of participants**. In other words, in contrast to **between-subjects designs**, every participant is subjected to every condition, and produces measurement data on the same dependent variable twice. Designs like this are known as **repeated-measures** designs, and could, for example, involve measuring patient score prior to and following the administration of a treatment, or testing participants' auditory recognition memory for human vs. chimpanzee vocalizations.
+
+Although the test may seem novel, it is not: it is simply a repackaged [one-sample t-test](t5.qmd#sec-ISACh5) performed on the difference scores obtained by subtracting each participant's score in one measurement condition from their score in the other condition! When selected in SPSS and other software, the programme takes care of the subtraction before running the test, but you could easily do this yourself using the `compute` function which we discussed [previously](t4.qmd#sec-ISACh4) prior to submitting the differences to a one-sample t-test test. The results you obtain will be identical to those obtained using the paired-samples t-test on the raw data. 
+
+In this course, to ensure that you understand the differences between the three 'flavours' of t-test, we ask you to formulate your hypotheses specifically with respect to the population mean difference between the conditions. For example, to develop a scenario which we previously conjured up, let's imagine that we are interested in seasonal flucuations in student alcohol consumption. We ask Dutch students to note their weekly alcohol consumption over an academic year, and we  compute averages for semester 1 and semester 2. If we expect a difference across the semesters, then we could formulate the following hypotheses:
+
+- $H_0: \mu D_{(sem 1 - sem2)} = 0$  
+    + '_In the population of Dutch students_, there is do difference in mean weekly alcohol consumption across the two semesters.'
+- $H_1: \mu D_{(sem 1 - sem2)} \neq 0$
+    + '_In the population of Dutch students_, there **is** a difference in mean weekly alcohol consumption across the two semesters.'^[Note that, while it is possible for formulate a [directional](t5.qmd#nte-hypo) $H_1$ for this test, a non-directional hypothesis will be sufficient for this course.]
+
+### Explainer video
+
+[paired-samp t - family TV, PCA - dating]
+
+
+### Conclusion
+
+> In the population of Belgians and Dutch, the total hours worked per week (inclusive of overtime) is less than 37.5 (mean = 36.46, s = 16.64; t[3031] = -3.45, p < .001). 
+

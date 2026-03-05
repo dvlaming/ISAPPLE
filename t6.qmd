@@ -1,0 +1,177 @@
+# The $\chi^2$ test of independence and the independent-samples t-test {#sec-ISACh6}
+
+### Conceptual 
+
+1. Calculate the $\chi^2$ statistic by hand and determine its significance
+
+### SPSS
+
+1. Run and interpret the $\chi^2$ test of independence and the independent-samples t-test
+
+
+## $\chi^2$ test of independence by hand
+
+This test is appropriate when we wish to examine the relationship between two variables which are measured either at the **nominal or ordinal**. For example, we might have a research question such as: _Is there a relationship between sex and having signed a petition in the last 12 months among the UvA student population?_ If we operationalize 'sex' as 'female/male' and 'petition signed in the last 12 months' as 'yes/no', then we have two nominal (binary) variables. As we will one more use [crosstabulations](t2.qmd#sec-ISACh2) to visualize the relationship between these two variables, we will nominate 'sex' as our [independent variable](t2.qmd#nte-ivdv), as, were there any causal relationship between these variables, it would surely originate with 'sex' and not the other way around. 
+
+Having defined our variables, we can specify hypotheses for our test:
+
+- $H_0$ = **_In the population of UvA students_**, there is no relationship between sex and having signed a petition in the last 12 months
+- $H_1$ = **_In the population of UvA Students_**, there **IS** a relationship between sex and having signed a petition in the last 12 months  
+
+
+Now, let's make a crosstabulation of the data:  
+
+<br>  
+
+```{r}
+#| label: tbl-genpet
+#| tbl-cap: "Rates of petition signing within sex"
+#| tbl-cap-location: bottom 
+
+`%>%`<-magrittr::`%>%`
+
+data<-tibble::tribble(
+  ~"Signed?",  ~Male, ~Female, ~Total,
+  "Yes", 7, 20, 27,
+  "No", 40, 25, 65,
+  "Total", 47, 45, 92
+  )
+
+dataFancy<-kableExtra::kbl(data) %>% 
+  kableExtra::kable_classic() %>%
+  kableExtra::add_header_above(c(" " = 1, "Sex" = 3)) 
+
+dataColPerc<-data %>%
+  dplyr::mutate(Male=(Male/47)*100, Female=(Female/45)*100, Total=(Total/92)*100)
+  
+
+dataColPercFancy<-kableExtra::kbl(dataColPerc, digits=2) %>% 
+  kableExtra::kable_classic() %>%
+  kableExtra::add_header_above(c(" " = 1, "Sex" = 3)) 
+
+dataFancy
+```
+
+<br>  
+
+As we do not have equal numbers of female and male participants, we can compute column percentages as previously:  
+
+<br>  
+
+```{r}
+#| label: tbl-genpet_perc
+#| tbl-cap: "Percentage rates of petition signing within sex"
+#| tbl-cap-location: bottom
+
+dataColPercFancy
+
+```
+
+<br>  
+
+With this descriptive tabulation, we can see that female students appear to have signed petitions more often in the last 12 months than male students. So, we have a suggestion that the two variables are related, but, in order to make inferences about the population, we need to compute the $\chi^2$ statistic from the counts. Put simply, this statistic tells us how much the observed frequencies in each cell deviate from the pattern expected under the null hypothesis (i.e., that there is no relationship between the variables.) If you look at the distribution of counts for 'Yes' and 'No' in the 'Total' column, you can see the expected pattern if the data were to be collapsed across 'Sex'. These totals allow us to calculate the **expected frequencies** of petition signing for both females and males, which we can compare to the **observed frequencies** as part of our calculation of the $\chi^2$ test statistic:  
+
+<br>  
+
+$$
+\chi^2 = \sum \frac{(f_o - f_e)^2}{f_e}
+$$ {#eq-chi}
+
+<br> 
+
+Where:
+
+- $f_o$ = **observed frequencies**
+- $f_e$ = **expected frequencies**
+    - Frequencies we expect to find in each cell if IV and DV are unrelated (i.e., under $H_0$)
+
+<br>   
+    
+```{r}
+#| label: tbl-genpet_totperc
+#| tbl-cap: "Rates of petition signing within sex"
+#| tbl-cap-location: bottom
+
+
+dataExp<-tibble::tribble(
+  ~"Signed?",  ~Male, ~Female, ~Total,
+  "Yes", 7, 20, "27 (29.35%)",
+  "No", 40, 25, "65 (70.65%)",
+  "Total", 47, 45, "92 (100%)" 
+  )
+
+dataExpFancy<-knitr::kable(dataExp, align = "r") %>% 
+  kableExtra::kable_classic() %>%
+  kableExtra::add_header_above(c(" " = 1, "Sex" = 3)) 
+
+dataExpFancy
+```
+
+<br>  
+
+Given our totals, we can calculate the expected frequencies as follows:  
+
+- female/yes: $f_e = \frac{29.35}{100} \times 45 = 13.21$
+- female/no: $f_e = \frac{70.65}{100} \times 45 = 31.79$
+- male/yes: $f_e = \frac{29.35}{100} \times 47 = 13.79$
+- male/no: $f_e = \frac{70.65}{100} \times 47 = 33.21$
+
+Recalling the [equation](#eq-chi), we can calculate the statistic step-by-step:  
+
+<br>  
+
+
+```{r}
+#| label: tbl-chisteps
+#| tbl-cap: "Steps for computing $\\chi^2$"
+#| tbl-cap-location: bottom
+#| tbl-colwidths: [25,25,25,25]
+
+dataFreq<-tibble::tibble(f_O=c(7,20,40,25),f_E=c(13.79,13.21,33.21,31.79))
+dataFreq<-dataFreq %>%
+  dplyr::mutate(fDevSq=(f_O-f_E)^2,fDevSqOverfE=((f_O-f_E)^2)/f_E)
+
+ChiSquare<-sum(dataFreq$fDevSqOverfE)
+
+dataFreq %>%
+  knitr::kable(align="c",col.names=c("$f_o$","$f_e$","$(f_o - f_e)^2$",
+                                     "$(f_o - f_e)^2/f_e$"),digits=2)
+```
+
+<br>  
+
+Summing the squared differences between the observed and expected frequencies in the rightmost column gives us a $\chi^2$ score of `{r} round(ChiSquare,2)`. In order to determine the significance of the statistic, we need to consult the statistical table A4 on page xx of the Argyrous book. The degrees of freedom value for the test is calculated by subtracting 1 from the number of rows and columns, and multiplying the result. As we have two rows and two columns, this test has 1 degree of freedom, and we can therefore find the relevant critical $\chi^2$ statistics in the first row of the table. We begin by comparing our value to the critical value associated with the .05 level, which our observed value exceeds. We repeat this process with the thresholds in the table until we find a critical value greater than our observed value, in this case the value associated with the .001 significance level. The significance level we report, then, is the value to the left of this (i.e., the lowest significance value whose critical value is exceeded by our observed value). The figure below shows a $\chi^2$ distribution with 1 degree of freedom, with notations at the critical values for the significance levels referenced in the textbook, and at the observed statistic.    
+
+```{r}
+#| label: fig-chidist
+#| fig-cap: "$\\chi^2$ critical values for selected significance levels vs. observed statistic"
+
+ggplot2::ggplot(data.frame(x = seq(0, 15, by = 0.01)), ggplot2::aes(x = x)) + 
+  ggplot2::stat_function(fun = dchisq, args = list(df = 1),fill="grey", geom = "density")+
+  ggplot2::theme_bw()+
+  ggplot2::geom_segment(x=3.84,y=0,xend=3.84,yend=1,linetype="dashed",color="darkgreen")+
+  ggplot2::geom_segment(x=6.64,y=0,xend=6.64,yend=1,linetype="dashed",color="darkgreen")+
+  ggplot2::geom_segment(x=10.83,y=0,xend=10.83,yend=1,linetype="dashed",color="red")+
+  ggplot2::geom_segment(x=9.67,y=0,xend=9.67,yend=1,linetype="dashed",color="blue")+
+  ggplot2::annotate("text", x = 8.25, y = 0.8, colour="blue", label = "Observed value")+
+  ggplot2::annotate("text", x = 4.45, y = 0.4, colour="darkgreen", label = "p = .05")+
+  ggplot2::annotate("text", x = 7.25, y = 0.4, colour="darkgreen", label = "p = .01")+
+  ggplot2::annotate("text", x = 11.6, y = 0.4, colour="red", label = "p = .001")+
+  ggplot2::xlab(expression(paste(chi^2, " for df = 1")))+
+  ggplot2::ylab("Density") +
+  ggplot2::scale_x_continuous(expand = c(0, 0)) +
+  ggplot2::scale_y_continuous(expand = c(0, 0))
+```
+
+
+### Reporting results
+
+- A Chi-Square test of independence showed a significant relationship between gender and having signed a petition in the last month, $\chi^2$(1, _N_=92) = 9.67, p< 0.01.  
+    + (We reject $H_0$ with p < 0.01).  
+- **Plainly:** _in the population_, there appears to be a relationship between gender and whether or not people have signed a petition in last 12 months: women are more likely to have signed a petition.
+
+
+
+## SPSS explainer video
+
+[ESS chi, indsamples t]

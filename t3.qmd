@@ -28,7 +28,7 @@ Where:
 * $\sum_{i=1}^{n}$ = sum scores from index (element) 1 to $n$   
 * $n$ = sample size
 
-Let's now imagine that we develop the following Research Question:_Does the average daily time (in minutes) spent using R correlate with the average number of obscenities used per day?_ We collect some data, which looks like this:
+Let's now imagine that we develop the following Research Question:_Does the average daily time (in minutes) spent using SPSS correlate with the average number of obscenities used per day?_ We collect some data, which looks like this:
 
 ```{r}
 #| label: tbl-corrdat
@@ -37,7 +37,7 @@ Let's now imagine that we develop the following Research Question:_Does the aver
 
 `%>%`<-magrittr::`%>%`  
 
-data<-tibble::tibble("Average R minutes"=c(240,310,230,220),"Average # obscenities"=c(3,6,4,3)) %>%
+data<-tibble::tibble("Average SPSS minutes"=c(240,310,230,220),"Average # obscenities"=c(3,6,4,3)) %>%
   knitr::kable(align="c")
 data
 ```
