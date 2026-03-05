@@ -21,13 +21,26 @@ In an SPSS spreadsheet, rows correspond to observations on the *unit of analysis
 
 Let's create a dataset of student names and ages:
 
+<br>  
+
 ```{r}
 #| label: gospels
 
+`%>%`<-magrittr::`%>%`
+
 students<-data.frame(names = c("Matthew","Mark","Luke","John"), age = c(18,19,18,20))
-students
+
+students %>% 
+  kableExtra::kbl(align = "l") %>% 
+  kableExtra::kable_classic() %>% 
+  kableExtra::kable_styling(full_width = FALSE)
+
+
 
 ```
+
+<br>  
+
 
 ## Measures of central tendency
 
@@ -87,6 +100,8 @@ The mode can be calculated for all measurement levels about which you have learn
 ## SPSS explainer video
 
 [entering data; frequencies, central tendency, selecting cases with ESS11]
+
+<br>
 
 ::: {#nte-logoper .callout-note}
 ### Use of logical operators when selecting cases

@@ -1,0 +1,105 @@
+# Factorial ANOVA (between subjects) {#sec-ISACh9}
+
+## Learning goals
+
+### SPSS
+
+1. Perform and interpret output from factorial ANOVA
+
+
+## Main effects and interactions in factorial ANOVA
+
+```{r}
+
+library(ggplot2)
+
+## good plotting stuff
+# https://www.sthda.com/english/wiki/wiki.php?id_contents=7930
+# https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
+# https://www.datanovia.com/en/blog/ggplot-title-subtitle-and-caption/
+#   https://www.tidyverse.org/blog/2024/02/ggplot2-3-5-0-legends/
+#   https://www.sthda.com/english/wiki/ggplot2-legend-easy-steps-to-change-the-position-and-the-appearance-of-a-graph-legend-in-r-software
+# https://www.sthda.com/english/wiki/ggplot2-axis-ticks-a-guide-to-customize-tick-marks-and-labels
+# https://www.sthda.com/english/wiki/ggplot2-line-plot-quick-start-guide-r-software-and-data-visualization
+
+data_ME1<-tibble::tibble(Student=rep(c("Fine Art", "Politics"),each=2), 
+                         Drink=rep(c("Beer", "Wine"),times=2), 
+                         Score=c(11, 21, 9, 19))
+
+data_ME2<-tibble::tibble(Student=rep(c("Fine Art", "Politics"),each=2), 
+                         Drink=rep(c("Beer", "Wine"),times=2), 
+                         Score=c(25, 25, 15, 15))
+
+data_CrossInt<-tibble::tibble(Student=rep(c("Fine Art", "Politics"),each=2), 
+                         Drink=rep(c("Beer", "Wine"),times=2), 
+                         Score=c(15, 25, 25, 15))
+
+data_ME_Int<-tibble::tibble(Student=rep(c("Fine Art", "Politics"),each=2), 
+                         Drink=rep(c("Beer", "Wine"),times=2), 
+                         Score=c(15, 25, 5, 5))
+
+
+p1<-ggplot(data_ME1, aes(x=Drink, y=Score, group=Student)) +
+  theme_bw()+
+  geom_line(aes(color=Student))+
+  geom_point(aes(color=Student))+
+  scale_color_manual(values=c("Blue","Black"))+
+  scale_y_continuous(limits=c(0, 30),breaks=seq(0,30,5))+
+  # theme(legend.position = c(.935, .9))+
+  # theme(legend.position="top")+
+  theme(axis.title.x = element_blank())+
+  ylab("Lang. score")+
+  labs(subtitle = "Main effect: drink\n ")
+  # theme(plot.caption = element_text(hjust=0))
+
+p2<-ggplot(data_ME2, aes(x=Drink, y=Score, group=Student)) +
+  theme_bw()+
+  geom_line(aes(color=Student))+
+  geom_point(aes(color=Student))+
+  scale_color_manual(values=c("Blue","Black"))+
+  scale_y_continuous(limits=c(0, 30),breaks=seq(0,30,5))+
+  # theme(legend.position = c(.935, .9))+
+  # theme(legend.position="none")+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank())+
+  labs(subtitle = "Main effect: major\n ")
+  # theme(plot.caption = element_text(hjust=0))
+
+p3<-ggplot(data_CrossInt, aes(x=Drink, y=Score, group=Student)) +
+  theme_bw()+
+  geom_line(aes(color=Student))+
+  geom_point(aes(color=Student))+
+  scale_color_manual(values=c("Blue","Black"))+
+  scale_y_continuous(limits=c(0, 30),breaks=seq(0,30,5))+
+  # theme(legend.position = c(.935, .9))+
+  # theme(legend.position="none")+
+  ylab("Lang. score")+
+  labs(subtitle = "'Crossover' interaction effect\n(no main effects)")
+  # theme(plot.caption = element_text(hjust=0))
+
+p4<-ggplot(data_ME_Int, aes(x=Drink, y=Score, group=Student)) +
+  theme_bw()+
+  geom_line(aes(color=Student))+
+  geom_point(aes(color=Student))+
+  scale_color_manual(values=c("Blue","Black"))+
+  scale_y_continuous(limits=c(0, 30),breaks=seq(0,30,5))+
+  # theme(legend.position="none")+
+  theme(axis.title.y = element_blank())+
+  labs(subtitle = "Interaction (drink effect only for 'Fine Art')\n ")
+  # theme(plot.caption = element_text(hjust=0))
+
+
+ggpubr::ggarrange(p1, p2, p3, p4, ncol=2, nrow=2, common.legend = TRUE, legend="bottom")
+
+# gridExtra::grid.arrange(p1, p2, p3, p4, ncol=2, nrow =2)
+
+
+
+```
+
+### Explainer video
+
+[ANOVA, drugtrial]
+
+ 
+

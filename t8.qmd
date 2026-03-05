@@ -1,0 +1,15 @@
+# One-way ANOVA (between subjects) {#sec-ISACh8}
+
+## Learning goals
+
+### SPSS
+
+1. Perform and interpret one-way ANOVA
+
+
+### Explainer video
+
+[ANOVA, drugtrial]
+
+### Conclusion
+

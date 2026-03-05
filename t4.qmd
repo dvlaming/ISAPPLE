@@ -44,10 +44,12 @@ p
 
 We can see the area of interest in the distribution above, in @fig-normdist_twee. To calculate the proportion, we first need to convert the target value into a **z-score**, which transforms the value into standard deviation units. In this case:
 
+<br>  
+
 $$
 z = \frac{x-\mu}{\sigma} = \frac{1350-1500}{100} = -1.5
 $$
-
+<br>  
 
 ```{r}
 target_income<-1350
@@ -68,14 +70,21 @@ Imagine (as before) that we know that income per week (in euro) is normally dist
 
 The mean of the sampling distribution = $\mu = 1,500$ and the standard deviation of sampling distribution is known as the **Standard Error (_SE_)**. While the sampling distribution is purely theoretical (because we usually cannot collect all possible permutations of elements from our population), we can estimate the standard error of the sampling distribution of means with the formula:
 
+<br>  
+
 $$
 \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
 $$
+<br>  
+
 Plugging in the values from our current example gives:
+
+<br>  
 
 $$
 \sigma_{\bar{x}} = \frac{100}{\sqrt{1000}} = 3.16
 $$
+<br>  
 
 We can now ask the question: _what is the probability of drawing a sample (_n_ = 1,000) from this population with a mean of less than 1,489 EUR?_
 
@@ -116,7 +125,9 @@ p <- ggplot2::ggplot(xx, ggplot2::aes(x=Income,y=pdf)) +
 p
 ```
 
-We can follow exactly the same steps as we did when working above with (fictional) population values: 
+We can follow exactly the same steps as we did when working above with (fictional) population values:
+
+<br>  
 
 $$
 z = \frac{x-\mu}{\frac{\sigma}{\sqrt{n}}} = \frac{1489-1500}{3.16} = -3.48
@@ -132,6 +143,7 @@ prop2<-pnorm(target_income ,mean = mean_income, sd = se_income, lower.tail = TRU
 
 ```
 
+<br>  
 
 Our answer, then, is: _there is a `{r} round(prop2*100,2)`% chance of randomly drawing a sample (n = 1,000) with a mean income of less than 1,489 EUR from this population (with $\mu = 1,500$ & $\sigma = 100$)_
 

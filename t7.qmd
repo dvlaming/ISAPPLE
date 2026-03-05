@@ -1,4 +1,4 @@
-# The t-test for paired samples and Principal Components Analysis {#sec-ISACh5}
+# The t-test for paired samples and Principal Components Analysis {#sec-ISACh7}
 
 ## Learning goals
 

@@ -15,16 +15,22 @@
 
 The **one-sample t-test** is appropriate when we wish to compare an estimate (from a sample) of the population of interest's mean value on some measure to a theoretical value. For example, we might have read some scholarly literature on alcohol consumption which suggests that Dutch students, on average, consume about 10 alcoholic drinks per week. This might lead us to pose the research question: _Is the average number of **beers** consumed per week by **UvA students** different from 10?_
 
-As a **null hypothesis**, we can specify: 
+As a **null hypothesis**, we can specify:
+
+<br>  
 $$
 H_0: \mu_{beers} = 10
 $$
+<br>  
 
 and, as an **alternative hypothesis**:
+
+<br>  
 
 $$
 H_1: \mu_{beers} \neq 10
 $$
+<br>  
 
 Or, in plain English:
 
@@ -44,24 +50,36 @@ On the other hand, the alternative hypothesis ($H_1$) can be specified as **dire
 
 Now, let's imagine we gather the following data from four UvA students:
 
+<br>  
+
 ```{r}
 #| echo: FALSE
 #| html-table-processing: none
 #| label: tbl-beer
 #| tbl-cap: "Beers consumed per week for four UvA students"
 #| tbl-cap-location: bottom 
+#| tbl-colwidths: FALSE 
 `%>%`<-magrittr::`%>%`
 
 data<-tibble::tibble("BeersPerWeek"=c(5,10,12,5)) 
 data %>%
-  knitr::kable(align="c",col.names=c("Beers per week"))
+  kableExtra::kbl(align="c",col.names=c("Beers per week")) %>%
+  kableExtra::kable_classic() %>% 
+  kableExtra::kable_styling(full_width=FALSE)
+
 ```
 
+<br>  
+
 We estimate $\mu$ with the sample mean ($\bar{X}$), which is 8. The test-statistic for the t-test is then given by:
+
+<br>  
 
 $$
 t = \frac{\bar{X}-\mu}{\frac{s}{\sqrt{n}}}
 $$
+<br>  
+
 Where:
 
 * $\bar{X}-\mu$ = the difference between the sample mean and the value for $\mu$ presented in the null hypothesis
@@ -70,20 +88,28 @@ Where:
 
 To calculate $se$, we first need $s$, the sample standard deviation:
 
+<br>  
+
 ```{r}
 #| echo: FALSE
 #| label: tbl-tsteps
-#| tbl-cap: "t-test steps"
-#| tbl-cap-location: bottom 
+#| tbl-cap: "Standard deviation calculation"
+#| tbl-cap-location: bottom
 
 data<-tibble::tibble("BeersPerWeek"=c(5,10,12,5))
 data$x_minus_xbar<-data$BeersPerWeek-mean(data$BeersPerWeek)
 data$xdev_square<-data$x_minus_xbar^2
 
 data %>%
-  knitr::kable(align="c",col.names=c("$x_{beers}$","$x-\\bar{x}$","$(x-\\bar{x})^2$"))
+  kableExtra::kbl(align="c",col.names=c("$$x_{beers}$$","$$x-\\bar{x}$$","$$(x-\\bar{x})^2$$")) %>% 
+  kableExtra::kable_classic() %>% 
+  kableExtra::column_spec(column=1, width="5cm", background="white") %>% 
+  kableExtra::column_spec(column=2, width="5cm", background="lightblue") %>%
+  kableExtra::column_spec(column=3, width="5cm", background="navajowhite")
 
 ```
+
+<br>  
 
 1. $\sum_{i=1}^{n}(X_i-\bar{X})^2 = 38$  
 
@@ -140,25 +166,38 @@ The **confidence level** relates to the long-term coverage of the confidence int
 
 To construct the interval, we first need to calculate $se$:
 
+<br>  
+
 $$
 se = \frac{1.5}{\sqrt{100}} = .15 
 $$
+<br>  
 
 Next, to create the bounds of our 95% interval, we need to find the critical t-value which marks the top and bottom 2.5% of a t-distribution with $df = 1 - n = 99$ degrees of freedom. Once more, we can find these from Argyrous, p. 543. 
 
 Now, we build the upper and lower bounds according to the following:
 
+<br>  
+
 $$
 ci_{95} = \bigg[\bar{x} - t_{crit} \times \frac{s}{\sqrt{n}}, \ \bar{x} + t_{crit} \times \frac{s}{\sqrt{n}} \bigg]
 $$
+
+<br>  
+
 Plugging in the values gives us:
+
+<br>  
 
 $$
 ci_{95} = \bigg[2.5 - 1.98 \times .15,\ 2.5 + 1.98 \times .15 \bigg]  
 $$
+<br>  
+
 $$
 = \bigg[2.20 <  \ 2.5 \ < 2.80\bigg]
 $$
+<br>  
 
 Given what we learned about confidence intervals [above](#nte-conf), we can conclude with something like:
 

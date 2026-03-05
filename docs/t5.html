@@ -70,6 +70,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -273,13 +277,16 @@ window.Quarto = {
 <section id="one-sample-t-test-by-hand" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="one-sample-t-test-by-hand"><span class="header-section-number">5.2</span> One-sample t-test by hand</h2>
 <p>The <strong>one-sample t-test</strong> is appropriate when we wish to compare an estimate (from a sample) of the population of interest’s mean value on some measure to a theoretical value. For example, we might have read some scholarly literature on alcohol consumption which suggests that Dutch students, on average, consume about 10 alcoholic drinks per week. This might lead us to pose the research question: <em>Is the average number of <strong>beers</strong> consumed per week by <strong>UvA students</strong> different from 10?</em></p>
-<p>As a <strong>null hypothesis</strong>, we can specify: <span class="math display">\[
+<p>As a <strong>null hypothesis</strong>, we can specify:</p>
+<p><br><br>
+<span class="math display">\[
 H_0: \mu_{beers} = 10
-\]</span></p>
+\]</span> <br></p>
 <p>and, as an <strong>alternative hypothesis</strong>:</p>
+<p><br></p>
 <p><span class="math display">\[
 H_1: \mu_{beers} \neq 10
-\]</span></p>
+\]</span> <br></p>
 <p>Or, in plain English:</p>
 <ul>
 <li><span class="math inline">\(H_0\)</span> = <em>In the population of Amsterdam students</em>, the average number of beers consumed per week is 10</li>
@@ -302,32 +309,34 @@ Note&nbsp;5.1: Nulls, alternatives, and directions
 </div>
 <p><br></p>
 <p>Now, let’s imagine we gather the following data from four UvA students:</p>
-<div class="cell" data-tbl-cap-location="bottom">
-<div id="tbl-beer" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
+<p><br></p>
+<div class="cell" data-tbl-colwidths="false" data-tbl-cap-location="bottom">
+<div id="tbl-beer" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom" data-tbl-colwidths="false">
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-beer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display" data-html-table-processing="none">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Beers per week</th>
-</tr>
-</thead>
+<table class=" lightable-classic table" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Beers per week </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">12</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">5</td>
-</tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-beer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -336,59 +345,65 @@ Table&nbsp;5.1: Beers consumed per week for four UvA students
 </figure>
 </div>
 </div>
+<p><br></p>
 <p>We estimate <span class="math inline">\(\mu\)</span> with the sample mean (<span class="math inline">\(\bar{X}\)</span>), which is 8. The test-statistic for the t-test is then given by:</p>
+<p><br></p>
 <p><span class="math display">\[
 t = \frac{\bar{X}-\mu}{\frac{s}{\sqrt{n}}}
-\]</span> Where:</p>
+\]</span> <br></p>
+<p>Where:</p>
 <ul>
 <li><span class="math inline">\(\bar{X}-\mu\)</span> = the difference between the sample mean and the value for <span class="math inline">\(\mu\)</span> presented in the null hypothesis</li>
 <li><span class="math inline">\(\frac{s}{\sqrt{n}}\)</span> = the <a href="./t4.html#sec-se">standard error (SE)</a></li>
 </ul>
 <p>To calculate <span class="math inline">\(se\)</span>, we first need <span class="math inline">\(s\)</span>, the sample standard deviation:</p>
+<p><br></p>
 <div class="cell" data-tbl-cap-location="bottom">
 <div id="tbl-tsteps" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-tsteps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: center;"><span class="math inline">\(x_{beers}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(x-\bar{x}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\((x-\bar{x})^2\)</span></th>
-</tr>
-</thead>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:center;"> $$x_{beers}$$ </th>
+   <th style="text-align:center;"> $$x-\bar{x}$$ </th>
+   <th style="text-align:center;"> $$(x-\bar{x})^2$$ </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">-3</td>
-<td style="text-align: center;">9</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">16</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">-3</td>
-<td style="text-align: center;">9</td>
-</tr>
+  <tr>
+   <td style="text-align:center;width: 5cm; background-color: white !important;"> 5 </td>
+   <td style="text-align:center;width: 5cm; background-color: lightblue !important;"> -3 </td>
+   <td style="text-align:center;width: 5cm; background-color: navajowhite !important;"> 9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;width: 5cm; background-color: white !important;"> 10 </td>
+   <td style="text-align:center;width: 5cm; background-color: lightblue !important;"> 2 </td>
+   <td style="text-align:center;width: 5cm; background-color: navajowhite !important;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;width: 5cm; background-color: white !important;"> 12 </td>
+   <td style="text-align:center;width: 5cm; background-color: lightblue !important;"> 4 </td>
+   <td style="text-align:center;width: 5cm; background-color: navajowhite !important;"> 16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;width: 5cm; background-color: white !important;"> 5 </td>
+   <td style="text-align:center;width: 5cm; background-color: lightblue !important;"> -3 </td>
+   <td style="text-align:center;width: 5cm; background-color: navajowhite !important;"> 9 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-tsteps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.2: t-test steps
+Table&nbsp;5.2: Standard deviation calculation
 </figcaption>
 </figure>
 </div>
 </div>
+<p><br></p>
 <ol type="1">
 <li><p><span class="math inline">\(\sum_{i=1}^{n}(X_i-\bar{X})^2 = 38\)</span></p></li>
 <li><p><span class="math inline">\(s = \sqrt{\frac{38}{3}} = 3.56\)</span></p></li>
@@ -450,19 +465,25 @@ Note&nbsp;5.4: Confidence
 </div>
 <p><br></p>
 <p>To construct the interval, we first need to calculate <span class="math inline">\(se\)</span>:</p>
+<p><br></p>
 <p><span class="math display">\[
 se = \frac{1.5}{\sqrt{100}} = .15
-\]</span></p>
+\]</span> <br></p>
 <p>Next, to create the bounds of our 95% interval, we need to find the critical t-value which marks the top and bottom 2.5% of a t-distribution with <span class="math inline">\(df = 1 - n = 99\)</span> degrees of freedom. Once more, we can find these from Argyrous, p.&nbsp;543.</p>
 <p>Now, we build the upper and lower bounds according to the following:</p>
+<p><br></p>
 <p><span class="math display">\[
 ci_{95} = \bigg[\bar{x} - t_{crit} \times \frac{s}{\sqrt{n}}, \ \bar{x} + t_{crit} \times \frac{s}{\sqrt{n}} \bigg]
-\]</span> Plugging in the values gives us:</p>
+\]</span></p>
+<p><br></p>
+<p>Plugging in the values gives us:</p>
+<p><br></p>
 <p><span class="math display">\[
 ci_{95} = \bigg[2.5 - 1.98 \times .15,\ 2.5 + 1.98 \times .15 \bigg]  
-\]</span> <span class="math display">\[
+\]</span> <br></p>
+<p><span class="math display">\[
 = \bigg[2.20 &lt;  \ 2.5 \ &lt; 2.80\bigg]
-\]</span></p>
+\]</span> <br></p>
 <p>Given what we learned about confidence intervals <a href="#nte-conf">above</a>, we can conclude with something like:</p>
 <blockquote class="blockquote">
 <p>With 95% confidence we estimate that the mean number of shots of tequila consumed per weekend in the population of Amsterdam students lies between 2.20 and 2.80.</p>

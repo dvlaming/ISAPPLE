@@ -221,13 +221,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#conceptual" id="toc-conceptual" class="nav-link active" data-scroll-target="#conceptual"><span class="header-section-number">6.0.1</span> Conceptual</a></li>
-  <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">6.0.2</span> SPSS</a></li>
-  <li><a href="#chi2-test-of-independence-by-hand" id="toc-chi2-test-of-independence-by-hand" class="nav-link" data-scroll-target="#chi2-test-of-independence-by-hand"><span class="header-section-number">6.1</span> <span class="math inline">\(\chi^2\)</span> test of independence by hand</a>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">6.1</span> Learning goals</a>
   <ul class="collapse">
-  <li><a href="#reporting-results" id="toc-reporting-results" class="nav-link" data-scroll-target="#reporting-results"><span class="header-section-number">6.1.1</span> Reporting results</a></li>
+  <li><a href="#conceptual" id="toc-conceptual" class="nav-link" data-scroll-target="#conceptual"><span class="header-section-number">6.1.1</span> Conceptual</a></li>
+  <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">6.1.2</span> SPSS</a></li>
   </ul></li>
-  <li><a href="#spss-explainer-video" id="toc-spss-explainer-video" class="nav-link" data-scroll-target="#spss-explainer-video"><span class="header-section-number">6.2</span> SPSS explainer video</a></li>
+  <li><a href="#chi2-test-of-independence-by-hand" id="toc-chi2-test-of-independence-by-hand" class="nav-link" data-scroll-target="#chi2-test-of-independence-by-hand"><span class="header-section-number">6.2</span> <span class="math inline">\(\chi^2\)</span> test of independence by hand</a>
+  <ul class="collapse">
+  <li><a href="#reporting-results" id="toc-reporting-results" class="nav-link" data-scroll-target="#reporting-results"><span class="header-section-number">6.2.1</span> Reporting results</a></li>
+  </ul></li>
+  <li><a href="#spss-explainer-video" id="toc-spss-explainer-video" class="nav-link" data-scroll-target="#spss-explainer-video"><span class="header-section-number">6.3</span> SPSS explainer video</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t6.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -253,20 +256,23 @@ window.Quarto = {
 </header>
 
 
-<section id="conceptual" class="level3" data-number="6.0.1">
-<h3 data-number="6.0.1" class="anchored" data-anchor-id="conceptual"><span class="header-section-number">6.0.1</span> Conceptual</h3>
+<section id="learning-goals" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">6.1</span> Learning goals</h2>
+<section id="conceptual" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="conceptual"><span class="header-section-number">6.1.1</span> Conceptual</h3>
 <ol type="1">
 <li>Calculate the <span class="math inline">\(\chi^2\)</span> statistic by hand and determine its significance</li>
 </ol>
 </section>
-<section id="spss" class="level3" data-number="6.0.2">
-<h3 data-number="6.0.2" class="anchored" data-anchor-id="spss"><span class="header-section-number">6.0.2</span> SPSS</h3>
+<section id="spss" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="spss"><span class="header-section-number">6.1.2</span> SPSS</h3>
 <ol type="1">
 <li>Run and interpret the <span class="math inline">\(\chi^2\)</span> test of independence and the independent-samples t-test</li>
 </ol>
 </section>
-<section id="chi2-test-of-independence-by-hand" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="chi2-test-of-independence-by-hand"><span class="header-section-number">6.1</span> <span class="math inline">\(\chi^2\)</span> test of independence by hand</h2>
+</section>
+<section id="chi2-test-of-independence-by-hand" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="chi2-test-of-independence-by-hand"><span class="header-section-number">6.2</span> <span class="math inline">\(\chi^2\)</span> test of independence by hand</h2>
 <p>This test is appropriate when we wish to examine the relationship between two variables which are measured either at the <strong>nominal or ordinal</strong>. For example, we might have a research question such as: <em>Is there a relationship between sex and having signed a petition in the last 12 months among the UvA student population?</em> If we operationalize ‘sex’ as ‘female/male’ and ‘petition signed in the last 12 months’ as ‘yes/no’, then we have two nominal (binary) variables. As we will one more use <a href="./t2.html#sec-ISACh2">crosstabulations</a> to visualize the relationship between these two variables, we will nominate ‘sex’ as our <a href="./t2.html#nte-ivdv">independent variable</a>, as, were there any causal relationship between these variables, it would surely originate with ‘sex’ and not the other way around.</p>
 <p>Having defined our variables, we can specify hypotheses for our test:</p>
 <ul>
@@ -402,7 +408,7 @@ Table&nbsp;6.2: Percentage rates of petition signing within sex
 <th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Sex</div></th>
 </tr>
   <tr>
-   <th style="text-align:right;"> Signed? </th>
+   <th style="text-align:left;"> Signed? </th>
    <th style="text-align:right;"> Male </th>
    <th style="text-align:right;"> Female </th>
    <th style="text-align:right;"> Total </th>
@@ -410,19 +416,19 @@ Table&nbsp;6.2: Percentage rates of petition signing within sex
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> Yes </td>
+   <td style="text-align:left;"> Yes </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 20 </td>
    <td style="text-align:right;"> 27 (29.35%) </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> No </td>
+   <td style="text-align:left;"> No </td>
    <td style="text-align:right;"> 40 </td>
    <td style="text-align:right;"> 25 </td>
    <td style="text-align:right;"> 65 (70.65%) </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> Total </td>
+   <td style="text-align:left;"> Total </td>
    <td style="text-align:right;"> 47 </td>
    <td style="text-align:right;"> 45 </td>
    <td style="text-align:right;"> 92 (100%) </td>
@@ -448,53 +454,48 @@ Table&nbsp;6.3: Rates of petition signing within sex
 </ul>
 <p>Recalling the <a href="#eq-chi">equation</a>, we can calculate the statistic step-by-step:</p>
 <p><br></p>
-<div class="cell" data-tbl-colwidths="[25,25,25,25]" data-tbl-cap-location="bottom">
-<div id="tbl-chisteps" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[25,25,25,25]" data-tbl-cap-location="bottom">
+<div class="cell" data-tbl-cap-location="bottom">
+<div id="tbl-chisteps" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-chisteps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="cell caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><span class="math inline">\(f_o\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(f_e\)</span></th>
-<th style="text-align: center;"><span class="math inline">\((f_o - f_e)^2\)</span></th>
-<th style="text-align: center;"><span class="math inline">\((f_o - f_e)^2/f_e\)</span></th>
-</tr>
-</thead>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:center;"> $$f_o$$ </th>
+   <th style="text-align:center;"> $$f_e$$ </th>
+   <th style="text-align:center;"> $$(f_o - f_e)^2$$ </th>
+   <th style="text-align:center;"> $$(f_o - f_e)^2/f_e$$ </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">13.79</td>
-<td style="text-align: center;">46.1</td>
-<td style="text-align: center;">3.34</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">13.21</td>
-<td style="text-align: center;">46.1</td>
-<td style="text-align: center;">3.49</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">40</td>
-<td style="text-align: center;">33.21</td>
-<td style="text-align: center;">46.1</td>
-<td style="text-align: center;">1.39</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">31.79</td>
-<td style="text-align: center;">46.1</td>
-<td style="text-align: center;">1.45</td>
-</tr>
+  <tr>
+   <td style="text-align:center;width: 4cm; background-color: white !important;"> 7 </td>
+   <td style="text-align:center;width: 4cm; background-color: lightblue !important;"> 13.79 </td>
+   <td style="text-align:center;width: 4cm; background-color: navajowhite !important;"> 46.1 </td>
+   <td style="text-align:center;width: 4cm; background-color: lightsalmon !important;"> 3.34 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;width: 4cm; background-color: white !important;"> 20 </td>
+   <td style="text-align:center;width: 4cm; background-color: lightblue !important;"> 13.21 </td>
+   <td style="text-align:center;width: 4cm; background-color: navajowhite !important;"> 46.1 </td>
+   <td style="text-align:center;width: 4cm; background-color: lightsalmon !important;"> 3.49 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;width: 4cm; background-color: white !important;"> 40 </td>
+   <td style="text-align:center;width: 4cm; background-color: lightblue !important;"> 33.21 </td>
+   <td style="text-align:center;width: 4cm; background-color: navajowhite !important;"> 46.1 </td>
+   <td style="text-align:center;width: 4cm; background-color: lightsalmon !important;"> 1.39 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;width: 4cm; background-color: white !important;"> 25 </td>
+   <td style="text-align:center;width: 4cm; background-color: lightblue !important;"> 31.79 </td>
+   <td style="text-align:center;width: 4cm; background-color: navajowhite !important;"> 46.1 </td>
+   <td style="text-align:center;width: 4cm; background-color: lightsalmon !important;"> 1.45 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-chisteps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -519,8 +520,8 @@ Figure&nbsp;6.1: <span class="math inline">\(\chi^2\)</span> critical values for
 </div>
 </div>
 </div>
-<section id="reporting-results" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="reporting-results"><span class="header-section-number">6.1.1</span> Reporting results</h3>
+<section id="reporting-results" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="reporting-results"><span class="header-section-number">6.2.1</span> Reporting results</h3>
 <ul>
 <li>A Chi-Square test of independence showed a significant relationship between gender and having signed a petition in the last month, <span class="math inline">\(\chi^2\)</span>(1, <em>N</em>=92) = 9.67, p&lt; 0.01.
 <ul>
@@ -531,8 +532,8 @@ Figure&nbsp;6.1: <span class="math inline">\(\chi^2\)</span> critical values for
 </ul>
 </section>
 </section>
-<section id="spss-explainer-video" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="spss-explainer-video"><span class="header-section-number">6.2</span> SPSS explainer video</h2>
+<section id="spss-explainer-video" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="spss-explainer-video"><span class="header-section-number">6.3</span> SPSS explainer video</h2>
 <p>[ESS chi, indsamples t]</p>
 
 

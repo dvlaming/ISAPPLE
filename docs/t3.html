@@ -70,6 +70,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -270,9 +274,10 @@ window.Quarto = {
 <section id="pearsons-r-correlation-coefficient" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="pearsons-r-correlation-coefficient"><span class="header-section-number">3.2</span> Pearson’s <span class="math inline">\(r\)</span> correlation coefficient</h2>
 <p>Pearson’s <span class="math inline">\(r\)</span> is given by:</p>
+<p><br></p>
 <p><span class="math display">\[
 r_{xy} = \frac{\sum_{i=1}^{n}{(x_i - \bar{x})(y_i - \bar{y})}}{{\sqrt{\sum_{i=1}^{n}{(x_i - \bar{x})^2}}}{\sqrt{\sum_{i=1}^{n}{(y_i - \bar{y})^2}}}}
-\]</span></p>
+\]</span> <br></p>
 <p>Where:</p>
 <ul>
 <li><span class="math inline">\(x_i\)</span> = i’th score on variable <span class="math inline">\(x\)</span><br>
@@ -288,6 +293,7 @@ r_{xy} = \frac{\sum_{i=1}^{n}{(x_i - \bar{x})(y_i - \bar{y})}}{{\sqrt{\sum_{i=1}
 <li><span class="math inline">\(n\)</span> = sample size</li>
 </ul>
 <p>Let’s now imagine that we develop the following Research Question:<em>Does the average daily time (in minutes) spent using SPSS correlate with the average number of obscenities used per day?</em> We collect some data, which looks like this:</p>
+<p><br></p>
 <div class="cell" data-tbl-cap-location="bottom">
 <div id="tbl-corrdat" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -322,77 +328,71 @@ r_{xy} = \frac{\sum_{i=1}^{n}{(x_i - \bar{x})(y_i - \bar{y})}}{{\sqrt{\sum_{i=1}
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-corrdat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.1: Average R minutes per week vs.&nbsp;average obscenities uttered
+Table&nbsp;3.1: Average SPSS minutes per week vs.&nbsp;average obscenities uttered
 </figcaption>
 </figure>
 </div>
 </div>
+<p><br></p>
 <p>With the following steps, we can unpack the formula and derive the correlation coefficient:</p>
+<p><br></p>
 <div class="cell" data-tbl-cap-location="bottom">
 <div id="tbl-corrdat_unpack" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom">
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-corrdat_unpack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 23%">
-<col style="width: 14%">
-<col style="width: 14%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><span class="math inline">\(x_{minutes}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(y_{words}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(x-\bar{x}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(y-\bar{y}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\((x-\bar{x}).(y-\bar{y})\)</span></th>
-<th style="text-align: center;"><span class="math inline">\((x-\bar{x})^2\)</span></th>
-<th style="text-align: center;"><span class="math inline">\((y-\bar{y})^2\)</span></th>
-</tr>
-</thead>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:center;"> $$x_{minutes}$$ </th>
+   <th style="text-align:center;"> $$y_{words}$$ </th>
+   <th style="text-align:center;"> $$x-\bar{x}$$ </th>
+   <th style="text-align:center;"> $$y-\bar{y}$$ </th>
+   <th style="text-align:center;"> $$(x-\bar{x}).(y-\bar{y})$$ </th>
+   <th style="text-align:center;"> $$(x-\bar{x})^2$$ </th>
+   <th style="text-align:center;"> $$(y-\bar{y})^2$$ </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">240</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">-10</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">100</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">310</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">60</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">120</td>
-<td style="text-align: center;">3600</td>
-<td style="text-align: center;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">230</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">-20</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">400</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">220</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">-30</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">30</td>
-<td style="text-align: center;">900</td>
-<td style="text-align: center;">1</td>
-</tr>
+  <tr>
+   <td style="text-align:center;background-color: white !important;"> 240 </td>
+   <td style="text-align:center;background-color: lightblue !important;"> 3 </td>
+   <td style="text-align:center;background-color: navajowhite !important;"> -10 </td>
+   <td style="text-align:center;background-color: lightsalmon !important;"> -1 </td>
+   <td style="text-align:center;background-color: lightgreen !important;"> 10 </td>
+   <td style="text-align:center;background-color: lightpink !important;"> 100 </td>
+   <td style="text-align:center;background-color: grey !important;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;background-color: white !important;"> 310 </td>
+   <td style="text-align:center;background-color: lightblue !important;"> 6 </td>
+   <td style="text-align:center;background-color: navajowhite !important;"> 60 </td>
+   <td style="text-align:center;background-color: lightsalmon !important;"> 2 </td>
+   <td style="text-align:center;background-color: lightgreen !important;"> 120 </td>
+   <td style="text-align:center;background-color: lightpink !important;"> 3600 </td>
+   <td style="text-align:center;background-color: grey !important;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;background-color: white !important;"> 230 </td>
+   <td style="text-align:center;background-color: lightblue !important;"> 4 </td>
+   <td style="text-align:center;background-color: navajowhite !important;"> -20 </td>
+   <td style="text-align:center;background-color: lightsalmon !important;"> 0 </td>
+   <td style="text-align:center;background-color: lightgreen !important;"> 0 </td>
+   <td style="text-align:center;background-color: lightpink !important;"> 400 </td>
+   <td style="text-align:center;background-color: grey !important;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;background-color: white !important;"> 220 </td>
+   <td style="text-align:center;background-color: lightblue !important;"> 3 </td>
+   <td style="text-align:center;background-color: navajowhite !important;"> -30 </td>
+   <td style="text-align:center;background-color: lightsalmon !important;"> -1 </td>
+   <td style="text-align:center;background-color: lightgreen !important;"> 30 </td>
+   <td style="text-align:center;background-color: lightpink !important;"> 900 </td>
+   <td style="text-align:center;background-color: grey !important;"> 1 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-corrdat_unpack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -401,6 +401,7 @@ Table&nbsp;3.2: Correlation steps
 </figure>
 </div>
 </div>
+<p><br></p>
 <ul>
 <li><span class="math inline">\(\bar{x} = 250\)</span><br>
 </li>
@@ -412,9 +413,10 @@ Table&nbsp;3.2: Correlation steps
 </li>
 <li><span class="math inline">\(\sum_{i=1}^{n}{(y_i - \bar{y})^2} = 6\)</span></li>
 </ul>
+<p><br></p>
 <p><span class="math display">\[
 r_{xy} = \frac{160}{\sqrt{5000}*\sqrt{6}} = \frac{160}{173.21} = .92
-\]</span></p>
+\]</span> <br></p>
 <p>We will use the following rules-of-thumb for interpreting <strong>absolute</strong> values of <span class="math inline">\(r\)</span>:</p>
 <ul>
 <li><span class="math inline">\(r \le .3\)</span> = small<br>
@@ -444,9 +446,11 @@ Figure&nbsp;3.1: Fictional distribution of graduate income scores. Green shading
 </div>
 </div>
 <p>We can see the area of interest in the distribution above, in <a href="#fig-normdist" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>. To calculate the proportion, we first need to convert the target value into a <strong>z-score</strong>, which transforms the value into standard deviation units. In this case:</p>
+<p><br></p>
 <p><span class="math display">\[
 z = \frac{x-\mu}{\sigma} = \frac{1700-1500}{100} = 2
 \]</span></p>
+<p><br></p>
 <p>To work out the probability associated with a z-score of 2, we can consult the normal distribution tables in the Argyrous textbook (pp.&nbsp;541 - 542), looking for the area under the curve <b>beyond</b> one point. This allows us to answer our question: <em>there is a 2.28% chance of randomly selecting an individual with an income above 1,700 EUR per week from the population of new Dutch graduates</em></p>
 </section>
 <section id="scatterplots-and-r-with-the-wdi-data-spss" class="level2" data-number="3.4">

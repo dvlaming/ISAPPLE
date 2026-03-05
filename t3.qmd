@@ -15,9 +15,12 @@
 
 Pearson's $r$ is given by:
 
+<br>  
+
 $$
 r_{xy} = \frac{\sum_{i=1}^{n}{(x_i - \bar{x})(y_i - \bar{y})}}{{\sqrt{\sum_{i=1}^{n}{(x_i - \bar{x})^2}}}{\sqrt{\sum_{i=1}^{n}{(y_i - \bar{y})^2}}}}
 $$ 
+<br>  
 
 Where:
 
@@ -30,9 +33,11 @@ Where:
 
 Let's now imagine that we develop the following Research Question:_Does the average daily time (in minutes) spent using SPSS correlate with the average number of obscenities used per day?_ We collect some data, which looks like this:
 
+<br>  
+
 ```{r}
 #| label: tbl-corrdat
-#| tbl-cap: "Average R minutes per week vs. average obscenities uttered"
+#| tbl-cap: "Average SPSS minutes per week vs. average obscenities uttered"
 #| tbl-cap-location: bottom 
 
 `%>%`<-magrittr::`%>%`  
@@ -42,7 +47,12 @@ data<-tibble::tibble("Average SPSS minutes"=c(240,310,230,220),"Average # obscen
 data
 ```
 
+
+<br>  
+
 With the following steps, we can unpack the formula and derive the correlation coefficient:
+
+<br>  
 
 ```{r}
 #| label: tbl-corrdat_unpack
@@ -56,9 +66,22 @@ data$xdev_by_ydev<-data$x_minus_xbar*data$y_minus_ybar
 data$xdev_square<-data$x_minus_xbar^2
 data$ydev_square<-data$y_minus_ybar^2
 
+# data %>%
+#   knitr::kable(align="c",col.names=c("$x_{minutes}$","$y_{words}$","$x-\\bar{x}$","$y-\\bar{y}$","$(x-\\bar{x}).(y-\\bar{y})$","$(x-\\bar{x})^2$","$(y-\\bar{y})^2$"))
+
 data %>%
-  knitr::kable(align="c",col.names=c("$x_{minutes}$","$y_{words}$","$x-\\bar{x}$","$y-\\bar{y}$","$(x-\\bar{x}).(y-\\bar{y})$","$(x-\\bar{x})^2$","$(y-\\bar{y})^2$"))
+  kableExtra::kbl(align="c",col.names=c("$$x_{minutes}$$","$$y_{words}$$","$$x-\\bar{x}$$","$$y-\\bar{y}$$","$$(x-\\bar{x}).(y-\\bar{y})$$","$$(x-\\bar{x})^2$$","$$(y-\\bar{y})^2$$")) %>% 
+  kableExtra::kable_classic() %>% 
+  kableExtra::column_spec(column=1,background="white") %>% 
+  kableExtra::column_spec(column=2,background="lightblue") %>%
+  kableExtra::column_spec(column=3,background="navajowhite") %>%
+  kableExtra::column_spec(column=4,background="lightsalmon") %>%
+  kableExtra::column_spec(column=5,background="lightgreen") %>% 
+  kableExtra::column_spec(column=6,background="lightpink") %>% 
+  kableExtra::column_spec(column=7,background="grey")
 ```
+
+<br>  
 
 * $\bar{x} = 250$   
 * $\bar{y}= 4$     
@@ -66,10 +89,12 @@ data %>%
 * $\sum_{i=1}^{n}{(x_i - \bar{x})^2} = 5000$  
 * $\sum_{i=1}^{n}{(y_i - \bar{y})^2} = 6$
 
+<br>  
+
 $$
 r_{xy} = \frac{160}{\sqrt{5000}*\sqrt{6}} = \frac{160}{173.21} = .92
 $$
-
+<br>  
 
 We will use the following rules-of-thumb for interpreting **absolute** values of $r$:
 
@@ -110,6 +135,8 @@ p
 
 We can see the area of interest in the distribution above, in @fig-normdist. To calculate the proportion, we first need to convert the target value into a **z-score**, which transforms the value into standard deviation units. In this case:
 
+<br>  
+
 $$
 z = \frac{x-\mu}{\sigma} = \frac{1700-1500}{100} = 2
 $$
@@ -124,6 +151,7 @@ prob<-pnorm(target_income ,mean = mean_income, sd = sd_income, lower.tail = FALS
 
 ```
 
+<br>  
 
 To work out the probability associated with a z-score of 2, we can consult the normal distribution tables in the Argyrous textbook (pp. 541 - 542), looking for the area under the curve <b>beyond</b> one point. This allows us to answer our question: _there is a `{r} round(prob*100,2)`% chance of randomly selecting an individual with an income above 1,700 EUR per week from the population of new Dutch graduates_
 

@@ -75,10 +75,14 @@ wd<-haven::read_sav("C:/Users/David/OneDrive - UvA/2025_2026/ISA_24_25/Datasets/
 
 Scatterplots are useful for visualizing relationships between interval/ratio variables. In this course, our convention will be to place **independent variables (IVs)** on the x-axis and **dependent variables (DVs)** on the y-axis.
 
+<br>  
+
 ::: {#nte-ivdv .callout-note}
 ### IVs and DVs
 An **independent variable** is the presumed cause of effects on a **dependent variable**. See the lecture notes for further information.
 :::
+
+<br>  
 
 The variables `wdi_lifexp` (life expectancy at birth) and `wdi_water` (percentage of population with access to improved water) are appropriate for scatterplotting. If there is a causal relationship between these two variables, then the most intuitive direction of influence would be from `wdi_water` to `wdi_lifexp`, so `wdi_water` will be our IV (x-variable) and `wdi_lifexp` our DV (y-variable). 
 

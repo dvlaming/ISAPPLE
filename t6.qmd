@@ -1,5 +1,7 @@
 # The $\chi^2$ test of independence and the independent-samples t-test {#sec-ISACh6}
 
+## Learning goals
+
 ### Conceptual 
 
 1. Calculate the $\chi^2$ statistic by hand and determine its significance
@@ -100,8 +102,8 @@ dataExp<-tibble::tribble(
   "Total", 47, 45, "92 (100%)" 
   )
 
-dataExpFancy<-knitr::kable(dataExp, align = "r") %>% 
-  kableExtra::kable_classic() %>%
+dataExpFancy<-kableExtra::kbl(dataExp, align = c("lrrr")) %>%
+  kableExtra::kable_classic() %>% 
   kableExtra::add_header_above(c(" " = 1, "Sex" = 3)) 
 
 dataExpFancy
@@ -125,7 +127,6 @@ Recalling the [equation](#eq-chi), we can calculate the statistic step-by-step:
 #| label: tbl-chisteps
 #| tbl-cap: "Steps for computing $\\chi^2$"
 #| tbl-cap-location: bottom
-#| tbl-colwidths: [25,25,25,25]
 
 dataFreq<-tibble::tibble(f_O=c(7,20,40,25),f_E=c(13.79,13.21,33.21,31.79))
 dataFreq<-dataFreq %>%
@@ -134,8 +135,13 @@ dataFreq<-dataFreq %>%
 ChiSquare<-sum(dataFreq$fDevSqOverfE)
 
 dataFreq %>%
-  knitr::kable(align="c",col.names=c("$f_o$","$f_e$","$(f_o - f_e)^2$",
-                                     "$(f_o - f_e)^2/f_e$"),digits=2)
+  kableExtra::kbl(align="c",col.names=c("$$f_o$$","$$f_e$$","$$(f_o - f_e)^2$$",
+                                     "$$(f_o - f_e)^2/f_e$$"),digits=2) %>% 
+  kableExtra::kable_classic() %>% 
+  kableExtra::column_spec(column=1, width="4cm", background="white") %>% 
+  kableExtra::column_spec(column=2, width="4cm", background="lightblue") %>%
+  kableExtra::column_spec(column=3, width="4cm", background="navajowhite") %>%
+  kableExtra::column_spec(column=4, width="4cm", background="lightsalmon")
 ```
 
 <br>  
