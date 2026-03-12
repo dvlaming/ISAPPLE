@@ -9,6 +9,21 @@
 
 ## Main effects and interactions in factorial ANOVA
 
+By definition, a factorial ANOVA consists of at least two IVs and one DV. The simplest factorial design is a 2 x 2 design, where we have two independent variables each with two levels.  
+
+To illustrate, let's imagine that we are researchers interested in the frequency of pretentious language use among students in cafés, and how this is influenced by one's alcoholic drink of choice and their major area of study. We could further imagine that we operationalize <b>type of alcohol</b> by randomly assigning students to either receive three glasses of either beer or wine (matched for alcoholic volume), and that <b>major</b> is operationalized with the levels fine art or politics. We could then pose the following research question: _does study major (art vs. politics) and type of alcohol (beer vs. wine) consumed influence the frequency of pretentious language production among students in cafés?_  
+
+In this design, there are three effects for which we can test:  
+
+1. The <b>main effect</b> of <b>major</b>    
+2. The <b>main effect</b> of <b>alcohol</b>  
+3. The <b>interaction effect</b> of <b>major</b> by <b>alcohol</b>  
+
+
+In a factorial design, a <b>main effect</b> is the effect of one IV when the other IV is ignored. For our alcohol IV, it is the <b>marginal effect</b> of alcohol (i.e., the difference in pretentious language frequency) collapsed across the levels of major. On the other hand, an <b>interaction effect</b> is the <b>conditional effect</b> of an IV depending on the level of the other IV. For example, imagine that politics students turned out to more frequently use pretentious language than fine art students <b>only after having drunk wine, not after having drunk beer</b>. You can see some examples of potential effects for this scenario below.     
+
+<br>  
+
 ```{r}
 
 library(ggplot2)
@@ -22,53 +37,53 @@ library(ggplot2)
 # https://www.sthda.com/english/wiki/ggplot2-axis-ticks-a-guide-to-customize-tick-marks-and-labels
 # https://www.sthda.com/english/wiki/ggplot2-line-plot-quick-start-guide-r-software-and-data-visualization
 
-data_ME1<-tibble::tibble(Student=rep(c("Fine Art", "Politics"),each=2), 
+data_ME1<-tibble::tibble(Major=rep(c("Fine Art", "Politics"),each=2), 
                          Drink=rep(c("Beer", "Wine"),times=2), 
                          Score=c(11, 21, 9, 19))
 
-data_ME2<-tibble::tibble(Student=rep(c("Fine Art", "Politics"),each=2), 
+data_ME2<-tibble::tibble(Major=rep(c("Fine Art", "Politics"),each=2), 
                          Drink=rep(c("Beer", "Wine"),times=2), 
-                         Score=c(25, 25, 15, 15))
+                         Score=c(15, 15, 25, 25))
 
-data_CrossInt<-tibble::tibble(Student=rep(c("Fine Art", "Politics"),each=2), 
+data_CrossInt<-tibble::tibble(Major=rep(c("Fine Art", "Politics"),each=2), 
                          Drink=rep(c("Beer", "Wine"),times=2), 
                          Score=c(15, 25, 25, 15))
 
-data_ME_Int<-tibble::tibble(Student=rep(c("Fine Art", "Politics"),each=2), 
+data_ME_Int<-tibble::tibble(Major=rep(c("Fine Art", "Politics"),each=2), 
                          Drink=rep(c("Beer", "Wine"),times=2), 
-                         Score=c(15, 25, 5, 5))
+                         Score=c(15, 25, 25, 50))
 
 
-p1<-ggplot(data_ME1, aes(x=Drink, y=Score, group=Student)) +
+p1<-ggplot(data_ME1, aes(x=Drink, y=Score, group=Major)) +
   theme_bw()+
-  geom_line(aes(color=Student))+
-  geom_point(aes(color=Student))+
+  geom_line(aes(color=Major))+
+  geom_point(aes(color=Major))+
   scale_color_manual(values=c("Blue","Black"))+
   scale_y_continuous(limits=c(0, 30),breaks=seq(0,30,5))+
   # theme(legend.position = c(.935, .9))+
   # theme(legend.position="top")+
   theme(axis.title.x = element_blank())+
   ylab("Lang. score")+
-  labs(subtitle = "Main effect: drink\n ")
+  labs(subtitle = "Main effects of both:\nwine > beer + (slightly) art > pol.")
   # theme(plot.caption = element_text(hjust=0))
 
-p2<-ggplot(data_ME2, aes(x=Drink, y=Score, group=Student)) +
+p2<-ggplot(data_ME2, aes(x=Drink, y=Score, group=Major)) +
   theme_bw()+
-  geom_line(aes(color=Student))+
-  geom_point(aes(color=Student))+
+  geom_line(aes(color=Major))+
+  geom_point(aes(color=Major))+
   scale_color_manual(values=c("Blue","Black"))+
   scale_y_continuous(limits=c(0, 30),breaks=seq(0,30,5))+
   # theme(legend.position = c(.935, .9))+
   # theme(legend.position="none")+
   theme(axis.title.x = element_blank(),
         axis.title.y = element_blank())+
-  labs(subtitle = "Main effect: major\n ")
+  labs(subtitle = "Only Main effect of 'major':\npol. > art")
   # theme(plot.caption = element_text(hjust=0))
 
-p3<-ggplot(data_CrossInt, aes(x=Drink, y=Score, group=Student)) +
+p3<-ggplot(data_CrossInt, aes(x=Drink, y=Score, group=Major)) +
   theme_bw()+
-  geom_line(aes(color=Student))+
-  geom_point(aes(color=Student))+
+  geom_line(aes(color=Major))+
+  geom_point(aes(color=Major))+
   scale_color_manual(values=c("Blue","Black"))+
   scale_y_continuous(limits=c(0, 30),breaks=seq(0,30,5))+
   # theme(legend.position = c(.935, .9))+
@@ -77,15 +92,15 @@ p3<-ggplot(data_CrossInt, aes(x=Drink, y=Score, group=Student)) +
   labs(subtitle = "'Crossover' interaction effect\n(no main effects)")
   # theme(plot.caption = element_text(hjust=0))
 
-p4<-ggplot(data_ME_Int, aes(x=Drink, y=Score, group=Student)) +
+p4<-ggplot(data_ME_Int, aes(x=Drink, y=Score, group=Major)) +
   theme_bw()+
-  geom_line(aes(color=Student))+
-  geom_point(aes(color=Student))+
+  geom_line(aes(color=Major))+
+  geom_point(aes(color=Major))+
   scale_color_manual(values=c("Blue","Black"))+
-  scale_y_continuous(limits=c(0, 30),breaks=seq(0,30,5))+
+  scale_y_continuous(limits=c(0, 51),breaks=seq(0,50,5))+
   # theme(legend.position="none")+
   theme(axis.title.y = element_blank())+
-  labs(subtitle = "Interaction (drink effect only for 'Fine Art')\n ")
+  labs(subtitle = "Interaction (wine effect stronger for pol.)\n ")
   # theme(plot.caption = element_text(hjust=0))
 
 
@@ -96,6 +111,18 @@ ggpubr::ggarrange(p1, p2, p3, p4, ncol=2, nrow=2, common.legend = TRUE, legend="
 
 
 ```
+
+
+## Formulating alternative hypotheses
+
+In this course, it is sufficient to formulate non-directional hypotheses, but when conducting your own research it is likely that established theory will lead you in a particular direction. Directional hypotheses are generally much clearer for the reader, particularly when it comes to predicted interaction effects. Consider the following alternative hypotheses:
+
+1. In the population of students, there will be an effect of type of alcohol consumed on pretentious language production frequency. <span style="color:blue">Students who consume wine will produce significantly more pretentious language than students who consume beer.</span>
+2. In the population of students, there will be an effect of major on pretentious language production frequency. <span style="color:blue">Students who study politics will produce significantly more pretentious language than students who consume beer.</span>
+3. In the population of students, there will be an interaction of type of alcohol by major. <span style="color:blue">The tendency for politics students to more frequently produce pretentious language than fine art students will be more pronounced when drinking wine.</span>  
+
+The information in blue gives much more clarity regarding how the effects are expected to look.
+
 
 ### Explainer video
 

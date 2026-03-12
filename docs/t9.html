@@ -233,9 +233,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">9.1.1</span> SPSS</a></li>
   </ul></li>
-  <li><a href="#main-effects-and-interactions-in-factorial-anova" id="toc-main-effects-and-interactions-in-factorial-anova" class="nav-link" data-scroll-target="#main-effects-and-interactions-in-factorial-anova"><span class="header-section-number">9.2</span> Main effects and interactions in factorial ANOVA</a>
+  <li><a href="#main-effects-and-interactions-in-factorial-anova" id="toc-main-effects-and-interactions-in-factorial-anova" class="nav-link" data-scroll-target="#main-effects-and-interactions-in-factorial-anova"><span class="header-section-number">9.2</span> Main effects and interactions in factorial ANOVA</a></li>
+  <li><a href="#formulating-alternative-hypotheses" id="toc-formulating-alternative-hypotheses" class="nav-link" data-scroll-target="#formulating-alternative-hypotheses"><span class="header-section-number">9.3</span> Formulating alternative hypotheses</a>
   <ul class="collapse">
-  <li><a href="#explainer-video" id="toc-explainer-video" class="nav-link" data-scroll-target="#explainer-video"><span class="header-section-number">9.2.1</span> Explainer video</a></li>
+  <li><a href="#explainer-video" id="toc-explainer-video" class="nav-link" data-scroll-target="#explainer-video"><span class="header-section-number">9.3.1</span> Explainer video</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t9.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
@@ -273,6 +274,18 @@ window.Quarto = {
 </section>
 <section id="main-effects-and-interactions-in-factorial-anova" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="main-effects-and-interactions-in-factorial-anova"><span class="header-section-number">9.2</span> Main effects and interactions in factorial ANOVA</h2>
+<p>By definition, a factorial ANOVA consists of at least two IVs and one DV. The simplest factorial design is a 2 x 2 design, where we have two independent variables each with two levels.</p>
+<p>To illustrate, let’s imagine that we are researchers interested in the frequency of pretentious language use among students in cafés, and how this is influenced by one’s alcoholic drink of choice and their major area of study. We could further imagine that we operationalize <b>type of alcohol</b> by randomly assigning students to either receive three glasses of either beer or wine (matched for alcoholic volume), and that <b>major</b> is operationalized with the levels fine art or politics. We could then pose the following research question: <em>does study major (art vs.&nbsp;politics) and type of alcohol (beer vs.&nbsp;wine) consumed influence the frequency of pretentious language production among students in cafés?</em></p>
+<p>In this design, there are three effects for which we can test:</p>
+<ol type="1">
+<li>The <b>main effect</b> of <b>major</b><br>
+</li>
+<li>The <b>main effect</b> of <b>alcohol</b><br>
+</li>
+<li>The <b>interaction effect</b> of <b>major</b> by <b>alcohol</b></li>
+</ol>
+<p>In a factorial design, a <b>main effect</b> is the effect of one IV when the other IV is ignored. For our alcohol IV, it is the <b>marginal effect</b> of alcohol (i.e., the difference in pretentious language frequency) collapsed across the levels of major. On the other hand, an <b>interaction effect</b> is the <b>conditional effect</b> of an IV depending on the level of the other IV. For example, imagine that politics students turned out to more frequently use pretentious language than fine art students <b>only after having drunk wine, not after having drunk beer</b>. You can see some examples of potential effects for this scenario below.</p>
+<p><br></p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -282,8 +295,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="explainer-video" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="explainer-video"><span class="header-section-number">9.2.1</span> Explainer video</h3>
+</section>
+<section id="formulating-alternative-hypotheses" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="formulating-alternative-hypotheses"><span class="header-section-number">9.3</span> Formulating alternative hypotheses</h2>
+<p>In this course, it is sufficient to formulate non-directional hypotheses, but when conducting your own research it is likely that established theory will lead you in a particular direction. Directional hypotheses are generally much clearer for the reader, particularly when it comes to predicted interaction effects. Consider the following alternative hypotheses:</p>
+<ol type="1">
+<li>In the population of students, there will be an effect of type of alcohol consumed on pretentious language production frequency. <span style="color:blue">Students who consume wine will produce significantly more pretentious language than students who consume beer.</span></li>
+<li>In the population of students, there will be an effect of major on pretentious language production frequency. <span style="color:blue">Students who study politics will produce significantly more pretentious language than students who consume beer.</span></li>
+<li>In the population of students, there will be an interaction of type of alcohol by major. <span style="color:blue">The tendency for politics students to more frequently produce pretentious language than fine art students will be more pronounced when drinking wine.</span></li>
+</ol>
+<p>The information in blue gives much more clarity regarding how the effects are expected to look.</p>
+<section id="explainer-video" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="explainer-video"><span class="header-section-number">9.3.1</span> Explainer video</h3>
 <p>[ANOVA, drugtrial]</p>
 
 
