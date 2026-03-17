@@ -1,0 +1,116 @@
+# Multiple regression {#sec-ISACh10}
+
+## Learning goals
+
+### Conceptual
+
+1. Check understanding of the assumptions associated with regression models
+
+### SPSS
+
+1. Run multiple linear regression, check assumptions and interpret output
+
+
+## Assumptions of linear regression
+
+In this course, we will focus on the following assumptions of linear regression:
+
+1. <b>Linearity: every independent variable should have a <i><u>linear relationship</u></i> with the dependent variable.</b> This assumption is violated if at least one independent variable has a relationship with the dependent variable which is <b> not linear</b> (i.e., curvilinear). Should this be the case, the linear model which you fit will give very biased results, missing the true nature of the relationship between IV(s) and DV. Note that the assumption is not necessarily violated when there appears to be <b>no clear relationship at all</b> between IV(s) and DV; this simply means that the IV might has no predictive power with respect to the DV.  
+    - <b>Testing the assumption:</b> run scatterplots for <b>each IV against the DV</b>, looking for any clear non-linear relationships. If you do not find these, the assumption is likely upheld.  
+2. <b>Homogeneity of residual variances/homoscedasticity: the model residuals should have a constant variance across all levels of the independent variables.</b> In plainer words, <b> the model should predict the DV similarly well (or poorly) across the different IV scores. </b>  
+    - <b>Testing the assumption:</b> you can recycle the scatterplots you use to check for linearity (see above), but this time you can apply a model fit line and checking for the spread of the data around it. If you see that the breadth of the cloud of points around the fit line changes as the IV scores increase (i.e., the cloud shows a funnel pattern, appearing to narrow or broaden as you read from left to right) then this could suggest that indicates that the model's predictions for that IV are not stable, and the assumption may be violated. Additionally, you should use the <b>zpred. vs. zresid</b> plot for the entire model; this graphs the standardized (z-scored) predictions that the model makes for each IV-score (i.e., on your single-IV scatterplots, the point on the fit line directly above a given IV score on the x-axis) against the standardized residuals (i.e., the prediction error, or difference between the model's prediction and the actual DV data corresponding to a particular IV score). In homoscedastic data we expect there to be no relationship between residuals and predictions, so a random-ish cloud of points is a good sign. However, if you see funnelling patterns or any other indication of a relationship between residuals and predictions, this assumption may be violated.  
+3. <b>No high multicollinearity among independent variables: independent variables should not be too strongly correlated with each other.</b> Where IVs are strongly correlated with each other, the regression coefficients become difficult to interpret because they they represent the unique contribution of each variable to the DV, holding other IVs constant.  
+    - <b>Testing the assumption:</b> You can compute Pearson's $r$ for all combinations of your independent variables. Ignore the p-values and look at the correlation coefficients: in this course, we will tolerate coefficients with an <b>absolute value</b> smaller than .8.  
+    
+The plots below can help you with diagnosing assumption violations.
+
+<br>
+
+```{r}
+#| label: fig-scatterzplots
+#| fig-cap: "A: Scatterplots depicting linear and nonlinear relationships (see strip labels on the left). Linear fit lines are shown in blue, and vertical red dashed lines show the residuals (i.e., the difference between the model's predictions and the actual DV scores for a given IV score. B: Plots of standardized residuals vs. standardized predictions corresponding to the raw data shown in panel A. The horizontal red dashed lines mark 0 on the y-axis for reference."
+
+set.seed(68019222)
+
+library(tidyverse)
+library(patchwork)
+
+ndat<-201
+
+Data1<-tibble::tibble(x=rnorm(ndat),y=rnorm(ndat))
+Data2<-tibble::tibble(x=sort(runif(ndat, min = 0, max = 2.5),decreasing=F),
+                      y=x*runif(ndat,min = 0, max = 2.5))
+Data3<-tibble::tibble(x=rnorm(ndat),y=rnorm(ndat)+.9*x)
+Data4<-tibble::tibble(x=seq(-100, 100),y=x^2 + rnorm(length(x),0,1000))
+
+## ^ https://stackoverflow.com/questions/53972889/how-do-i-simulate-two-variables-in-r-which-are-non-linearly-related
+
+bigData<-tibble::tibble(x=c(Data1$x,Data2$x,Data3$x,Data4$x),
+                        y=c(Data1$y,Data2$y,Data3$y,Data4$y),
+                        mod = c(rep("weak/none",ndat),rep("heteroscedastic",ndat),
+                                rep("homoscedastic",ndat),
+                        rep("nonlinear",ndat)))
+
+
+mod1<-lm(y~x, data=subset(bigData,mod=="weak/none"))
+mod2<-lm(y~x, data=subset(bigData,mod=="heteroscedastic"))
+mod3<-lm(y~x, data=subset(bigData,mod=="homoscedastic"))
+mod4<-lm(y~x, data=subset(bigData,mod=="nonlinear"))
+
+## resid and predictions
+
+zstan<-function(x){
+  zstanvals<-(x-mean(x))/sd(x)
+}
+
+bigData<-bigData %>% 
+  dplyr::mutate(stanresid=c(zstan(mod1$residuals),zstan(mod2$residuals)
+                            ,zstan(mod3$residuals),zstan(mod4$residuals)), 
+                predic=c(mod1$fitted.values, mod2$fitted.values, 
+                         mod3$fitted.values, mod4$fitted.values),
+                stanpredic=c(zstan(mod1$fitted.values), zstan(mod2$fitted.values), 
+                             zstan(mod3$fitted.values), zstan(mod4$fitted.values)),
+                mod=fct_relevel(mod,c("weak/none","homoscedastic","heteroscedastic",
+                                      "nonlinear")))
+
+
+Scatter<-ggplot(bigData,aes(x=x,y=y))+
+  theme_classic() +
+  geom_point()+
+  geom_smooth(method="lm",se=F)+
+  # geom_vline(xintercept=x)
+  geom_segment(x=bigData$x, xend=bigData$x, y=bigData$predic, yend=bigData$y,
+               linetype="dashed",color="red") +
+  facet_wrap(vars(mod),scales = "free",nrow = 4, strip.position = "left") +
+  labs(x="IV",y="DV") +
+  theme(axis.ticks = element_blank(), 
+        axis.text = element_blank())
+
+
+predresid<-ggplot(bigData, aes(x=stanresid,y=stanpredic)) +
+  theme_classic() +
+  geom_point(colour = "blue") +
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "red") +
+  scale_y_continuous(position = "right") +
+  facet_wrap(vars(mod),nrow = 4, scales = "free") +
+  labs(x="Residual",y="Prediction") +
+  theme(axis.ticks = element_blank(), axis.text = element_blank(), 
+        strip.background = element_blank(),strip.text = element_blank())
+
+patch<-Scatter + predresid + plot_annotation(
+  title = 'Scatterplots and zresid vs. zpred plots of various relationships',
+  tag_levels = 'A')
+
+patch
+```
+
+
+
+
+
+### Explainer video
+
+[mult reg, example ntb]
+
+ 
+

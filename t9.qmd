@@ -2,6 +2,10 @@
 
 ## Learning goals
 
+### Conceptual
+
+1. Check understanding of the difference between <b>main effects</b> and <b>interactions</b> in factorial ANOVA
+
 ### SPSS
 
 1. Perform and interpret output from factorial ANOVA

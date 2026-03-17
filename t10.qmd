@@ -1,0 +1,14 @@
+# Simple (bivariate) regression {#sec-ISACh10}
+
+## Learning goals
+
+### SPSS
+
+1. Perform and interpret output from simple linear regression
+
+### Explainer video
+
+[simple reg, example ntb]
+
+ 
+

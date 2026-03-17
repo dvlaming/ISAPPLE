@@ -469,7 +469,7 @@
     "href": "t8.html#learning-goals",
     "title": "8  One-way ANOVA (between subjects)",
     "section": "",
-    "text": "8.1.1 SPSS\n\nPerform and interpret one-way ANOVA\n\n\n\n8.1.2 Explainer video\n[ANOVA, drugtrial]\n\n\n8.1.3 Conclusion",
+    "text": "8.1.1 SPSS\n\nPerform and interpret one-way ANOVA and post-hoc comparisons\n\n\n\n8.1.2 Explainer video\n[ANOVA, drugtrial]\n\n\n8.1.3 Conclusion",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>One-way ANOVA (between subjects)</span>"
     ]
@@ -489,7 +489,7 @@
     "href": "t9.html#learning-goals",
     "title": "9  Factorial ANOVA (between subjects)",
     "section": "",
-    "text": "9.1.1 SPSS\n\nPerform and interpret output from factorial ANOVA",
+    "text": "9.1.1 Conceptual\n\nCheck understanding of the difference between main effects and interactions in factorial ANOVA\n\n\n\n9.1.2 SPSS\n\nPerform and interpret output from factorial ANOVA",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Factorial ANOVA (between subjects)</span>"
     ]
@@ -512,6 +512,56 @@
     "text": "9.3 Formulating alternative hypotheses\nIn this course, it is sufficient to formulate non-directional hypotheses, but when conducting your own research it is likely that established theory will lead you in a particular direction. Directional hypotheses are generally much clearer for the reader, particularly when it comes to predicted interaction effects. Consider the following alternative hypotheses:\n\nIn the population of students, there will be an effect of type of alcohol consumed on pretentious language production frequency. Students who consume wine will produce significantly more pretentious language than students who consume beer.\nIn the population of students, there will be an effect of major on pretentious language production frequency. Students who study politics will produce significantly more pretentious language than students who consume beer.\nIn the population of students, there will be an interaction of type of alcohol by major. The tendency for politics students to more frequently produce pretentious language than fine art students will be more pronounced when drinking wine.\n\nThe information in blue gives much more clarity regarding how the effects are expected to look.\n\n9.3.1 Explainer video\n[ANOVA, drugtrial]",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Factorial ANOVA (between subjects)</span>"
+    ]
+  },
+  {
+    "objectID": "t11.html",
+    "href": "t11.html",
+    "title": "11  Multiple regression",
+    "section": "",
+    "text": "11.1 Learning goals",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Multiple regression</span>"
+    ]
+  },
+  {
+    "objectID": "t11.html#learning-goals",
+    "href": "t11.html#learning-goals",
+    "title": "11  Multiple regression",
+    "section": "",
+    "text": "11.1.1 Conceptual\n\nCheck understanding of the assumptions associated with regression models\n\n\n\n11.1.2 SPSS\n\nRun multiple linear regression, check assumptions and interpret output",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Multiple regression</span>"
+    ]
+  },
+  {
+    "objectID": "t11.html#assumptions-of-linear-regression",
+    "href": "t11.html#assumptions-of-linear-regression",
+    "title": "11  Multiple regression",
+    "section": "11.2 Assumptions of linear regression",
+    "text": "11.2 Assumptions of linear regression\nIn this course, we will focus on the following assumptions of linear regression:\n\nLinearity: every independent variable should have a linear relationship with the dependent variable. This assumption is violated if at least one independent variable has a relationship with the dependent variable which is  not linear (i.e., curvilinear). Should this be the case, the linear model which you fit will give very biased results, missing the true nature of the relationship between IV(s) and DV. Note that the assumption is not necessarily violated when there appears to be no clear relationship at all between IV(s) and DV; this simply means that the IV might has no predictive power with respect to the DV.\n\nTesting the assumption: run scatterplots for each IV against the DV, looking for any clear non-linear relationships. If you do not find these, the assumption is likely upheld.\n\n\nHomogeneity of residual variances/homoscedasticity: the model residuals should have a constant variance across all levels of the independent variables. In plainer words,  the model should predict the DV similarly well (or poorly) across the different IV scores. \n\nTesting the assumption: you can recycle the scatterplots you use to check for linearity (see above), but this time you can apply a model fit line and checking for the spread of the data around it. If you see that the breadth of the cloud of points around the fit line changes as the IV scores increase (i.e., the cloud shows a funnel pattern, appearing to narrow or broaden as you read from left to right) then this could suggest that indicates that the model’s predictions for that IV are not stable, and the assumption may be violated. Additionally, you should use the zpred. vs. zresid plot for the entire model; this graphs the standardized (z-scored) predictions that the model makes for each IV-score (i.e., on your single-IV scatterplots, the point on the fit line directly above a given IV score on the x-axis) against the standardized residuals (i.e., the prediction error, or difference between the model’s prediction and the actual DV data corresponding to a particular IV score). In homoscedastic data we expect there to be no relationship between residuals and predictions, so a random-ish cloud of points is a good sign. However, if you see funnelling patterns or any other indication of a relationship between residuals and predictions, this assumption may be violated.\n\n\nNo high multicollinearity among independent variables: independent variables should not be too strongly correlated with each other. Where IVs are strongly correlated with each other, the regression coefficients become difficult to interpret because they they represent the unique contribution of each variable to the DV, holding other IVs constant.\n\nTesting the assumption: You can compute Pearson’s \\(r\\) for all combinations of your independent variables. Ignore the p-values and look at the correlation coefficients: in this course, we will tolerate coefficients with an absolute value smaller than .8.\n\n\nThe plots below can help you with diagnosing assumption violations.\n\n\n\n\n\n\n\n\n\nFigure 11.1: A: Scatterplots depicting linear and nonlinear relationships (see strip labels on the left). Linear fit lines are shown in blue, and vertical red dashed lines show the residuals (i.e., the difference between the model’s predictions and the actual DV scores for a given IV score. B: Plots of standardized residuals vs. standardized predictions corresponding to the raw data shown in panel A. The horizontal red dashed lines mark 0 on the y-axis for reference.\n\n\n\n\n\n\n11.2.1 Explainer video\n[mult reg, example ntb]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Multiple regression</span>"
+    ]
+  },
+  {
+    "objectID": "t10.html",
+    "href": "t10.html",
+    "title": "10  Simple (bivariate) regression",
+    "section": "",
+    "text": "10.1 Learning goals",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Simple (bivariate) regression</span>"
+    ]
+  },
+  {
+    "objectID": "t10.html#learning-goals",
+    "href": "t10.html#learning-goals",
+    "title": "10  Simple (bivariate) regression",
+    "section": "",
+    "text": "10.1.1 SPSS\n\nPerform and interpret output from simple linear regression\n\n\n\n10.1.2 Explainer video\n[simple reg, example ntb]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Simple (bivariate) regression</span>"
     ]
   }
 ]

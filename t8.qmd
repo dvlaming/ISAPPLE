@@ -4,7 +4,7 @@
 
 ### SPSS
 
-1. Perform and interpret one-way ANOVA
+1. Perform and interpret one-way ANOVA and post-hoc comparisons
 
 
 ### Explainer video

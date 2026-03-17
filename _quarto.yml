@@ -25,6 +25,8 @@ book:
     - t7.qmd
     - t8.qmd
     - t9.qmd
+    - t10.qmd
+    - t11.qmd
   appendices: 
     - a1.qmd
 
