@@ -68,7 +68,7 @@ In the above case, we would average the 25th- and 26th-ranked values of $x$ to f
 ## Visualizing relationships between variables
 
 ```{r ESSloadreal, echo = FALSE}
-wd<-haven::read_sav("C:/Users/David/OneDrive - UvA/2025_2026/ISA_24_25/Datasets/World_Data.sav")
+wd<-haven::read_sav("C:/Users/David/OneDrive - UvA/2025_2026/ISA_25_26/Datasets/World_Data.sav")
 ```
 
 ### Scatterplots
@@ -142,7 +142,13 @@ While we can see trends, it can be more informative to view the press freedom ca
 knitr::kable(prop.table(quickxtab(haven::as_factor(wd$fhp_status5),haven::as_factor(wd$region)),margin = 2)*200, digits = 2, align = "c") 
 ```
 
-## SPSS explainer video
+## SPSS explainer video (World Data)
 
-[WDI measures of dispersion, scatterplot, crosstab, recode]
+1. Measures of dispersion 
+2. Scatterplots
+3. Recode
+4. Crosstabs
+
+See video [here](https://amsuni-my.sharepoint.com/:v:/g/personal/d_fleming_uva_nl/IQB0nogsDhMcQJ-FEkbfXbpHAb4yDYT_Fnn1m-_plwu_zjs). (UvA login required)
+
 
