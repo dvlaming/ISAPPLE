@@ -152,14 +152,16 @@ Summing the squared differences between the observed and expected frequencies in
 #| label: fig-chidist
 #| fig-cap: "$\\chi^2$ critical values for selected significance levels vs. observed statistic"
 
+temp<-expression("Observed"~chi^2 )
+  
 ggplot2::ggplot(data.frame(x = seq(0, 15, by = 0.01)), ggplot2::aes(x = x)) + 
   ggplot2::stat_function(fun = dchisq, args = list(df = 1),fill="grey", geom = "density")+
   ggplot2::theme_bw()+
-  ggplot2::geom_segment(x=3.84,y=0,xend=3.84,yend=1,linetype="dashed",color="darkgreen")+
-  ggplot2::geom_segment(x=6.64,y=0,xend=6.64,yend=1,linetype="dashed",color="darkgreen")+
-  ggplot2::geom_segment(x=10.83,y=0,xend=10.83,yend=1,linetype="dashed",color="red")+
-  ggplot2::geom_segment(x=9.67,y=0,xend=9.67,yend=1,linetype="dashed",color="blue")+
-  ggplot2::annotate("text", x = 8.25, y = 0.8, colour="blue", label = "Observed value")+
+  ggplot2::geom_segment(x=3.84,y=0,xend=3.84,yend=1,linetype="solid",color="darkgreen")+
+  ggplot2::geom_segment(x=6.64,y=0,xend=6.64,yend=1,linetype="solid",color="darkgreen")+
+  ggplot2::geom_segment(x=10.83,y=0,xend=10.83,yend=1,linetype="solid",color="red")+
+  ggplot2::geom_segment(x=9.67,y=0,xend=9.67,yend=1,linetype="solid",color="blue")+
+  ggplot2::annotate("text", x = 8.25, y = 0.3, colour="blue", label=temp, parse = TRUE)+
   ggplot2::annotate("text", x = 4.45, y = 0.4, colour="darkgreen", label = "p = .05")+
   ggplot2::annotate("text", x = 7.25, y = 0.4, colour="darkgreen", label = "p = .01")+
   ggplot2::annotate("text", x = 11.6, y = 0.4, colour="red", label = "p = .001")+

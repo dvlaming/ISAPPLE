@@ -35,7 +35,7 @@ Computation of the standard deviation involves:
 5. Dividing the deviations by the number of observations ($n$) minus 1
 6. Taking the square root of 5
 
-The standard deviation can be roughly interpreted as the average deviation from the sample mean in the data. Much like the mean, this measure of dispersion is mot appropriate for interval/ratio level data. 
+The standard deviation can be roughly interpreted as the average deviation from the sample mean in the data. Much like the mean, this measure of dispersion is most appropriate for interval/ratio level data. 
 
 ### The range
 
@@ -84,17 +84,17 @@ An **independent variable** is the presumed cause of effects on a **dependent va
 
 <br>  
 
-The variables `wdi_lifexp` (life expectancy at birth) and `wdi_water` (percentage of population with access to improved water) are appropriate for scatterplotting. If there is a causal relationship between these two variables, then the most intuitive direction of influence would be from `wdi_water` to `wdi_lifexp`, so `wdi_water` will be our IV (x-variable) and `wdi_lifexp` our DV (y-variable). 
+The variables `wdi_lifexp` (life expectancy at birth) and `wdi_sanitation` (percentage of population with access to improved sanitation) are appropriate for scatterplotting. If there is a causal relationship between these two variables, then the most intuitive direction of influence would be from `wdi_sanitation` to `wdi_lifexp`, so `wdi_sanitation` will be our IV (x-variable) and `wdi_lifexp` our DV (y-variable). 
 
 ```{r}
 #| label: fig-wdscatter_1
-#| fig-cap: "Access to water vs. Life exp."
+#| fig-cap: "Access to sanitation vs. Life exp."
 #| warning: FALSE
 #| message: FALSE  
 
 `%>%`<-magrittr::`%>%`
 wd %>% 
-  ggplot2::ggplot(ggplot2::aes(x = wdi_water, y = wdi_lifexp)) +
+  ggplot2::ggplot(ggplot2::aes(x = wdi_sanitation, y = wdi_lifexp)) +
   ggplot2::geom_point()
 
 ```
@@ -107,7 +107,7 @@ We can see a noisy, yet positive relationship between a country's percentage acc
 #| warning: FALSE
 #| message: FALSE 
 wd %>% 
-  ggplot2::ggplot(ggplot2::aes(x = wdi_water, y = wdi_lifexp)) +
+  ggplot2::ggplot(ggplot2::aes(x = wdi_sanitation, y = wdi_lifexp)) +
   ggplot2::geom_point() +
   ggplot2::geom_smooth(method = "lm", se = FALSE)
 
