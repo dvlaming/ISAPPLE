@@ -191,4 +191,4 @@ To give us some more formal information about the relationship strength, we can 
 1. Scatterplots
 2. Pearson's $r$ 
 
-See video [here](https://amsuni-my.sharepoint.com/:v:/g/personal/d_fleming_uva_nl/IQA-vgBxpJsSS5WjMfqmMVHPAa6rnB7I0o-elSsp_xpe6-U?e=hZrjkZ)^[<b>Note that I refer to a <i>strong</i> correlation in the video, when this should be <i>very strong</i>, following our rules of thumb</b>] (UvA login required)
+See video 'ISA3' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U)^[Note that I refer to a <i>strong</i> correlation in the video, when this should be <i>very strong</i>, following our rules of thumb.] (UvA login required)
