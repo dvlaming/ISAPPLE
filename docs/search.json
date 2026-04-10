@@ -119,7 +119,7 @@
     "href": "t1.html#spss-explainer-video",
     "title": "1  Entering, importing, summarizing and subsetting data",
     "section": "1.4 SPSS explainer video",
-    "text": "1.4 SPSS explainer video\n\nEntering data\nFrequencies\nCentral tendency\nSelecting cases with ESS11\n\nSee video ‘ISA1’ here. (UvA login required)\n\n\n\n\n\n\n\nNote 1.1: Use of logical operators when selecting cases\n\n\n\nYou will probably rely mostly on the following:\n\n= - searches for equivalence, whether the data are numerical or character string (text).\n~= - the complement of =. E.g, cntry ~= \"Netherlands\" means “return all respondents who are NOT from the Netherlands”.\n& (AND) - used when you want the selected responses to satisfy multiple conditions. E.g., cntry == \"Netherlands\" & agea &gt; 22 means “return all respondents from the Netherlands who are also older than (&gt; = ”greater than”) 22”.\n| (OR) - use this if you want to select responses which match at least one of the specified conditions. E.g., cntry == \"Netherlands\" | agea &gt; 22 will return participants who are either in the Netherlands, or older than 22, or both. Participants who meet neither criterion will be filtered out.",
+    "text": "1.4 SPSS explainer video\n\nEntering data\nFrequencies\nCentral tendency\nSelecting cases (ESS11)\n\nSee video ‘ISA1’ here. (UvA login required)\n\n\n\n\n\n\n\nNote 1.1: Use of logical operators when selecting cases\n\n\n\nYou will probably rely mostly on the following:\n\n= - searches for equivalence, whether the data are numerical or character string (text).\n~= - the complement of =. E.g, cntry ~= \"Netherlands\" means “return all respondents who are NOT from the Netherlands”.\n& (AND) - used when you want the selected responses to satisfy multiple conditions. E.g., cntry == \"Netherlands\" & agea &gt; 22 means “return all respondents from the Netherlands who are also older than (&gt; = ”greater than”) 22”.\n| (OR) - use this if you want to select responses which match at least one of the specified conditions. E.g., cntry == \"Netherlands\" | agea &gt; 22 will return participants who are either in the Netherlands, or older than 22, or both. Participants who meet neither criterion will be filtered out.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Entering, importing, summarizing and subsetting data</span>"
     ]
@@ -319,7 +319,7 @@
     "href": "t5.html#one-sample-t-test-in-spss",
     "title": "5  The one-sample t-test & confidence intervals",
     "section": "5.4 One-sample t-test in SPSS",
-    "text": "5.4 One-sample t-test in SPSS\nLet’s load in the ESS11 dataset and imagine we are interested working habits in Belgium and the Netherlands. Specifically, we are interested in whether people living in these countries normally work more than 37.5 hours per week on average, inclusive of overtime. This information is held in the variable wkhtot, which you can call to check.\nBefore we go further, let’s formulate some hypotheses.\n\n\\(H_0: \\mu_{hrs} = 37.5\\) (In the population of Belgian and Dutch, average weekly working hours are not different from 37.5)\n\\(H_1: \\mu_{hrs} &gt; 37.5\\) (In the population of Belgian and Dutch, average weekly working hours are less than 37.5)\n\nNote that we now have a directional alternative hypothesis (see Note 5.1). In this case, it can be justifiable to use a one-tailed t-test, meaning we only consider half of the t-distribution when deriving our p-value.\n\n5.4.1 Explainer video\n[ESS one-samp t]\n\n\n5.4.2 Conclusion\n\nIn the population of Belgians and Dutch, the total hours worked per week (inclusive of overtime) is less than 37.5 (mean = 36.46, s = 16.64; t[3031] = -3.45, p &lt; .001).",
+    "text": "5.4 One-sample t-test in SPSS\nLet’s load in the ESS11 dataset and imagine that we are interested in working habits amongst men in Greece. Based on information from the Greek labour unions, we have reason to believe that Greek males normally work more than 40 hours per week on average, inclusive of overtime. This information is held in the variable wkhtot.\nBefore we go further, let’s formulate some hypotheses.\n\n\\(H_0: \\mu_{hrs} = 40\\) (In the population of Greek males, average weekly working hours are not different from 40)\n\\(H_1: \\mu_{hrs} &gt; 40\\) (In the population of Greek males, average weekly working hours are greater than 40)\n\nNote that we now have a directional alternative hypothesis (see Note 5.1). In this case, it can be justifiable to use a one-tailed t-test, meaning we only consider half of the t-distribution when deriving our p-value.\n\n5.4.1 SPSS explainer video (ESS11)\n\nOne-sample t-test (ESS11)\n\nSee video ‘ISA5’ here\n\n\n5.4.2 Conclusion\n\nIn the population of Greek males, the total hours worked per week (inclusive of overtime) is greater than 40 (mean = 45.90, s = xxx; t[xxx] = xxx, p &lt; .001).",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>The one-sample t-test & confidence intervals</span>"
     ]
@@ -582,6 +582,26 @@
     "text": "Note that I refer to a strong correlation in the video, when this should be very strong, following our rules of thumb.↩︎",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correlation coefficients and working with normal distributions</span>"
+    ]
+  },
+  {
+    "objectID": "t3.html#spss-explainer-video-world-data",
+    "href": "t3.html#spss-explainer-video-world-data",
+    "title": "3  Correlation coefficients and working with normal distributions",
+    "section": "3.5 SPSS explainer video (World Data)",
+    "text": "3.5 SPSS explainer video (World Data)\n\nScatterplots\nPearson’s \\(r\\)\n\nSee video ‘ISA3’ here1 (UvA login required)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correlation coefficients and working with normal distributions</span>"
+    ]
+  },
+  {
+    "objectID": "t4.html#spss-explainer-video-ess11",
+    "href": "t4.html#spss-explainer-video-ess11",
+    "title": "4  Working with normal distributions II - the sampling distribution of means",
+    "section": "4.4 SPSS explainer video (ESS11)",
+    "text": "4.4 SPSS explainer video (ESS11)\n\nCompute new variable from existing variables\n\nSee video ‘ISA4’ here",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with normal distributions II - the sampling distribution of means</span>"
     ]
   }
 ]

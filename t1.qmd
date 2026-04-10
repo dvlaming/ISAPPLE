@@ -102,7 +102,7 @@ The mode can be calculated for all measurement levels about which you have learn
 1. Entering data 
 2. Frequencies
 3. Central tendency
-4. Selecting cases with ESS11
+4. Selecting cases (ESS11)
 
 See video 'ISA1' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U). (UvA login required)
 

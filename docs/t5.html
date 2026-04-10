@@ -206,6 +206,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Factorial ANOVA (between subjects)</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple (bivariate) regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Multiple regression</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -242,7 +254,7 @@ window.Quarto = {
   <li><a href="#confidence-intervals-by-hand" id="toc-confidence-intervals-by-hand" class="nav-link" data-scroll-target="#confidence-intervals-by-hand"><span class="header-section-number">5.3</span> Confidence Intervals by hand</a></li>
   <li><a href="#one-sample-t-test-in-spss" id="toc-one-sample-t-test-in-spss" class="nav-link" data-scroll-target="#one-sample-t-test-in-spss"><span class="header-section-number">5.4</span> One-sample t-test in SPSS</a>
   <ul class="collapse">
-  <li><a href="#explainer-video" id="toc-explainer-video" class="nav-link" data-scroll-target="#explainer-video"><span class="header-section-number">5.4.1</span> Explainer video</a></li>
+  <li><a href="#spss-explainer-video-ess11" id="toc-spss-explainer-video-ess11" class="nav-link" data-scroll-target="#spss-explainer-video-ess11"><span class="header-section-number">5.4.1</span> SPSS explainer video (ESS11)</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5.4.2</span> Conclusion</a></li>
   </ul></li>
   </ul>
@@ -323,7 +335,7 @@ Note&nbsp;5.1: Nulls, alternatives, and directions
 <p>Now, let’s imagine we gather the following data from four UvA students:</p>
 <p><br></p>
 <div class="cell" data-tbl-colwidths="false" data-tbl-cap-location="bottom">
-<div id="tbl-beer" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom" data-tbl-colwidths="false">
+<div id="tbl-beer" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="false" data-tbl-cap-location="bottom">
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-beer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display" data-html-table-processing="none">
@@ -503,21 +515,24 @@ ci_{95} = \bigg[2.5 - 1.98 \times .15,\ 2.5 + 1.98 \times .15 \bigg]
 </section>
 <section id="one-sample-t-test-in-spss" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="one-sample-t-test-in-spss"><span class="header-section-number">5.4</span> One-sample t-test in SPSS</h2>
-<p>Let’s load in the ESS11 dataset and imagine we are interested working habits in Belgium and the Netherlands. Specifically, we are interested in whether people living in these countries normally work more than 37.5 hours per week on average, inclusive of overtime. This information is held in the variable <code>wkhtot</code>, which you can call to check.</p>
+<p>Let’s load in the ESS11 dataset and imagine that we are interested in working habits amongst men in Greece. Based on information from the Greek labour unions, we have reason to believe that Greek males normally work more than 40 hours per week on average, inclusive of overtime. This information is held in the variable <code>wkhtot</code>.</p>
 <p>Before we go further, let’s formulate some hypotheses.</p>
 <ul>
-<li><span class="math inline">\(H_0: \mu_{hrs} = 37.5\)</span> (In the population of Belgian and Dutch, average weekly working hours are not different from 37.5)</li>
-<li><span class="math inline">\(H_1: \mu_{hrs} &gt; 37.5\)</span> (In the population of Belgian and Dutch, average weekly working hours are <strong>less than</strong> 37.5)</li>
+<li><span class="math inline">\(H_0: \mu_{hrs} = 40\)</span> (In the population of Greek males, average weekly working hours are not different from 40)</li>
+<li><span class="math inline">\(H_1: \mu_{hrs} &gt; 40\)</span> (In the population of Greek males, average weekly working hours are <strong>greater than</strong> 40)</li>
 </ul>
 <p>Note that we now have a <strong>directional</strong> alternative hypothesis (see <a href="#nte-hypo" class="quarto-xref">Note&nbsp;<span>5.1</span></a>). In this case, it can be justifiable to use a one-tailed t-test, meaning we only consider half of the t-distribution when deriving our p-value.</p>
-<section id="explainer-video" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="explainer-video"><span class="header-section-number">5.4.1</span> Explainer video</h3>
-<p>[ESS one-samp t]</p>
+<section id="spss-explainer-video-ess11" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="spss-explainer-video-ess11"><span class="header-section-number">5.4.1</span> SPSS explainer video (ESS11)</h3>
+<ol type="1">
+<li>One-sample t-test (ESS11)</li>
+</ol>
+<p>See video ‘ISA5’ <a href="https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U">here</a></p>
 </section>
 <section id="conclusion" class="level3" data-number="5.4.2">
 <h3 data-number="5.4.2" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5.4.2</span> Conclusion</h3>
 <blockquote class="blockquote">
-<p>In the population of Belgians and Dutch, the total hours worked per week (inclusive of overtime) is less than 37.5 (mean = 36.46, s = 16.64; t[3031] = -3.45, p &lt; .001).</p>
+<p>In the population of Greek males, the total hours worked per week (inclusive of overtime) is greater than 40 (mean = 45.90, s = xxx; t[xxx] = xxx, p &lt; .001).</p>
 </blockquote>
 
 

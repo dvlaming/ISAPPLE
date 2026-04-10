@@ -205,21 +205,23 @@ Given what we learned about confidence intervals [above](#nte-conf), we can conc
 
 ## One-sample t-test in SPSS
 
-Let's load in the ESS11 dataset and imagine we are interested working habits in Belgium and the Netherlands. Specifically, we are interested in whether people living in these countries normally work more than 37.5 hours per week on average, inclusive of overtime. This information is held in the variable `wkhtot`, which you can call to check.
+Let's load in the ESS11 dataset and imagine that we are interested in working habits amongst men in Greece. Based on information from the Greek labour unions, we have reason to believe that Greek males normally work more than 40 hours per week on average, inclusive of overtime. This information is held in the variable `wkhtot`.
 
 Before we go further, let's formulate some hypotheses.
 
-* $H_0: \mu_{hrs} = 37.5$ (In the population of Belgian and Dutch, average weekly working hours are not different from 37.5)
-* $H_1: \mu_{hrs} > 37.5$ (In the population of Belgian and Dutch, average weekly working hours are **less than** 37.5)
+* $H_0: \mu_{hrs} = 40$ (In the population of Greek males, average weekly working hours are not different from 40)
+* $H_1: \mu_{hrs} > 40$ (In the population of Greek males, average weekly working hours are **greater than** 40)
 
 Note that we now have a **directional** alternative hypothesis (see @nte-hypo). In this case, it can be justifiable to use a one-tailed t-test, meaning we only consider half of the t-distribution when deriving our p-value.
 
-### Explainer video
+### SPSS explainer video (ESS11)
 
-[ESS one-samp t]
+1. One-sample t-test (ESS11)
+
+See video 'ISA5' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U)
 
 
 ### Conclusion
 
-> In the population of Belgians and Dutch, the total hours worked per week (inclusive of overtime) is less than 37.5 (mean = 36.46, s = 16.64; t[3031] = -3.45, p < .001). 
+> In the population of Greek males, the total hours worked per week (inclusive of overtime) is greater than 40 (mean = 45.90, s = xxx; t[xxx] = xxx, p < .001). 
 

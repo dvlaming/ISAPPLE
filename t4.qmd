@@ -147,6 +147,8 @@ prop2<-pnorm(target_income ,mean = mean_income, sd = se_income, lower.tail = TRU
 
 Our answer, then, is: _there is a `{r} round(prop2*100,2)`% chance of randomly drawing a sample (n = 1,000) with a mean income of less than 1,489 EUR from this population (with $\mu = 1,500$ & $\sigma = 100$)_
 
-## SPSS explainer video
+## SPSS explainer video (ESS11)
 
-[ESS Compute, trust variables]
+1. Compute new variable from existing variables
+
+See video 'ISA4' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U)

@@ -186,9 +186,9 @@ wdcor <- cor(wd$wdi_sanitation, wd$wdi_lifexp, use = "complete.obs")
 To give us some more formal information about the relationship strength, we can calculate pearson's $r$ in SPSS which reveals that the correlation between the variables is `{r} round(wdcor,2)`. Following our rules-of-thumb above, we could diagnose this as a **very strong, positive** relationship between the two variables.
 
 
-## SPSS explainer video
+## SPSS explainer video (World Data)
 
-1. Scatterplots
-2. Pearson's $r$ 
+1. Scatterplots 
+2. Pearson's $r$  
 
 See video 'ISA3' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U)^[Note that I refer to a <i>strong</i> correlation in the video, when this should be <i>very strong</i>, following our rules of thumb.] (UvA login required)
