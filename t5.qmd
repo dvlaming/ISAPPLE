@@ -71,18 +71,18 @@ data %>%
 
 <br>  
 
-We estimate $\mu$ with the sample mean ($\bar{X}$), which is 8. The test-statistic for the t-test is then given by:
+We estimate $\mu$ with the sample mean ($\bar{x}$), which is 8. The test-statistic for the t-test is then given by:
 
 <br>  
 
 $$
-t = \frac{\bar{X}-\mu}{\frac{s}{\sqrt{n}}}
+t = \frac{\bar{x}-\mu}{\frac{s}{\sqrt{n}}}
 $$
 <br>  
 
 Where:
 
-* $\bar{X}-\mu$ = the difference between the sample mean and the value for $\mu$ presented in the null hypothesis
+* $\bar{x}-\mu$ = the difference between the sample mean and the value for $\mu$ presented in the null hypothesis
 * $\frac{s}{\sqrt{n}}$ = the [standard error (SE)](t4.qmd#sec-se)
 
 
@@ -111,7 +111,7 @@ data %>%
 
 <br>  
 
-1. $\sum_{i=1}^{n}(X_i-\bar{X})^2 = 38$  
+1. $\sum_{i=1}^{n}(x_i-\bar{x})^2 = 38$  
 
 2. $s = \sqrt{\frac{38}{3}} = 3.56$  
 
@@ -142,7 +142,64 @@ We need to compare our observed t-statistic to the critical t-value associated w
 
 > Our 1-sample t-test indicated that, in the population of Amsterdam students, the mean beers consumed per week (_M_ = 8, _SD_ = 3.56) did not differ from 10, _t_ (3) = -1.12, _p_ > .05.
 
+
+```{r}
+#| label: fig-tdist
+#| fig-cap: "Critical t-values for selected significance levels vs. observed statistic"
+
+  
+segments<-tibble::tibble(quants=c(qt(.025,df =3),qt(.975,df =3),qt(.01,df =3),
+                                  qt(.99,df =3), qt(.005,df =3),qt(.995,df =3)),
+                         p=c(".025 (lower)", ".025 (upper)", ".01 (lower)", 
+                             ".01 (upper)",".005 (lower)", ".005 (upper)"))
+
+
+ggplot2::ggplot(data.frame(x = seq(-7, 7, length = 100)), ggplot2::aes(x = x)) + 
+  ggplot2::stat_function(fun = dt, args = list(df = 3),fill="grey", geom = "density")+
+  ggplot2::theme_bw()+
+  ggplot2::geom_segment(data = segments, ggplot2::aes(x=quants,y=0,xend=quants,yend=.4,color=p),
+                        linetype="dashed",linewidth = 1)+
+  ggplot2::geom_segment(x=-1.12,y=0,xend=-1.12,yend=.4,color="black", linewidth = 1) +
+  ggplot2::labs(x = "t distribution for df = 3", y = "Density", colour = "Sig. levels for\ncritical values")+
+  ggplot2::theme(legend.position="top") +
+  ggplot2::geom_label(x = -1.1, y = .4, vjust = "inward", label = "Observed\nt-statistic") +
+  ggplot2::scale_x_continuous(expand = c(0, 0), breaks = seq(-6,6,by=1)) +
+  ggplot2::scale_y_continuous(expand = c(0, 0))
+```
+
+
 <br>  
+
+### Effect size: Cohen's $d$
+
+In the last lecture, you also learned about measures of effect size which can give us some information about the <i>practical</i> as opposed to <i>statistical</i> significance of our findings. These measures typically standardize effects such that they can be compared across different studies. To accompany t-tests, researchers typically use Cohen's $d$, which - in the one sample case - is computed as follows:  
+
+<br>  
+
+$$
+d = \frac{\bar{x} - \mu}{s}
+$$
+<br>
+
+As you can see, this resembles a signal-to-noise ratio which expresses differences in standard deviation units, allowing cross-study comparisons. For the data above, we compute as follows:
+
+<br>  
+
+$$
+d = \frac{8-10}{3.56} = -.56
+$$
+<br>  
+
+
+Like Pearson's $r$, there is a common heuristic for evaluating the absolute size of Cohen's $d$:
+
+* $d \le .2$ = small  
+* $.2 < d \le .8$ = medium/moderate    
+* $d > 8$ = large/strong  
+
+Thus, we could categorize the above as a <b><i>moderate</i> difference/effect</b>. 
+
+<br>
 
 ::: {#nte-sig .callout-note}
 ### Statistical significance
@@ -203,6 +260,8 @@ Given what we learned about confidence intervals [above](#nte-conf), we can conc
 
 > With 95% confidence we estimate that the mean number of shots of tequila consumed per weekend in the population of Amsterdam students lies between 2.20 and 2.80.
 
+<br>  
+
 ## One-sample t-test in SPSS
 
 Let's load in the ESS11 dataset and imagine that we are interested in working habits amongst men in Greece. Based on information from the Greek labour unions, we have reason to believe that Greek males normally work more than 40 hours per week on average, inclusive of overtime. This information is held in the variable `wkhtot`.
@@ -223,5 +282,5 @@ See video 'ISA5' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_flemin
 
 ### Conclusion
 
-> In the population of Greek males, the total hours worked per week (inclusive of overtime) is greater than 40 (mean = 45.90, s = xxx; t[xxx] = xxx, p < .001). 
+> In the population of Greek males, the total hours worked per week (inclusive of overtime) is greater than 40 (mean = 45.90, s = 13.36; <i>t</i>[1119] = 14.77, p < .001; Cohen's $d$ = .44).   
 

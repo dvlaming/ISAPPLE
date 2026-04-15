@@ -250,7 +250,10 @@ window.Quarto = {
   <li><a href="#conceptual" id="toc-conceptual" class="nav-link" data-scroll-target="#conceptual"><span class="header-section-number">5.1.1</span> Conceptual</a></li>
   <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">5.1.2</span> SPSS</a></li>
   </ul></li>
-  <li><a href="#one-sample-t-test-by-hand" id="toc-one-sample-t-test-by-hand" class="nav-link" data-scroll-target="#one-sample-t-test-by-hand"><span class="header-section-number">5.2</span> One-sample t-test by hand</a></li>
+  <li><a href="#one-sample-t-test-by-hand" id="toc-one-sample-t-test-by-hand" class="nav-link" data-scroll-target="#one-sample-t-test-by-hand"><span class="header-section-number">5.2</span> One-sample t-test by hand</a>
+  <ul class="collapse">
+  <li><a href="#effect-size-cohens-d" id="toc-effect-size-cohens-d" class="nav-link" data-scroll-target="#effect-size-cohens-d"><span class="header-section-number">5.2.1</span> Effect size: Cohen’s <span class="math inline">\(d\)</span></a></li>
+  </ul></li>
   <li><a href="#confidence-intervals-by-hand" id="toc-confidence-intervals-by-hand" class="nav-link" data-scroll-target="#confidence-intervals-by-hand"><span class="header-section-number">5.3</span> Confidence Intervals by hand</a></li>
   <li><a href="#one-sample-t-test-in-spss" id="toc-one-sample-t-test-in-spss" class="nav-link" data-scroll-target="#one-sample-t-test-in-spss"><span class="header-section-number">5.4</span> One-sample t-test in SPSS</a>
   <ul class="collapse">
@@ -335,7 +338,7 @@ Note&nbsp;5.1: Nulls, alternatives, and directions
 <p>Now, let’s imagine we gather the following data from four UvA students:</p>
 <p><br></p>
 <div class="cell" data-tbl-colwidths="false" data-tbl-cap-location="bottom">
-<div id="tbl-beer" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="false" data-tbl-cap-location="bottom">
+<div id="tbl-beer" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-cap-location="bottom" data-tbl-colwidths="false">
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-beer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display" data-html-table-processing="none">
@@ -370,14 +373,14 @@ Table&nbsp;5.1: Beers consumed per week for four UvA students
 </div>
 </div>
 <p><br></p>
-<p>We estimate <span class="math inline">\(\mu\)</span> with the sample mean (<span class="math inline">\(\bar{X}\)</span>), which is 8. The test-statistic for the t-test is then given by:</p>
+<p>We estimate <span class="math inline">\(\mu\)</span> with the sample mean (<span class="math inline">\(\bar{x}\)</span>), which is 8. The test-statistic for the t-test is then given by:</p>
 <p><br></p>
 <p><span class="math display">\[
-t = \frac{\bar{X}-\mu}{\frac{s}{\sqrt{n}}}
+t = \frac{\bar{x}-\mu}{\frac{s}{\sqrt{n}}}
 \]</span> <br></p>
 <p>Where:</p>
 <ul>
-<li><span class="math inline">\(\bar{X}-\mu\)</span> = the difference between the sample mean and the value for <span class="math inline">\(\mu\)</span> presented in the null hypothesis</li>
+<li><span class="math inline">\(\bar{x}-\mu\)</span> = the difference between the sample mean and the value for <span class="math inline">\(\mu\)</span> presented in the null hypothesis</li>
 <li><span class="math inline">\(\frac{s}{\sqrt{n}}\)</span> = the <a href="./t4.html#sec-se">standard error (SE)</a></li>
 </ul>
 <p>To calculate <span class="math inline">\(se\)</span>, we first need <span class="math inline">\(s\)</span>, the sample standard deviation:</p>
@@ -429,7 +432,7 @@ Table&nbsp;5.2: Standard deviation calculation
 </div>
 <p><br></p>
 <ol type="1">
-<li><p><span class="math inline">\(\sum_{i=1}^{n}(X_i-\bar{X})^2 = 38\)</span></p></li>
+<li><p><span class="math inline">\(\sum_{i=1}^{n}(x_i-\bar{x})^2 = 38\)</span></p></li>
 <li><p><span class="math inline">\(s = \sqrt{\frac{38}{3}} = 3.56\)</span></p></li>
 <li><p><span class="math inline">\(se = \frac{3.56}{\sqrt{4}} = 1.78\)</span></p></li>
 </ol>
@@ -454,6 +457,42 @@ Note&nbsp;5.2: Degrees of freedom
 <blockquote class="blockquote">
 <p>Our 1-sample t-test indicated that, in the population of Amsterdam students, the mean beers consumed per week (<em>M</em> = 8, <em>SD</em> = 3.56) did not differ from 10, <em>t</em> (3) = -1.12, <em>p</em> &gt; .05.</p>
 </blockquote>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tdist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="t5_files/figure-html/fig-tdist-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Critical t-values for selected significance levels vs.&nbsp;observed statistic
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<section id="effect-size-cohens-d" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="effect-size-cohens-d"><span class="header-section-number">5.2.1</span> Effect size: Cohen’s <span class="math inline">\(d\)</span></h3>
+<p>In the last lecture, you also learned about measures of effect size which can give us some information about the <i>practical</i> as opposed to <i>statistical</i> significance of our findings. These measures typically standardize effects such that they can be compared across different studies. To accompany t-tests, researchers typically use Cohen’s <span class="math inline">\(d\)</span>, which - in the one sample case - is computed as follows:</p>
+<p><br></p>
+<p><span class="math display">\[
+d = \frac{\bar{x} - \mu}{s}
+\]</span> <br></p>
+<p>As you can see, this resembles a signal-to-noise ratio which expresses differences in standard deviation units, allowing cross-study comparisons. For the data above, we compute as follows:</p>
+<p><br></p>
+<p><span class="math display">\[
+d = \frac{8-10}{3.56} = -.56
+\]</span> <br></p>
+<p>Like Pearson’s <span class="math inline">\(r\)</span>, there is a common heuristic for evaluating the absolute size of Cohen’s <span class="math inline">\(d\)</span>:</p>
+<ul>
+<li><span class="math inline">\(d \le .2\)</span> = small<br>
+</li>
+<li><span class="math inline">\(.2 &lt; d \le .8\)</span> = medium/moderate<br>
+</li>
+<li><span class="math inline">\(d &gt; 8\)</span> = large/strong</li>
+</ul>
+<p>Thus, we could categorize the above as a <b><i>moderate</i> difference/effect</b>.</p>
 <p><br></p>
 <div id="nte-sig" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -469,6 +508,7 @@ Note&nbsp;5.3: Statistical significance
 </div>
 </div>
 <p><br></p>
+</section>
 </section>
 <section id="confidence-intervals-by-hand" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="confidence-intervals-by-hand"><span class="header-section-number">5.3</span> Confidence Intervals by hand</h2>
@@ -512,6 +552,7 @@ ci_{95} = \bigg[2.5 - 1.98 \times .15,\ 2.5 + 1.98 \times .15 \bigg]
 <blockquote class="blockquote">
 <p>With 95% confidence we estimate that the mean number of shots of tequila consumed per weekend in the population of Amsterdam students lies between 2.20 and 2.80.</p>
 </blockquote>
+<p><br></p>
 </section>
 <section id="one-sample-t-test-in-spss" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="one-sample-t-test-in-spss"><span class="header-section-number">5.4</span> One-sample t-test in SPSS</h2>
@@ -532,7 +573,7 @@ ci_{95} = \bigg[2.5 - 1.98 \times .15,\ 2.5 + 1.98 \times .15 \bigg]
 <section id="conclusion" class="level3" data-number="5.4.2">
 <h3 data-number="5.4.2" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5.4.2</span> Conclusion</h3>
 <blockquote class="blockquote">
-<p>In the population of Greek males, the total hours worked per week (inclusive of overtime) is greater than 40 (mean = 45.90, s = xxx; t[xxx] = xxx, p &lt; .001).</p>
+<p>In the population of Greek males, the total hours worked per week (inclusive of overtime) is greater than 40 (mean = 45.90, s = 13.36; <i>t</i>[1119] = 14.77, p &lt; .001; Cohen’s <span class="math inline">\(d\)</span> = .44).</p>
 </blockquote>
 
 
