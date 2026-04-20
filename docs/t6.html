@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./t7.html" rel="next">
+<link href="./t8.html" rel="next">
 <link href="./t5.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -190,32 +190,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./t7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The t-test for paired samples and Principal Components Analysis</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./t8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">One-way ANOVA (between subjects)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">One-way ANOVA (between subjects)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./t9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Factorial ANOVA (between subjects)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Factorial ANOVA (between subjects)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./t10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple (bivariate) regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Simple (bivariate) regression</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./t11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Multiple regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multiple regression</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -254,7 +248,9 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#reporting-results" id="toc-reporting-results" class="nav-link" data-scroll-target="#reporting-results"><span class="header-section-number">6.2.1</span> Reporting results</a></li>
   </ul></li>
-  <li><a href="#spss-explainer-video" id="toc-spss-explainer-video" class="nav-link" data-scroll-target="#spss-explainer-video"><span class="header-section-number">6.3</span> SPSS explainer video</a></li>
+  <li><a href="#the-independent-samples-t-test" id="toc-the-independent-samples-t-test" class="nav-link" data-scroll-target="#the-independent-samples-t-test"><span class="header-section-number">6.3</span> The independent-samples t-test</a></li>
+  <li><a href="#the-paired-samples-t-test" id="toc-the-paired-samples-t-test" class="nav-link" data-scroll-target="#the-paired-samples-t-test"><span class="header-section-number">6.4</span> The paired-samples t-test</a></li>
+  <li><a href="#spss-explainer-video" id="toc-spss-explainer-video" class="nav-link" data-scroll-target="#spss-explainer-video"><span class="header-section-number">6.5</span> SPSS explainer video</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t6.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -290,8 +286,13 @@ window.Quarto = {
 </section>
 <section id="spss" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="spss"><span class="header-section-number">6.1.2</span> SPSS</h3>
+<p>Run and interpret the:</p>
 <ol type="1">
-<li>Run and interpret the <span class="math inline">\(\chi^2\)</span> test of independence and the independent-samples t-test</li>
+<li><span class="math inline">\(\chi^2\)</span> test of independence<br>
+</li>
+<li>independent-samples t-test<br>
+</li>
+<li>paired-samples t-test</li>
 </ol>
 </section>
 </section>
@@ -556,11 +557,51 @@ Figure&nbsp;6.1: <span class="math inline">\(\chi^2\)</span> critical values for
 </ul>
 </section>
 </section>
-<section id="spss-explainer-video" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="spss-explainer-video"><span class="header-section-number">6.3</span> SPSS explainer video</h2>
+<section id="the-independent-samples-t-test" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="the-independent-samples-t-test"><span class="header-section-number">6.3</span> The independent-samples t-test</h2>
+<p>The <b>independent-samples t-test</b> is useful when we want to compare two <b>mutually exclusive</b> groups’ scores on a single dependent variable. For example, we may wish to compare reduction on depression inventory scores among patients who were randomized to receive either a new drug or the best current drug. For this test, we specify hypotheses about population mean differences among the groups, as follows:</p>
+<ul>
+<li><span class="math inline">\(H_0: \mu_{new} = \mu_{current}\)</span>
+<ul>
+<li>‘<em>In the population of depression patients</em>, there is <b>no</b> difference in the average effects of the new drug treatment and the current drug treatment.’</li>
+</ul></li>
+<li><span class="math inline">\(H_{1a}: \mu_{new} \neq \mu_{current}\)</span>
+<ul>
+<li>’‘<em>In the population of depression patients</em>, there <b>is</b> a difference in the average effects of the new drug treatment and the current drug treatment.’ (non-directional)</li>
+</ul></li>
+<li><span class="math inline">\(H_{1b}: \mu_{new} &gt; \mu_{current}\)</span>
+<ul>
+<li>’‘<em>In the population of depression patients</em>, there is <b>a greater average effect</b> the new drug treatment as compared to the current drug treatment.’ (directional)</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-paired-samples-t-test" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="the-paired-samples-t-test"><span class="header-section-number">6.4</span> The paired-samples t-test</h2>
+<p>The <strong>paired-samples t-test</strong> is of use in designs where we collect <strong>two measurements of a dependent variable from a single sample of participants</strong>. In other words, in contrast to <strong>between-subjects designs</strong> (see above), every participant is subjected to every condition, and produces measurement data on the same dependent variable twice. Designs like this are known as <strong>repeated-measures</strong> designs, and could, for example, involve measuring patient score prior to and following the administration of a treatment, or testing participants’ auditory recognition memory for human vs.&nbsp;chimpanzee vocalizations.</p>
+<p>Although the test may seem novel, it is not: it is simply a repackaged <a href="./t5.html#sec-ISACh5">one-sample t-test</a> performed on the difference scores obtained by subtracting each participant’s score in one measurement condition from their score in the other condition! When selected in SPSS and other software, the programme takes care of the subtraction before running the test, but you could easily do this yourself using the <code>compute</code> function which we discussed <a href="./t4.html#sec-ISACh4">previously</a> prior to submitting the differences to a one-sample t-test test. The results you obtain will be identical to those obtained using the paired-samples t-test on the raw data.</p>
+<p>To ensure that you understand the differences between the three ‘flavours’ of t-test, we ask you to formulate your hypotheses specifically with respect to the population mean difference between the conditions. For example, to develop a scenario which we previously conjured up, let’s imagine that we are interested in seasonal fluctuations in student alcohol consumption. We ask Dutch students to note their weekly alcohol consumption over an academic year, and we compute averages for the <b>same group of students</b> in semester 1 and semester 2. If we expect a difference across the semesters, then we could formulate the following hypotheses:</p>
+<ul>
+<li><span class="math inline">\(H_0: \mu D_{(sem 1 - sem2)} = 0\)</span>
+<ul>
+<li>‘<em>In the population of Dutch students</em>, there is do difference in mean weekly alcohol consumption across the two semesters.’</li>
+</ul></li>
+<li><span class="math inline">\(H_1: \mu D_{(sem 1 - sem2)} \neq 0\)</span>
+<ul>
+<li>‘<em>In the population of Dutch students</em>, there <strong>is</strong> a difference in mean weekly alcohol consumption across the two semesters.’<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ul></li>
+</ul>
+</section>
+<section id="spss-explainer-video" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="spss-explainer-video"><span class="header-section-number">6.5</span> SPSS explainer video</h2>
 <p>[ESS chi, indsamples t]</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Note that, while it is possible for formulate a <a href="./t5.html#nte-hypo">directional</a> <span class="math inline">\(H_1\)</span> for this test, a non-directional hypothesis will be sufficient for this course.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -971,8 +1012,8 @@ Figure&nbsp;6.1: <span class="math inline">\(\chi^2\)</span> critical values for
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./t7.html" class="pagination-link" aria-label="The t-test for paired samples and Principal Components Analysis">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The t-test for paired samples and Principal Components Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./t8.html" class="pagination-link" aria-label="One-way ANOVA (between subjects)">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">One-way ANOVA (between subjects)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

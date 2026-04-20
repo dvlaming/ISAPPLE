@@ -398,8 +398,8 @@
     "objectID": "t6.html#spss-explainer-video",
     "href": "t6.html#spss-explainer-video",
     "title": "6  The \\(\\chi^2\\) test of independence and the independent-samples t-test",
-    "section": "6.3 SPSS explainer video",
-    "text": "6.3 SPSS explainer video\n[ESS chi, indsamples t]",
+    "section": "6.5 SPSS explainer video",
+    "text": "6.5 SPSS explainer video\n[ESS chi, indsamples t]",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>The $\\chi^2$ test of independence and the independent-samples t-test</span>"
     ]
@@ -449,7 +449,7 @@
     "href": "t6.html#learning-goals",
     "title": "6  The \\(\\chi^2\\) test of independence and the independent-samples t-test",
     "section": "",
-    "text": "6.1.1 Conceptual\n\nCalculate the \\(\\chi^2\\) statistic by hand and determine its significance\n\n\n\n6.1.2 SPSS\n\nRun and interpret the \\(\\chi^2\\) test of independence and the independent-samples t-test",
+    "text": "6.1.1 Conceptual\n\nCalculate the \\(\\chi^2\\) statistic by hand and determine its significance\n\n\n\n6.1.2 SPSS\nRun and interpret the:\n\n\\(\\chi^2\\) test of independence\n\nindependent-samples t-test\n\npaired-samples t-test",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>The $\\chi^2$ test of independence and the independent-samples t-test</span>"
     ]
@@ -457,21 +457,21 @@
   {
     "objectID": "t8.html",
     "href": "t8.html",
-    "title": "8  One-way ANOVA (between subjects)",
+    "title": "7  One-way ANOVA (between subjects)",
     "section": "",
-    "text": "8.1 Learning goals",
+    "text": "7.1 Learning goals",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>One-way ANOVA (between subjects)</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>One-way ANOVA (between subjects)</span>"
     ]
   },
   {
     "objectID": "t8.html#learning-goals",
     "href": "t8.html#learning-goals",
-    "title": "8  One-way ANOVA (between subjects)",
+    "title": "7  One-way ANOVA (between subjects)",
     "section": "",
-    "text": "8.1.1 SPSS\n\nPerform and interpret one-way ANOVA and post-hoc comparisons\n\n\n\n8.1.2 Explainer video\n[ANOVA, drugtrial]\n\n\n8.1.3 Conclusion",
+    "text": "7.1.1 SPSS\n\nPerform and interpret one-way ANOVA and post-hoc comparisons\n\n\n\n7.1.2 Explainer video\n[ANOVA, drugtrial]\n\n\n7.1.3 Conclusion",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>One-way ANOVA (between subjects)</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>One-way ANOVA (between subjects)</span>"
     ]
   },
   {
@@ -517,51 +517,51 @@
   {
     "objectID": "t11.html",
     "href": "t11.html",
-    "title": "11  Multiple regression",
+    "title": "10  Multiple regression",
     "section": "",
-    "text": "11.1 Learning goals",
+    "text": "10.1 Learning goals",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Multiple regression</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Multiple regression</span>"
     ]
   },
   {
     "objectID": "t11.html#learning-goals",
     "href": "t11.html#learning-goals",
-    "title": "11  Multiple regression",
+    "title": "10  Multiple regression",
     "section": "",
-    "text": "11.1.1 Conceptual\n\nCheck understanding of the assumptions associated with regression models\n\n\n\n11.1.2 SPSS\n\nRun multiple linear regression, check assumptions and interpret output",
+    "text": "10.1.1 Conceptual\n\nCheck understanding of the assumptions associated with regression models\n\n\n\n10.1.2 SPSS\n\nRun multiple linear regression, check assumptions and interpret output",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Multiple regression</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Multiple regression</span>"
     ]
   },
   {
     "objectID": "t11.html#assumptions-of-linear-regression",
     "href": "t11.html#assumptions-of-linear-regression",
-    "title": "11  Multiple regression",
-    "section": "11.2 Assumptions of linear regression",
-    "text": "11.2 Assumptions of linear regression\nIn this course, we will focus on the following assumptions of linear regression:\n\nLinearity: every independent variable should have a linear relationship with the dependent variable. This assumption is violated if at least one independent variable has a relationship with the dependent variable which is  not linear (i.e., curvilinear). Should this be the case, the linear model which you fit will give very biased results, missing the true nature of the relationship between IV(s) and DV. Note that the assumption is not necessarily violated when there appears to be no clear relationship at all between IV(s) and DV; this simply means that the IV might has no predictive power with respect to the DV.\n\nTesting the assumption: run scatterplots for each IV against the DV, looking for any clear non-linear relationships. If you do not find these, the assumption is likely upheld.\n\n\nHomogeneity of residual variances/homoscedasticity: the model residuals should have a constant variance across all levels of the independent variables. In plainer words,  the model should predict the DV similarly well (or poorly) across the different IV scores. \n\nTesting the assumption: you can recycle the scatterplots you use to check for linearity (see above), but this time you can apply a model fit line and checking for the spread of the data around it. If you see that the breadth of the cloud of points around the fit line changes as the IV scores increase (i.e., the cloud shows a funnel pattern, appearing to narrow or broaden as you read from left to right) then this could suggest that indicates that the model’s predictions for that IV are not stable, and the assumption may be violated. Additionally, you should use the zpred. vs. zresid plot for the entire model; this graphs the standardized (z-scored) predictions that the model makes for each IV-score (i.e., on your single-IV scatterplots, the point on the fit line directly above a given IV score on the x-axis) against the standardized residuals (i.e., the prediction error, or difference between the model’s prediction and the actual DV data corresponding to a particular IV score). In homoscedastic data we expect there to be no relationship between residuals and predictions, so a random-ish cloud of points is a good sign. However, if you see funnelling patterns or any other indication of a relationship between residuals and predictions, this assumption may be violated.\n\n\nNo high multicollinearity among independent variables: independent variables should not be too strongly correlated with each other. Where IVs are strongly correlated with each other, the regression coefficients become difficult to interpret because they they represent the unique contribution of each variable to the DV, holding other IVs constant.\n\nTesting the assumption: You can compute Pearson’s \\(r\\) for all combinations of your independent variables. Ignore the p-values and look at the correlation coefficients: in this course, we will tolerate coefficients with an absolute value smaller than .8.\n\n\nThe plots below can help you with diagnosing assumption violations.\n\n\n\n\n\n\n\n\n\nFigure 11.1: A: Scatterplots depicting linear and nonlinear relationships (see strip labels on the left). Linear fit lines are shown in blue, and vertical red dashed lines show the residuals (i.e., the difference between the model’s predictions and the actual DV scores for a given IV score. B: Plots of standardized residuals vs. standardized predictions corresponding to the raw data shown in panel A. The horizontal red dashed lines mark 0 on the y-axis for reference.\n\n\n\n\n\n\n11.2.1 Explainer video\n[mult reg, example ntb]",
+    "title": "10  Multiple regression",
+    "section": "10.2 Assumptions of linear regression",
+    "text": "10.2 Assumptions of linear regression\nIn this course, we will focus on the following assumptions of linear regression:\n\nLinearity: every independent variable should have a linear relationship with the dependent variable. This assumption is violated if at least one independent variable has a relationship with the dependent variable which is  not linear (i.e., curvilinear). Should this be the case, the linear model which you fit will give very biased results, missing the true nature of the relationship between IV(s) and DV. Note that the assumption is not necessarily violated when there appears to be no clear relationship at all between IV(s) and DV; this simply means that the IV might has no predictive power with respect to the DV.\n\nTesting the assumption: run scatterplots for each IV against the DV, looking for any clear non-linear relationships. If you do not find these, the assumption is likely upheld.\n\n\nHomogeneity of residual variances/homoscedasticity: the model residuals should have a constant variance across all levels of the independent variables. In plainer words,  the model should predict the DV similarly well (or poorly) across the different IV scores. \n\nTesting the assumption: you can recycle the scatterplots you use to check for linearity (see above), but this time you can apply a model fit line and checking for the spread of the data around it. If you see that the breadth of the cloud of points around the fit line changes as the IV scores increase (i.e., the cloud shows a funnel pattern, appearing to narrow or broaden as you read from left to right) then this could suggest that indicates that the model’s predictions for that IV are not stable, and the assumption may be violated. Additionally, you should use the zpred. vs. zresid plot for the entire model; this graphs the standardized (z-scored) predictions that the model makes for each IV-score (i.e., on your single-IV scatterplots, the point on the fit line directly above a given IV score on the x-axis) against the standardized residuals (i.e., the prediction error, or difference between the model’s prediction and the actual DV data corresponding to a particular IV score). In homoscedastic data we expect there to be no relationship between residuals and predictions, so a random-ish cloud of points is a good sign. However, if you see funnelling patterns or any other indication of a relationship between residuals and predictions, this assumption may be violated.\n\n\nNo high multicollinearity among independent variables: independent variables should not be too strongly correlated with each other. Where IVs are strongly correlated with each other, the regression coefficients become difficult to interpret because they they represent the unique contribution of each variable to the DV, holding other IVs constant.\n\nTesting the assumption: You can compute Pearson’s \\(r\\) for all combinations of your independent variables. Ignore the p-values and look at the correlation coefficients: in this course, we will tolerate coefficients with an absolute value smaller than .8.\n\n\nThe plots below can help you with diagnosing assumption violations.\n\n\n\n\n\n\n\n\n\nFigure 10.1: A: Scatterplots depicting linear and nonlinear relationships (see strip labels on the left). Linear fit lines are shown in blue, and vertical red dashed lines show the residuals (i.e., the difference between the model’s predictions and the actual DV scores for a given IV score. B: Plots of standardized residuals vs. standardized predictions corresponding to the raw data shown in panel A. The horizontal red dashed lines mark 0 on the y-axis for reference.\n\n\n\n\n\n\n10.2.1 Explainer video\n[mult reg, example ntb]",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Multiple regression</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Multiple regression</span>"
     ]
   },
   {
     "objectID": "t10.html",
     "href": "t10.html",
-    "title": "10  Simple (bivariate) regression",
+    "title": "9  Simple (bivariate) regression",
     "section": "",
-    "text": "10.1 Learning goals",
+    "text": "9.1 Learning goals",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Simple (bivariate) regression</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Simple (bivariate) regression</span>"
     ]
   },
   {
     "objectID": "t10.html#learning-goals",
     "href": "t10.html#learning-goals",
-    "title": "10  Simple (bivariate) regression",
+    "title": "9  Simple (bivariate) regression",
     "section": "",
-    "text": "10.1.1 SPSS\n\nPerform and interpret output from simple linear regression\n\n\n\n10.1.2 Explainer video\n[simple reg, example ntb]",
+    "text": "9.1.1 SPSS\n\nPerform and interpret output from simple linear regression\n\n\n\n9.1.2 Explainer video\n[simple reg, example ntb]",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Simple (bivariate) regression</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Simple (bivariate) regression</span>"
     ]
   },
   {
@@ -602,6 +602,46 @@
     "text": "4.4 SPSS explainer video (ESS11)\n\nCompute new variable from existing variables\n\nSee video ‘ISA4’ here",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with normal distributions II - the sampling distribution of means</span>"
+    ]
+  },
+  {
+    "objectID": "t6.html#the-independent-t-test",
+    "href": "t6.html#the-independent-t-test",
+    "title": "6  The \\(\\chi^2\\) test of independence and the independent-samples t-test",
+    "section": "6.3 The independent t-test",
+    "text": "6.3 The independent t-test\nThe independent-samples t-test is useful when we want to compare two mutually exclusive groups’ scores on a single dependent variable. For example, we may wish to compare reduction on depression inventory scores among patients who were randomized to receive either a new drug or the best current drug. For this test, we specify hypotheses about population mean differences among the groups, as follows:\n\n\\(H_0: \\mu_{new} = \\mu_{current}\\)\n\n‘In the population of depression patients, there is no difference in the average effects of the new drug treatment and the current drug treatment.’\n\n\\(H_{1a}: \\mu_{new} \\neq \\mu_{current}\\)\n\n’‘In the population of depression patients, there is a difference in the average effects of the new drug treatment and the current drug treatment.’ (non-directional)\n\n\\(H_{1a}: \\mu_{new} &gt; \\mu_{current}\\)\n\n’‘In the population of depression patients, there is a greater average effect the new drug treatment as compared to the current drug treatment.’ (directional)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>The $\\chi^2$ test of independence and the independent-samples t-test</span>"
+    ]
+  },
+  {
+    "objectID": "t6.html#the-paired-samples-t-test",
+    "href": "t6.html#the-paired-samples-t-test",
+    "title": "6  The \\(\\chi^2\\) test of independence and the independent-samples t-test",
+    "section": "6.4 The paired-samples t-test",
+    "text": "6.4 The paired-samples t-test\nThe paired-samples t-test is of use in designs where we collect two measurements of a dependent variable from a single sample of participants. In other words, in contrast to between-subjects designs (see above), every participant is subjected to every condition, and produces measurement data on the same dependent variable twice. Designs like this are known as repeated-measures designs, and could, for example, involve measuring patient score prior to and following the administration of a treatment, or testing participants’ auditory recognition memory for human vs. chimpanzee vocalizations.\nAlthough the test may seem novel, it is not: it is simply a repackaged one-sample t-test performed on the difference scores obtained by subtracting each participant’s score in one measurement condition from their score in the other condition! When selected in SPSS and other software, the programme takes care of the subtraction before running the test, but you could easily do this yourself using the compute function which we discussed previously prior to submitting the differences to a one-sample t-test test. The results you obtain will be identical to those obtained using the paired-samples t-test on the raw data.\nTo ensure that you understand the differences between the three ‘flavours’ of t-test, we ask you to formulate your hypotheses specifically with respect to the population mean difference between the conditions. For example, to develop a scenario which we previously conjured up, let’s imagine that we are interested in seasonal fluctuations in student alcohol consumption. We ask Dutch students to note their weekly alcohol consumption over an academic year, and we compute averages for the same group of students in semester 1 and semester 2. If we expect a difference across the semesters, then we could formulate the following hypotheses:\n\n\\(H_0: \\mu D_{(sem 1 - sem2)} = 0\\)\n\n‘In the population of Dutch students, there is do difference in mean weekly alcohol consumption across the two semesters.’\n\n\\(H_1: \\mu D_{(sem 1 - sem2)} \\neq 0\\)\n\n‘In the population of Dutch students, there is a difference in mean weekly alcohol consumption across the two semesters.’1",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>The $\\chi^2$ test of independence and the independent-samples t-test</span>"
+    ]
+  },
+  {
+    "objectID": "t6.html#footnotes",
+    "href": "t6.html#footnotes",
+    "title": "6  The \\(\\chi^2\\) test of independence and the independent-samples t-test",
+    "section": "",
+    "text": "Note that, while it is possible for formulate a directional \\(H_1\\) for this test, a non-directional hypothesis will be sufficient for this course.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>The $\\chi^2$ test of independence and the independent-samples t-test</span>"
+    ]
+  },
+  {
+    "objectID": "t6.html#the-independent-samples-t-test",
+    "href": "t6.html#the-independent-samples-t-test",
+    "title": "6  The \\(\\chi^2\\) test of independence and the independent-samples t-test",
+    "section": "6.3 The independent-samples t-test",
+    "text": "6.3 The independent-samples t-test\nThe independent-samples t-test is useful when we want to compare two mutually exclusive groups’ scores on a single dependent variable. For example, we may wish to compare reduction on depression inventory scores among patients who were randomized to receive either a new drug or the best current drug. For this test, we specify hypotheses about population mean differences among the groups, as follows:\n\n\\(H_0: \\mu_{new} = \\mu_{current}\\)\n\n‘In the population of depression patients, there is no difference in the average effects of the new drug treatment and the current drug treatment.’\n\n\\(H_{1a}: \\mu_{new} \\neq \\mu_{current}\\)\n\n’‘In the population of depression patients, there is a difference in the average effects of the new drug treatment and the current drug treatment.’ (non-directional)\n\n\\(H_{1b}: \\mu_{new} &gt; \\mu_{current}\\)\n\n’‘In the population of depression patients, there is a greater average effect the new drug treatment as compared to the current drug treatment.’ (directional)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>The $\\chi^2$ test of independence and the independent-samples t-test</span>"
     ]
   }
 ]
