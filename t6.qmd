@@ -1,4 +1,4 @@
-# The $\chi^2$ test of independence and the independent-samples t-test {#sec-ISACh6}
+# The $\chi^2$ test of independence, the independent-samples t-test, and the paired-samples t-test {#sec-ISACh6}
 
 ## Learning goals
 
@@ -211,4 +211,8 @@ To ensure that you understand the differences between the three 'flavours' of t-
 
 ## SPSS explainer video
 
-[ESS chi, indsamples t]
+1. $\chi^2$ test of independence (ESS 11)   
+2. independent-samples t-test (ESS 11)  
+3. paired-samples t-test (ISA mockup Argyrous Ch20-1-1)  
+
+See videos 'ISA6' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U)
