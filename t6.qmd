@@ -189,10 +189,10 @@ The <b>independent-samples t-test</b> is useful when we want to compare two <b>m
 
 - $H_0: \mu_{new} = \mu_{current}$  
     + '_In the population of depression patients_, there is <b>no</b> difference in the average effects of the new drug treatment and the current drug treatment.'
-- $H_{1a}: \mu_{new} \neq \mu_{current}$
-    + ''_In the population of depression patients_, there <b>is</b> a difference in the average effects of the new drug treatment and the current drug treatment.' (non-directional)
+- $H_{1a}: \mu_{new} \neq \mu_{current}$  
+    + '_In the population of depression patients_, there <b>is</b> a difference in the average effects of the new drug treatment and the current drug treatment.' (non-directional)
 - $H_{1b}: \mu_{new} > \mu_{current}$
-    + ''_In the population of depression patients_, there is <b>a greater average effect</b> the new drug treatment as compared to the current drug treatment.' (directional)  
+    + '_In the population of depression patients_, there is <b>a greater average effect</b> of the new drug treatment as compared to the current drug treatment.' (directional)  
     
 ## The paired-samples t-test 
 
@@ -204,8 +204,10 @@ To ensure that you understand the differences between the three 'flavours' of t-
 
 - $H_0: \mu D_{(sem 1 - sem2)} = 0$  
     + '_In the population of Dutch students_, there is do difference in mean weekly alcohol consumption across the two semesters.'
-- $H_1: \mu D_{(sem 1 - sem2)} \neq 0$
-    + '_In the population of Dutch students_, there **is** a difference in mean weekly alcohol consumption across the two semesters.'^[Note that, while it is possible for formulate a [directional](t5.qmd#nte-hypo) $H_1$ for this test, a non-directional hypothesis will be sufficient for this course.]
+- $H_{1a}: \mu D_{(sem 1 - sem2)} \neq 0$  
+    + '_In the population of Dutch students_, there **is** a difference in mean weekly alcohol consumption across the two semesters.' (non-directional)  
+- $H_{1b}: \mu D_{(sem 1 - sem2)} > 0$  
+    + '_In the population of Dutch students_, **more** alcohol is consumed per week in semester 1 than in semester 2.' (directional)
 
 
 
