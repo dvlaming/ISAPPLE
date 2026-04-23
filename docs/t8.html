@@ -238,8 +238,11 @@ window.Quarto = {
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">7.1</span> Learning goals</a>
   <ul class="collapse">
   <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">7.1.1</span> SPSS</a></li>
-  <li><a href="#explainer-video" id="toc-explainer-video" class="nav-link" data-scroll-target="#explainer-video"><span class="header-section-number">7.1.2</span> Explainer video</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7.1.3</span> Conclusion</a></li>
+  </ul></li>
+  <li><a href="#formulating-hypotheses-for-one-way-anova" id="toc-formulating-hypotheses-for-one-way-anova" class="nav-link" data-scroll-target="#formulating-hypotheses-for-one-way-anova"><span class="header-section-number">7.2</span> Formulating hypotheses for one-way ANOVA</a>
+  <ul class="collapse">
+  <li><a href="#explainer-video" id="toc-explainer-video" class="nav-link" data-scroll-target="#explainer-video"><span class="header-section-number">7.2.1</span> Explainer video</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7.2.2</span> Conclusion</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dvlaming/ISA/blob/main/t8.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
@@ -274,12 +277,24 @@ window.Quarto = {
 <li>Perform and interpret one-way ANOVA and post-hoc comparisons</li>
 </ol>
 </section>
-<section id="explainer-video" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="explainer-video"><span class="header-section-number">7.1.2</span> Explainer video</h3>
+</section>
+<section id="formulating-hypotheses-for-one-way-anova" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="formulating-hypotheses-for-one-way-anova"><span class="header-section-number">7.2</span> Formulating hypotheses for one-way ANOVA</h2>
+<p>When comparing means of more than two independent groups, we move beyond t-tests and use Analysis of Variance (ANOVA). We formulate hypotheses as follows:</p>
+<ul>
+<li><span class="math inline">\(H_0: \mu_1 = \mu_2 ... = \mu_k\)</span> (where <span class="math inline">\(k\)</span> = number of groups)
+<ul>
+<li>Population means are equal across all groups.</li>
+</ul></li>
+<li><span class="math inline">\(H_1:\)</span> At least one of the population means of the <span class="math inline">\(k\)</span> groups is different from (one of) the others.</li>
+</ul>
+<p>Note that <span class="math inline">\(H_1\)</span> here is not directional, and we use post-hoc tests to follow up on the omnibus F-test performed as part of the ANOVA procedure.</p>
+<section id="explainer-video" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="explainer-video"><span class="header-section-number">7.2.1</span> Explainer video</h3>
 <p>[ANOVA, drugtrial]</p>
 </section>
-<section id="conclusion" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7.1.3</span> Conclusion</h3>
+<section id="conclusion" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7.2.2</span> Conclusion</h3>
 
 
 </section>

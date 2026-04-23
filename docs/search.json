@@ -35,7 +35,7 @@
     "href": "a1.html#sec-a1t",
     "title": "Appendix A — APA reporting style for statistical tests",
     "section": "A.2 t-tests",
-    "text": "A.2 t-tests\nt(degrees of freedom) = t-value, p = p-value",
+    "text": "A.2 t-tests\nt(degrees of freedom) = t-value, p = p-value, Cohen’s \\(d\\) = d",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>APA reporting style for statistical tests</span>"
@@ -46,7 +46,7 @@
     "href": "a1.html#sec-a1anova",
     "title": "Appendix A — APA reporting style for statistical tests",
     "section": "A.3 ANOVA",
-    "text": "A.3 ANOVA\nF(numerator/effect degrees of freedom, denominator/residual degrees of freedom) = F-value, p = p-value,",
+    "text": "A.3 ANOVA\nF(numerator/effect degrees of freedom, denominator/residual degrees of freedom) = F-value, p = p-value, \\(\\eta^2\\) = eta-squared",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>APA reporting style for statistical tests</span>"
@@ -469,7 +469,7 @@
     "href": "t8.html#learning-goals",
     "title": "7  One-way ANOVA (between subjects)",
     "section": "",
-    "text": "7.1.1 SPSS\n\nPerform and interpret one-way ANOVA and post-hoc comparisons\n\n\n\n7.1.2 Explainer video\n[ANOVA, drugtrial]\n\n\n7.1.3 Conclusion",
+    "text": "7.1.1 SPSS\n\nPerform and interpret one-way ANOVA and post-hoc comparisons",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>One-way ANOVA (between subjects)</span>"
     ]
@@ -642,6 +642,16 @@
     "text": "6.3 The independent-samples t-test\nThe independent-samples t-test is useful when we want to compare two mutually exclusive groups’ scores on a single dependent variable. For example, we may wish to compare reduction on depression inventory scores among patients who were randomized to receive either a new drug or the best current drug. For this test, we specify hypotheses about population mean differences among the groups, as follows:\n\n\\(H_0: \\mu_{new} = \\mu_{current}\\)\n\n‘In the population of depression patients, there is no difference in the average effects of the new drug treatment and the current drug treatment.’\n\n\\(H_{1a}: \\mu_{new} \\neq \\mu_{current}\\)\n\n‘In the population of depression patients, there is a difference in the average effects of the new drug treatment and the current drug treatment.’ (non-directional)\n\n\\(H_{1b}: \\mu_{new} &gt; \\mu_{current}\\)\n\n‘In the population of depression patients, there is a greater average effect of the new drug treatment as compared to the current drug treatment.’ (directional)",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>The $\\chi^2$ test of independence, the independent-samples t-test, and the paired-samples t-test</span>"
+    ]
+  },
+  {
+    "objectID": "t8.html#formulating-hypotheses-for-one-way-anova",
+    "href": "t8.html#formulating-hypotheses-for-one-way-anova",
+    "title": "7  One-way ANOVA (between subjects)",
+    "section": "7.2 Formulating hypotheses for one-way ANOVA",
+    "text": "7.2 Formulating hypotheses for one-way ANOVA\nWhen comparing means of more than two independent groups, we move beyond t-tests and use Analysis of Variance (ANOVA). We formulate hypotheses as follows:\n\n\\(H_0: \\mu_1 = \\mu_2 ... = \\mu_k\\) (where \\(k\\) = number of groups)\n\nPopulation means are equal across all groups.\n\n\\(H_1:\\) At least one of the population means of the \\(k\\) groups is different from (one of) the others.\n\nNote that \\(H_1\\) here is not directional, and we use post-hoc tests to follow up on the omnibus F-test performed as part of the ANOVA procedure.\n\n7.2.1 Explainer video\n[ANOVA, drugtrial]\n\n\n7.2.2 Conclusion",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>One-way ANOVA (between subjects)</span>"
     ]
   }
 ]

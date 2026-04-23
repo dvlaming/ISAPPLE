@@ -6,11 +6,11 @@ r(<b>degrees of freedom</b>) = <b>correlation coefficient</b> p = <b>p-value</b>
 
 ## t-tests {#sec-a1t}
 
-t(<b>degrees of freedom</b>) = <b>t-value</b>,  p = <b>p-value</b>
+t(<b>degrees of freedom</b>) = <b>t-value</b>,  p = <b>p-value</b>, Cohen's $d$ = <b>d</b>
 
 ## ANOVA {#sec-a1anova}
 
-F(<b>numerator/effect degrees of freedom</b>,  <b>denominator/residual degrees of freedom</b>) = <b>F-value</b>,  p = <b>p-value</b>, 
+F(<b>numerator/effect degrees of freedom</b>,  <b>denominator/residual degrees of freedom</b>) = <b>F-value</b>,  p = <b>p-value</b>, $\eta^2$ = <b>eta-squared</b>
 
 ## $\chi^2$ {#sec-a1chi}
 

@@ -7,6 +7,17 @@
 1. Perform and interpret one-way ANOVA and post-hoc comparisons
 
 
+## Formulating hypotheses for one-way ANOVA
+
+When comparing means of more than two independent groups, we move beyond t-tests and use Analysis of Variance (ANOVA). We formulate hypotheses as follows:
+
+- $H_0: \mu_1 = \mu_2 ... = \mu_k$ (where $k$ = number of groups) 
+    + Population means are equal across all groups.
+- $H_1:$ At least one of the population means of the $k$ groups is different from (one of) the others.
+
+Note that $H_1$ here is not directional, and we use post-hoc tests to follow up on the omnibus F-test performed as part of the ANOVA procedure. 
+
+
 ### Explainer video
 
 [ANOVA, drugtrial]
