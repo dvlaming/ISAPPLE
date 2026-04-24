@@ -18,9 +18,11 @@ When comparing means of more than two independent groups, we move beyond t-tests
 Note that $H_1$ here is not directional, and we use post-hoc tests to follow up on the omnibus F-test performed as part of the ANOVA procedure. 
 
 
-### Explainer video
+## Explainer video (ISA mockup drugtrial-2)
 
-[ANOVA, drugtrial]
+1. One-way ANOVA 
+
+See video 'ISA7' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U)
 
 ### Conclusion
 
