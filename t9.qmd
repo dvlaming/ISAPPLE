@@ -128,9 +128,11 @@ In this course, it is sufficient to formulate non-directional hypotheses, but wh
 The information in blue gives much more clarity regarding how the effects are expected to look.
 
 
-### Explainer video
+## Explainer video (ISA mockup drugtrial-2)
 
-[ANOVA, drugtrial]
+1. Factorial ANOVA 
+
+See video 'ISA8' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U)
 
  
 
