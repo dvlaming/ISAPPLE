@@ -14,7 +14,7 @@ F(<b>numerator/effect degrees of freedom</b>,  <b>denominator/residual degrees o
 
 ## $\chi^2$ {#sec-a1chi}
 
-$\chi^2$(_n_, <b>degrees of freedom</b>) = <b>chi-squared value</b>,  p = <b>p-value</b>
+$\chi^2$(<b>degrees of freedom</b>, <i>N</i> = <b>number of participants</b>) = <b>chi-squared value</b>,  p = <b>p-value</b>
 
 ## Regression {#sec-a1reg}
 

@@ -104,7 +104,7 @@ p4<-ggplot(data_ME_Int, aes(x=Drink, y=Score, group=Major)) +
   scale_y_continuous(limits=c(0, 51),breaks=seq(0,50,5))+
   # theme(legend.position="none")+
   theme(axis.title.y = element_blank())+
-  labs(subtitle = "Interaction (wine effect stronger for pol.)\n ")
+  labs(subtitle = "Main effects of drink (W>B) and major (P>FA)\nInteraction: drink effect stronger for pol.")
   # theme(plot.caption = element_text(hjust=0))
 
 
