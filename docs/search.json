@@ -547,21 +547,21 @@
   {
     "objectID": "t10.html",
     "href": "t10.html",
-    "title": "9  Simple (bivariate) regression",
+    "title": "9  Simple and multiple regression",
     "section": "",
     "text": "9.1 Learning goals",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Simple (bivariate) regression</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Simple and multiple regression</span>"
     ]
   },
   {
     "objectID": "t10.html#learning-goals",
     "href": "t10.html#learning-goals",
-    "title": "9  Simple (bivariate) regression",
+    "title": "9  Simple and multiple regression",
     "section": "",
-    "text": "9.1.1 SPSS\n\nPerform and interpret output from simple linear regression\n\n\n\n9.1.2 Explainer video\n[simple reg, example ntb]",
+    "text": "9.1.1 Conceptual\n\nInterpreting regression equations\nCheck understanding of the assumptions associated with regression models\n\n\n\n9.1.2 SPSS\n\nPerform and interpret output from simple and multiple linear regression\nCheck regression assumptions",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Simple (bivariate) regression</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Simple and multiple regression</span>"
     ]
   },
   {
@@ -672,6 +672,26 @@
     "text": "8.4 Explainer video (ISA mockup drugtrial-2)\n\nFactorial ANOVA\n\nSee video ‘ISA8’ here",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Factorial ANOVA (between subjects)</span>"
+    ]
+  },
+  {
+    "objectID": "t10.html#linear-regression",
+    "href": "t10.html#linear-regression",
+    "title": "9  Simple and multiple regression",
+    "section": "9.2 Linear regression",
+    "text": "9.2 Linear regression\n\n9.2.1 Simple/bivariate linear regression\nThe aim of linear regression is to fit a straight-line model which predicting an interval-ratio outcome (DV) from interval-ratio (or categorical - more on this later) predictors (IVs). The simplest case of this is bivariate regression, where the outcome is regressed on (predicted by) a model with only one predictor. A simple linear regression equation takes the form:\n\\[\n\\hat{Y} = a + bX\n\\] Where:\n\n\\(\\hat{Y}\\) = predicted value of the outcome (DV)\n\\(a\\) = the intercept (or, the predicted value of \\(Y\\) when all predictors = 0)\n\\(b\\) = the slope coefficient (i.e., the predicted unit change in \\(Y\\) given a one-unit increase in \\(X\\))\n\\(X\\) = the value of the predictor (IV)\n\nIt is important to reiterate that \\(\\hat{Y}\\) is the prediction for \\(Y\\) based on the regression model, for a given \\(X\\). Once the model has been fit (using the slope and intercept calculations you learned about earlier in this course), we can make predictions about \\(Y\\) for given values of \\(X\\). In fact, this is exactly what the least-squares fit line (see Figure 2.2) which you previously generated for your scatterplots reflects: it is a visualization of the simple linear regression model, showing predicted values of \\(Y\\) for the values of \\(X\\).\nUsing an example featured in the explainer video below, let’s imagine that we fit a model predicting the level of happiness among people in the Netherlands from the extent to which they feel that people in general can be trusted (or, ‘social trust’, for short). We see that the intercept of the model is 7.22 and that the unstandardized slope coefficient (or b value) is .113. Assembling these into an equation with specific variables gives us:\n\\[\n\\hat{Y}_{happiness} = 7.22 + .113 \\times{social trust}\n\\] Now, let’s imagine that we wanted to predict the level of happiness for a Netherlands resident with a social trust score of 5. That would give:\n\\[\n\\hat{Y}_{happiness} = 7.22 + .113 \\times{5} = 7.785\n\\]\nTo conclude: the model predicts a happiness score of 7.785 for a Netherlands resident with a social trust score of 5.\n\n\n9.2.2 Multiple linear regression\nWhen we have multiple predictors, the regression equation expands to:\n\\[\n\\hat{Y} = a + b_1X_1 + b_2X_2...b_nX_n\n\\]\nThe interpretation of coefficients is very similar to the bivariate case described above. However, when looking at the slope coefficient of a specific IV, we must remember to account for the fact that this reflects the predicted change in \\(Y\\) for that IV when all other IVs in the model are held constant.\nUsing another example from the explainer video, let’s imagine that we added a person’s left-right political tendency and their religiosity to the model as predictors of happiness. Now, we see that the intercept is 6.832 and that the unstandardized slope coefficients are .126, .047 and .024, for social trust, left-right tendency and religiosity, respectively. This gives us:\n\\[\n\\hat{Y}_{happiness} = 6.832 + .126 \\times{social trust} + .047 \\times{leftright} + .024 \\times{religiosity}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Simple and multiple regression</span>"
+    ]
+  },
+  {
+    "objectID": "t10.html#assumptions-of-linear-regression",
+    "href": "t10.html#assumptions-of-linear-regression",
+    "title": "9  Simple and multiple regression",
+    "section": "9.3 Assumptions of linear regression",
+    "text": "9.3 Assumptions of linear regression\nIn this course, we will focus on the following assumptions of linear regression:\n\nLinearity: every independent variable should have a linear relationship with the dependent variable. This assumption is violated if at least one independent variable has a relationship with the dependent variable which is  not linear (i.e., curvilinear). Should this be the case, the linear model which you fit will give very biased results, missing the true nature of the relationship between IV(s) and DV. Note that the assumption is not necessarily violated when there appears to be no clear relationship at all between IV(s) and DV; this simply means that the IV has very little predictive power with respect to the DV.\n\nTesting the assumption: run scatterplots for each IV against the DV, looking for any clear non-linear relationships. If you do not find these, the assumption is likely upheld.\n\n\nHomogeneity of residual variances/homoscedasticity: the model residuals should have a constant variance across all levels of the independent variables. In plainer words,  the model should predict the DV similarly well (or poorly) across the different IV scores. \n\nTesting the assumption: you can recycle the scatterplots you use to check for linearity (see above), but this time you can apply a model fit line and check for the spread of the data around it. If you see that the breadth of the cloud of points around the fit line changes as the IV scores increase (i.e., the cloud shows a funnel pattern, appearing to narrow or broaden as you read from left to right) then this could suggest that that the model’s predictions for that IV are not stable, and the assumption may be violated. Additionally, you should use the zpred. vs. zresid plot for the entire model; this graphs the standardized (z-scored) predictions that the model makes for each IV-score (i.e., on your single-IV scatterplots, the point on the fit line directly above a given IV score on the x-axis) against the standardized residuals (i.e., the prediction error, or difference between the model’s prediction and the actual DV data corresponding to a particular IV score). In homoscedastic data we expect there to be no relationship between residuals and predictions, so a random-ish cloud of points is a good sign. However, if you see funnelling patterns or any other indication of a relationship between residuals and predictions, this assumption may be violated.\n\n\nNo high multicollinearity among independent variables: independent variables should not be too strongly correlated with each other. Where IVs are strongly correlated with each other, the regression coefficients become difficult to interpret because they represent the unique contribution of each variable to the DV, holding other IVs constant.\n\nTesting the assumption: You can compute Pearson’s \\(r\\) for all combinations of your independent variables. Ignore the p-values and look at the correlation coefficients: in this course, we will tolerate coefficients with an absolute value smaller than .8.\n\n\nThe plots below can help you with diagnosing assumption violations.\n\n\n\n\n\n\n\n\n\nFigure 9.1: A. Scatterplots depicting linear and nonlinear relationships (see strip labels on the left). Linear fit lines are shown in blue, and vertical red dashed lines show the residuals (i.e., the difference between the model’s predictions and the actual DV scores for a given IV score. B. Plots of standardized residuals vs. standardized predictions corresponding to the raw data shown in panel A. The horizontal red dashed lines mark 0 on the y-axis for reference.\n\n\n\n\n\n\n9.3.1 Explainer video (ESS11)\n\nSimple (bivariate) and multiple regression\n\nSee video ‘ISA9’ here",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Simple and multiple regression</span>"
     ]
   }
 ]
