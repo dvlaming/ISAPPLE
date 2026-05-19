@@ -155,6 +155,8 @@ patch
 
 ### Explainer video (ESS11)
 
-1. Simple (bivariate) and multiple regression 
+1. Simple (bivariate) and multiple regression
+2. Assumption checking
+3. Dummy predictors
 
-See video 'ISA9' [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U)
+See videos on regression [here](https://amsuni-my.sharepoint.com/:f:/g/personal/d_fleming_uva_nl/IgB9cOs7BXZCQbMrWQqEbynXAbXqaJtO5NEi9MwvBjiod2U).
